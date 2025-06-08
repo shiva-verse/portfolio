@@ -5,268 +5,219 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Shivam Aggarwal - Experienced Product Manager in FinTech & SaaS with expertise in API integration, backend systems, and AI-powered solutions." />
+    content="Shivam Aggarwal - Senior Product Manager | FinTech & SaaS | AI Advocate | Portfolio and Resume" />
   <meta name="keywords"
-    content="Shivam Aggarwal, Product Manager, FinTech, SaaS, API, Backend, AI, Open Banking, Gen AI, Tableau, Kaggle, Certifications, Resume, Portfolio" />
+    content="Shivam Aggarwal, Product Manager, FinTech, SaaS, AI, API integration, Agile, Scrum, Elastic, ELK, Adobe, Magento" />
   <meta name="author" content="Shivam Aggarwal" />
   <title>Shivam Aggarwal | Product Manager Portfolio</title>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Slab:wght@400;700&display=swap"
-    rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset & base */
+    /* Root variables for light and dark mode */
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #222;
+      --header-bg: transparent;
+      --header-text: #000;
+      --link-color: #0073e6;
+      --section-bg: #fff;
+      --tag-bg: #eef;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --toggle-bg: #ddd;
+      --toggle-color: #222;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #eee;
+      --header-bg: #222;
+      --header-text: #fff;
+      --link-color: #5dade2;
+      --section-bg: #1e1e1e;
+      --tag-bg: #2a3a5a;
+      --shadow-color: rgba(255, 255, 255, 0.1);
+      --toggle-bg: #444;
+      --toggle-color: #eee;
+    }
+
+    /* Global Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      transition: background-color 0.3s, color 0.3s;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f5f7fa;
-      color: #222; /* dark text in light mode */
+      font-family: 'Roboto', sans-serif;
       line-height: 1.6;
+      background: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
       min-height: 100vh;
-      padding: 0 1rem 3rem;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    body.dark {
-      background-color: #121212;
-      color: #eee; /* light text in dark mode */
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: 'Roboto Slab', serif;
-      color: #222;
-      margin-bottom: 0.8rem;
-    }
-
-    body.dark h1,
-    body.dark h2,
-    body.dark h3 {
-      color: #eee;
     }
 
     a {
-      color: #1a73e8;
+      color: var(--link-color);
       text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
 
-    a:hover {
-      color: #0046c3;
+    a:hover,
+    a:focus {
       text-decoration: underline;
+    }
+
+    header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px var(--shadow-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .header-left h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      user-select: none;
+    }
+
+    .header-left p {
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--header-text);
+    }
+
+    .header-left p a {
+      font-weight: 500;
+    }
+
+    .header-right img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 6px var(--shadow-color);
+      border: 2px solid var(--link-color);
+      user-select: none;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      background: var(--section-bg);
+      margin-bottom: 2rem;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px var(--shadow-color);
+      transition: background-color 0.3s ease;
+    }
+
+    h2 {
+      color: var(--text-color);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--link-color);
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      margin-top: 1.2rem;
+      margin-bottom: 0.6rem;
+      color: var(--text-color);
+    }
+
+    p,
+    li {
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      color: var(--text-color);
     }
 
     ul {
       margin-left: 1.5rem;
-      margin-bottom: 1rem;
       list-style-type: disc;
     }
 
-    /* Container */
-    main {
-      max-width: 900px;
-      margin: 2rem auto 0 auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgb(0 0 0 / 0.1);
-      padding: 2rem 3rem 3rem;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    body.dark main {
-      background-color: #1c1c1c;
-      box-shadow: 0 6px 18px rgb(255 255 255 / 0.05);
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #1e1e1e;
-      color: #fff; /* always white */
-      padding: 1.5rem 3rem;
-      border-radius: 12px 12px 0 0;
-      box-shadow: 0 4px 12px rgb(0 0 0 / 0.3);
-    }
-
-    header h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      font-family: 'Roboto Slab', serif;
-      color: #fff; /* explicitly white */
-    }
-
-    header img {
-      width: 110px;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #4a90e2;
-      box-shadow: 0 4px 8px rgb(74 144 226 / 0.5);
-    }
-
-    header nav {
-      margin-left: 2rem;
-      font-size: 1rem;
-    }
-
-    header nav a {
-      color: #4a90e2;
-      margin-left: 1.5rem;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    body.dark header nav a {
-      color: #7ea6ff;
-    }
-
-    /* Section styling */
-    section {
-      margin-bottom: 2.5rem;
-    }
-
-    section h2 {
-      border-bottom: 3px solid #4a90e2;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1.2rem;
-      font-size: 1.8rem;
-    }
-
-    body.dark section h2 {
-      border-color: #7ea6ff;
-    }
-
-    /* Tags */
     .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 0.6rem;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
     }
 
     .tag {
-      background-color: #d9e8ff;
-      color: #1a3f7a;
-      padding: 0.35rem 0.9rem;
-      border-radius: 20px;
+      background: var(--tag-bg);
+      color: var(--text-color);
+      padding: 0.4rem 0.7rem;
+      border-radius: 6px;
       font-size: 0.9rem;
-      font-weight: 600;
       user-select: none;
-      box-shadow: 0 2px 5px rgb(26 63 122 / 0.2);
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .tag:hover {
-      background-color: #a0c1ff;
-      cursor: default;
-    }
-
-    body.dark .tag {
-      background-color: #2a3b5a;
-      color: #aec6ff;
-      box-shadow: none;
-    }
-
-    body.dark .tag:hover {
-      background-color: #435d9f;
-    }
-
-    /* Experience lists */
-    .experience-list li {
-      margin-bottom: 0.7rem;
-    }
-
-    /* Certifications */
-    .cert-list li {
-      margin-bottom: 0.5rem;
-      font-style: italic;
-      color: #555;
-    }
-
-    body.dark .cert-list li {
-      color: #bbb;
-    }
-
-    /* Footer */
     footer {
-      max-width: 900px;
-      margin: 0 auto 3rem;
-      padding: 1rem 1rem 2rem;
-      font-size: 0.9rem;
-      color: #666;
+      background: var(--header-bg);
+      color: var(--header-text);
       text-align: center;
+      padding: 1rem 2rem;
+      font-size: 0.9rem;
       user-select: none;
-      transition: color 0.3s;
-    }
-
-    body.dark footer {
-      color: #aaa;
-    }
-
-    footer a {
-      color: #4a90e2;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    body.dark footer a {
-      color: #7ea6ff;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     /* Dark mode toggle button */
     #darkModeToggle {
       cursor: pointer;
-      background: transparent;
-      border: 2px solid #4a90e2;
-      color: #4a90e2;
+      background-color: var(--toggle-bg);
+      color: var(--toggle-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
       font-weight: 600;
-      padding: 0.3rem 0.8rem;
-      border-radius: 24px;
-      user-select: none;
-      transition: all 0.3s ease;
       font-size: 0.9rem;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 0 6px var(--shadow-color);
     }
 
-    #darkModeToggle:hover {
-      background: #4a90e2;
+    #darkModeToggle:hover,
+    #darkModeToggle:focus {
+      background-color: var(--link-color);
       color: #fff;
-      border-color: #3a78d8;
+      outline: none;
     }
 
     /* Responsive */
-    @media (max-width: 720px) {
+    @media (max-width: 640px) {
       header {
         flex-direction: column;
         gap: 1rem;
-        padding: 1rem 2rem;
       }
 
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      header img {
-        width: 90px;
-        height: 90px;
+      .header-right img {
+        width: 60px;
+        height: 60px;
       }
 
       main {
-        padding: 1.5rem 1.5rem 2rem;
+        margin: 1rem;
       }
     }
   </style>
@@ -274,25 +225,29 @@
 
 <body>
   <header>
-    <h1>Shivam Aggarwal</h1>
-    <img src="https://avatars.githubusercontent.com/u/33031744?v=4" alt="Shivam Aggarwal Photo" />
-    <nav>
-      <a href="mailto:aggarwalshivam1991@gmail.com" aria-label="Email Shivam">Email</a>
-      <a href="https://www.linkedin.com/in/shivam-aggarwal/" target="_blank" rel="noopener"
-        aria-label="Shivam's LinkedIn">LinkedIn</a>
-      <button id="darkModeToggle" aria-label="Toggle Dark Mode">Dark Mode</button>
-    </nav>
+    <div class="header-left">
+      <h1>Shivam Aggarwal</h1>
+      <p>Senior Product Manager | FinTech & SaaS | AI Advocate</p>
+      <p>
+        <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a> |
+        <a href="https://www.linkedin.com/in/shivam-aggarwal/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
+    </div>
+    <div class="header-right">
+      <!-- Replace the src with your actual photo URL or GitHub avatar link -->
+      <img src="https://avatars.githubusercontent.com/u/64343528?v=4" alt="Shivam Aggarwal Photo" />
+    </div>
+    <button id="darkModeToggle" aria-label="Toggle dark mode">Dark Mode</button>
   </header>
 
   <main>
-    <section id="about">
+    <section>
       <h2>About Me</h2>
       <p>
-        Experienced Senior Product Delivery Manager with over 7 years of international experience delivering
-        high-impact digital and technical products in FinTech and SaaS sectors. Proven expertise in leading global
-        cross-functional teams across Agile and Scrum frameworks, driving end-to-end product development from ideation
-        to successful launch. Adept at stakeholder collaboration across geographies, including the US, Europe, and
-        Southeast Asia.
+        Senior Product Manager with over 7 years of international experience delivering high-impact digital and
+        technical products in FinTech and SaaS sectors. Proven expertise in leading global cross-functional teams across
+        Agile and Scrum frameworks, driving end-to-end product development from ideation to successful launch. Adept at
+        stakeholder collaboration across geographies, including the US, Europe, and Southeast Asia.
       </p>
       <p>
         Skilled in managing both frontend and backend sprints, scaling complex systems, and integrating enterprise
@@ -301,9 +256,9 @@
       </p>
       <p>
         Bringing a strong understanding of Artificial Intelligence (AI) tools and their applications in product
-        innovation, with hands-on experience leveraging AI-driven platforms for customer experience optimisation,
-        process automation, and product enhancement. Well-versed in using AI tools such as ChatGPT, Midjourney, Notion AI,
-        and no-code/low-code automation platforms. Knowledgeable in AI product trends, ethical AI practices, prompt
+        innovation, with hands-on experience leveraging AI-driven platforms for customer experience optimisation, process
+        automation, and product enhancement. Well-versed in using AI tools such as ChatGPT, Midjourney, Notion AI, and
+        no-code/low-code automation platforms. Knowledgeable in AI product trends, ethical AI practices, prompt
         engineering, AI/ML integration planning, and user-centric AI product strategies.
       </p>
       <p>
@@ -312,90 +267,98 @@
       </p>
     </section>
 
-    <section id="skills">
-      <h2>Key Skills</h2>
-      <div class="tags">
-        <span class="tag">Agile Delivery</span>
-        <span class="tag">Scrum & Kanban</span>
-        <span class="tag">Product Lifecycle Management</span>
-        <span class="tag">Stakeholder Communication</span>
-        <span class="tag">Backend Architecture</span>
-        <span class="tag">SQL & API Testing</span>
-        <span class="tag">ETL Pipelines</span>
-        <span class="tag">Adobe AEM</span>
-        <span class="tag">Adobe Commerce (Magento)</span>
-        <span class="tag">Elastic & ELK Stack</span>
-        <span class="tag">Cloud Deployment & ELB</span>
-        <span class="tag">AI Tools & Automation</span>
-        <span class="tag">Gen AI & Prompt Engineering</span>
-        <span class="tag">Tableau & Power BI</span>
-        <span class="tag">Postman & Jira</span>
-        <span class="tag">Python (Basics)</span>
-      </div>
-    </section>
-
-    <section id="experience">
+    <section>
       <h2>Professional Experience</h2>
 
-      <h3>Bajaj FinServ Direct Limited, Pune, India — Senior Product Manager – Delivery (Aug 2021 – Present)</h3>
-      <ul class="experience-list">
-        <li>Led Agile delivery of UI and horizontal sprints, managing cross-regional teams to build scalable, customer-centric features with automation and intelligent workflows</li>
-        <li>Delivered Elastic and ELK-based backend solutions for system observability, logging, and diagnostics on global platforms</li>
-        <li>Managed ELB configurations and cloud deployments with monitoring tools and AI-assisted performance tuning</li>
-        <li>Collaborated with data engineering teams to design ETL pipelines and AI-supported KPI dashboards</li>
-        <li>Oversaw API integration and UAT, ensuring compliance, accuracy, and alignment with evolving product needs</li>
-        <li>Contributed to AI-powered chatbot design and rollout, enhancing internal support and customer experience</li>
-        <li>Developed roadmaps and prioritized backlogs for India, US, and ASEAN markets using AI-driven analytics and sentiment tracking</li>
-        <li>Led digital transformation integrating Adobe Commerce (Magento) and AEM with AI-enhanced personalization</li>
-        <li>Adopted AI productivity tools (ChatGPT, Notion AI) for research, documentation, and prototyping</li>
+      <h3>Bajaj FinServ Direct Limited, Pune, India</h3>
+      <h4>Senior Product Manager – Delivery (Aug 2021 – Present)</h4>
+      <ul>
+        <li>Led Agile delivery of UI and horizontal sprints, managing cross-regional teams to build scalable, customer-centric features with focus on automation and intelligent workflows.</li>
+        <li>Delivered Elastic and ELK-based backend solutions to enhance system observability, logging, and diagnostics for global platforms, supporting data-driven decision-making and operational efficiency.</li>
+        <li>Managed ELB configurations and cloud deployment strategies for high-availability infrastructure, incorporating monitoring tools and AI-assisted performance tuning recommendations.</li>
+        <li>Collaborated with data engineering teams to design and implement ETL pipelines, enabling real-time reporting and AI-supported KPI dashboards for leadership insights.</li>
+        <li>Oversaw API integration and UAT efforts for backend systems, ensuring compliance, accuracy, and alignment with evolving product and AI-aligned automation needs.</li>
+        <li>Played a key role in the design and rollout of an internal AI-powered chatbot (Master BOT), contributing to conversation flows, use case mapping, and user adoption strategy to enhance internal support and customer experience.</li>
+        <li>Contributed to roadmap development and backlog prioritisation with stakeholders across India, the US, and ASEAN markets, incorporating feedback loops powered by AI-driven analytics and sentiment tracking tools.</li>
+        <li>Delivered digital transformation initiatives by integrating Adobe Commerce (Magento) and AEM, while exploring AI-enhanced personalisation features to improve global customer engagement.</li>
+        <li>Embraced AI productivity tools (e.g., ChatGPT, Notion AI, automation platforms) in daily workflows to accelerate research, documentation, and solution prototyping in cross-functional teams.</li>
       </ul>
 
-      <h3>Siroi Solution Sdn Bhd, Kuala Lumpur, Malaysia — Product Manager (Dec 2018 – Aug 2021)</h3>
-      <ul class="experience-list">
-        <li>Delivered UI and backend features for cross-border fintech platforms in APAC with focus on modularity and compliance</li>
-        <li>Collaborated with distributed Agile teams across Malaysia, India, and Singapore using AI-enabled productivity tools</li>
-        <li>Implemented Elastic and ELK stack for full-stack observability and diagnostics</li>
-        <li>Integrated ETL pipelines with fintech and banking APIs, supporting secure data sync and audit trails</li>
-        <li>Facilitated structured UAT and go-live readiness with vendors and compliance teams</li>
-        <li>Enhanced Magento-based platforms with AI personalization experiments</li>
-        <li>Embedded AI, Open Banking, and automation insights into backlog grooming and roadmap decisions</li>
+      <h3>Siroi Solution Sdn Bhd, Kuala Lumpur, Malaysia</h3>
+      <h4>Product Manager (Dec 2018 – Aug 2021)</h4>
+      <ul>
+        <li>Owned product delivery across UI and backend layers for cross-border fintech platforms in APAC, focusing on modular scalability and compliance-aligned architecture in evolving Open Banking ecosystems.</li>
+        <li>Collaborated with Agile teams across Malaysia, India, and Singapore to execute iterative product releases, streamlining communication and documentation workflows through AI-enabled productivity tools.</li>
+        <li>Implemented Elastic and ELK for full-stack observability and diagnostic optimisation, enabling actionable insights and predictive analysis for application performance at scale.</li>
+        <li>Integrated ETL pipelines with third-party fintech and banking APIs, supporting secure cross-platform data synchronisation, audit trails, and early exploration of pattern recognition in reporting metrics.</li>
+        <li>Facilitated structured UAT and go-live readiness with vendors and compliance teams, with enhanced validation frameworks influenced by conversational automation and early natural language interface testing.</li>
+        <li>Contributed to global commerce scalability by enhancing Magento-based platforms, evaluating personalisation use cases through lightweight experimentation with generative AI concepts and OpenAI tooling.</li>
+        <li>Stayed actively informed on AI trends, Open Banking regulations, and intelligent automation, embedding strategic insights into backlog grooming, stakeholder discussions, and product roadmap decisions.</li>
       </ul>
 
-      <h3>Alepo Technologies Inc., Austin, Texas (Remote) — Product Analyst (Nov 2017 – Dec 2018)</h3>
-      <ul class="experience-list">
-        <li>Supported telecom and digital infrastructure product deliveries for US and LATAM clients</li>
-        <li>Applied ELK stack and SQL for backend reliability and monitoring</li>
-        <li>Managed backlog grooming, UAT planning, and API validation across distributed teams</li>
+      <h3>Alepo Technologies Inc., Austin, Texas (Remote)</h3>
+      <h4>Product Analyst (Nov 2017 – Dec 2018)</h4>
+      <ul>
+        <li>Supported the delivery of telecom and digital infrastructure products for US-based and LATAM clients.</li>
+        <li>Applied ELK stack and SQL analysis to drive backend reliability and system monitoring.</li>
+        <li>Participated in remote sprint cycles with the Texas and Pune teams, managing backlog grooming and UAT planning.</li>
+        <li>Coordinated API validation and post-release monitoring with QA and tech leads across time zones.</li>
       </ul>
     </section>
 
-    <section id="education">
+    <section>
       <h2>Education</h2>
       <ul>
-        <li><strong>Symbiosis International University, Pune</strong> — MBA Information Technology (2016 – 2018)</li>
+        <li><strong>Symbiosis International University, Pune</strong> — MBA, Information Technology (2016 – 2018)</li>
         <li><strong>Uttarakhand Technical University, Nainital</strong> — Bachelor of Technology, Computer Science (2011 – 2015)</li>
       </ul>
     </section>
 
-    <section id="certifications">
+    <section>
+      <h2>Skills</h2>
+      <div class="tags">
+        <span class="tag">Agile Delivery (Scrum, Kanban, SAFe)</span>
+        <span class="tag">Global Sprint Management</span>
+        <span class="tag">Product Lifecycle Management</span>
+        <span class="tag">Stakeholder Communication</span>
+        <span class="tag">Backend Architecture & Integration</span>
+        <span class="tag">SQL, API Testing, UAT</span>
+        <span class="tag">ETL Workflows & Data Engineering</span>
+        <span class="tag">Adobe Experience Manager (AEM)</span>
+        <span class="tag">Adobe Commerce / Magento</span>
+        <span class="tag">Elastic, ELK Stack, ELB Deployment</span>
+        <span class="tag">AI Tools (ChatGPT, Midjourney, Notion AI)</span>
+      </div>
+    </section>
+
+    <section>
       <h2>Certifications</h2>
-      <ul class="cert-list">
+      <ul>
         <li>PMI Certified – Agile Product Owner</li>
-        <li>Certified Scrum Master (CSM), Certified Scrum Product Owner (CSPO)</li>
+        <li>Scrum Alliance – Certified Scrum Master (CSM)</li>
+        <li>Scrum Alliance – Certified Scrum Product Owner (CSPO)</li>
         <li>Oracle Certified OCI Architect Professional</li>
         <li>Azure DevOps Foundation</li>
         <li>Google Generative AI Fundamentals</li>
         <li>IBM Machine Learning Essentials</li>
         <li>Tableau Certified Analyst</li>
-        <li>Kaggle – Deep Learning, Time Series, Reinforcement Learning, Vision, Geospatial</li>
+        <li>Oracle Certified Business Analysis Expert</li>
       </ul>
     </section>
 
-    <section id="projects">
+    <section>
+      <h2>Languages</h2>
+      <ul>
+        <li>Hindi - Native</li>
+        <li>English – Fluent</li>
+      </ul>
+    </section>
+
+    <section>
       <h2>Projects</h2>
       <ul>
         <li>AI Prompt Generator API – Public project showcasing Gen AI use cases</li>
-        <li>Postman Collections – Private workflows and test suites for API testing</li>
+        <li>Postman Collections (Private Workflows & Test Suites)</li>
         <li>Power BI Dashboards for sales, NPS, and internal analytics</li>
       </ul>
     </section>
@@ -406,24 +369,28 @@
   </footer>
 
   <script>
-    // Dark mode toggle
     const toggle = document.getElementById('darkModeToggle');
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    const currentTheme = localStorage.getItem('theme');
 
-    // Initialize dark mode based on saved preference or system
-    if (localStorage.getItem('darkMode') === 'enabled' || (!localStorage.getItem('darkMode') && prefersDarkScheme.matches)) {
-      document.body.classList.add('dark');
+    // Apply saved theme on load
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
       toggle.textContent = 'Light Mode';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      toggle.textContent = 'Dark Mode';
     }
 
     toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      if (document.body.classList.contains('dark')) {
-        toggle.textContent = 'Light Mode';
-        localStorage.setItem('darkMode', 'enabled');
-      } else {
+      let theme = document.documentElement.getAttribute('data-theme');
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
         toggle.textContent = 'Dark Mode';
-        localStorage.setItem('darkMode', 'disabled');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggle.textContent = 'Light Mode';
+        localStorage.setItem('theme', 'dark');
       }
     });
   </script>
