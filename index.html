@@ -30,11 +30,16 @@
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f5f7fa;
-      color: #222;
+      color: #222; /* dark text in light mode */
       line-height: 1.6;
       min-height: 100vh;
       padding: 0 1rem 3rem;
       transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: #121212;
+      color: #eee; /* light text in dark mode */
     }
 
     h1,
@@ -43,6 +48,12 @@
       font-family: 'Roboto Slab', serif;
       color: #222;
       margin-bottom: 0.8rem;
+    }
+
+    body.dark h1,
+    body.dark h2,
+    body.dark h3 {
+      color: #eee;
     }
 
     a {
@@ -71,6 +82,12 @@
       border-radius: 12px;
       box-shadow: 0 6px 18px rgb(0 0 0 / 0.1);
       padding: 2rem 3rem 3rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark main {
+      background-color: #1c1c1c;
+      box-shadow: 0 6px 18px rgb(255 255 255 / 0.05);
     }
 
     /* Header */
@@ -79,7 +96,7 @@
       justify-content: space-between;
       align-items: center;
       background-color: #1e1e1e;
-      color: #eee;
+      color: #fff; /* always white */
       padding: 1.5rem 3rem;
       border-radius: 12px 12px 0 0;
       box-shadow: 0 4px 12px rgb(0 0 0 / 0.3);
@@ -90,6 +107,7 @@
       font-weight: 700;
       letter-spacing: 1px;
       font-family: 'Roboto Slab', serif;
+      color: #fff; /* explicitly white */
     }
 
     header img {
@@ -110,6 +128,11 @@
       color: #4a90e2;
       margin-left: 1.5rem;
       font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    body.dark header nav a {
+      color: #7ea6ff;
     }
 
     /* Section styling */
@@ -122,6 +145,10 @@
       padding-bottom: 0.3rem;
       margin-bottom: 1.2rem;
       font-size: 1.8rem;
+    }
+
+    body.dark section h2 {
+      border-color: #7ea6ff;
     }
 
     /* Tags */
@@ -149,6 +176,16 @@
       cursor: default;
     }
 
+    body.dark .tag {
+      background-color: #2a3b5a;
+      color: #aec6ff;
+      box-shadow: none;
+    }
+
+    body.dark .tag:hover {
+      background-color: #435d9f;
+    }
+
     /* Experience lists */
     .experience-list li {
       margin-bottom: 0.7rem;
@@ -161,6 +198,10 @@
       color: #555;
     }
 
+    body.dark .cert-list li {
+      color: #bbb;
+    }
+
     /* Footer */
     footer {
       max-width: 900px;
@@ -170,54 +211,21 @@
       color: #666;
       text-align: center;
       user-select: none;
+      transition: color 0.3s;
+    }
+
+    body.dark footer {
+      color: #aaa;
     }
 
     footer a {
       color: #4a90e2;
       font-weight: 600;
+      transition: color 0.3s;
     }
 
-    /* Dark Mode Styles */
-    body.dark {
-      background-color: #121212;
-      color: #eee;
-    }
-
-    body.dark header {
-      background-color: #181818;
-      color: #eee;
-      box-shadow: 0 4px 12px rgb(255 255 255 / 0.1);
-    }
-
-    body.dark header nav a {
+    body.dark footer a {
       color: #7ea6ff;
-    }
-
-    body.dark a {
-      color: #82aaff;
-    }
-
-    body.dark a:hover {
-      color: #adc6ff;
-    }
-
-    body.dark .tag {
-      background-color: #2a3b5a;
-      color: #aec6ff;
-      box-shadow: none;
-    }
-
-    body.dark .tag:hover {
-      background-color: #435d9f;
-    }
-
-    body.dark main {
-      background-color: #1c1c1c;
-      box-shadow: 0 6px 18px rgb(255 255 255 / 0.05);
-    }
-
-    body.dark footer {
-      color: #aaa;
     }
 
     /* Dark mode toggle button */
