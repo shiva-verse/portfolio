@@ -4,253 +4,351 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shivam Aggarwal | Senior Product Delivery Manager Portfolio</title>
-
-  <!-- SEO Meta -->
-  <meta name="description" content="Portfolio of Shivam Aggarwal, Senior Product Delivery Manager with 7+ years international experience in FinTech, SaaS, AI integration, Agile delivery, and API management." />
-  <meta name="keywords" content="Shivam Aggarwal, Product Manager, FinTech, SaaS, AI, Agile, Scrum, API, AEM, Magento, Elastic, ELK, Resume, Portfolio, India" />
-  <meta name="author" content="Shivam Aggarwal" />
+  <title>Shivam Aggarwal | Product Manager Portfolio</title>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Slab&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://avatars.githubusercontent.com/u/54376910?s=64" type="image/png" />
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
-    /* Reset and Base */
+    /* Reset and base styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html {
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
       scroll-behavior: smooth;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f8fafc;
-      color: #1e293b;
-      line-height: 1.6;
-      font-size: 16px;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+    /* Dark mode styles */
+    body.dark {
+      background-color: #121212;
+      color: #eee;
     }
 
     a {
-      color: #2563eb;
+      color: #007acc;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.2s ease;
     }
 
-    a:hover,
-    a:focus {
-      color: #1e40af;
+    a:hover {
+      color: #005ea2;
       text-decoration: underline;
-      outline: none;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: 'Roboto Slab', serif;
-      margin-bottom: 0.5rem;
-      color: #0f172a;
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      border-bottom: 3px solid #2563eb;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: #334155;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      color: #475569;
-    }
-
-    ul {
-      margin-left: 1.3rem;
-      margin-bottom: 1rem;
-    }
-
-    li {
-      margin-bottom: 0.4rem;
     }
 
     /* Container */
     .container {
-      max-width: 980px;
-      margin: 1.5rem auto 3rem;
-      padding: 0 1rem;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 15px 30px rgba(100, 116, 139, 0.1);
-      padding-bottom: 3rem;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.2rem 3rem;
     }
 
     /* Header */
     header {
-      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      background-color: #007acc;
       color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      border-radius: 0 0 15px 15px;
-      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.2rem;
-      letter-spacing: 2px;
-    }
-
-    header p {
-      font-weight: 400;
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 1rem auto;
-      color: #bfdbfe;
-    }
-
-    header .contact-links a {
-      display: inline-block;
-      margin: 0 10px;
       font-weight: 600;
+      font-size: 2.2rem;
+      user-select: none;
+    }
+
+    header img {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+      user-select: none;
+    }
+
+    /* Dark mode toggle button */
+    #darkToggle {
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 25px;
+      color: white;
+      padding: 0.4rem 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      margin-left: 1.5rem;
+      user-select: none;
+    }
+
+    #darkToggle:hover {
+      background-color: white;
+      color: #007acc;
+    }
+
+    /* Navigation menu (optional) */
+    nav {
+      margin-left: 2rem;
+      flex-grow: 1;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav ul li a {
+      color: white;
       font-size: 1rem;
-      background: rgba(255 255 255 / 0.15);
-      padding: 0.5rem 1.2rem;
-      border-radius: 30px;
-      transition: background-color 0.3s ease;
+      padding: 0.3rem 0.5rem;
     }
 
-    header .contact-links a:hover {
-      background: rgba(255 255 255 / 0.35);
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: white;
+      color: #007acc;
+      border-radius: 4px;
+      transition: 0.3s;
     }
 
-    /* Section Titles */
-    section + section {
-      margin-top: 2.5rem;
+    /* Section styling */
+    section {
+      background: white;
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    /* Skills Tags */
-    .skills-list {
+    body.dark section {
+      background-color: #222;
+      color: #eee;
+      box-shadow: 0 8px 20px rgba(255 255 255 / 0.1);
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.9rem;
+      border-bottom: 3px solid #007acc;
+      padding-bottom: 0.3rem;
+    }
+
+    /* About Me */
+    #about p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    body.dark #about p {
+      color: #ccc;
+    }
+
+    /* Skills tags */
+    .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 0.5rem;
+      gap: 10px;
+      margin-top: 0.7rem;
     }
 
-    .skill-tag {
-      background-color: #e0e7ff;
-      color: #3730a3;
-      padding: 0.5rem 0.9rem;
-      border-radius: 25px;
+    .tag {
+      background-color: #eef6ff;
+      color: #007acc;
       font-weight: 600;
       font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      box-shadow: 0 1px 3px rgb(0 122 204 / 0.3);
+      transition: background-color 0.3s ease, color 0.3s ease;
       user-select: none;
-      box-shadow: 1px 1px 5px rgba(55, 48, 163, 0.15);
-      transition: background-color 0.3s ease;
     }
 
-    .skill-tag:hover {
-      background-color: #c7d2fe;
+    body.dark .tag {
+      background-color: #004b85;
+      color: #b0d7ff;
+      box-shadow: 0 1px 3px rgba(176, 215, 255, 0.6);
     }
 
-    /* Experience & Education Timeline */
-    .timeline-item {
-      margin-bottom: 1.6rem;
-    }
-
-    .timeline-item h3 {
-      margin-bottom: 0.3rem;
-      color: #1e293b;
-    }
-
-    .timeline-item span {
-      font-style: italic;
-      font-weight: 500;
-      color: #64748b;
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-
-    .timeline-item ul {
-      list-style-type: disc;
-      margin-left: 1.4rem;
-    }
-
-    /* Certifications List */
-    .cert-list {
-      columns: 2;
-      column-gap: 3rem;
-      list-style: none;
-      padding-left: 0;
-      color: #475569;
-    }
-
-    .cert-list li {
-      margin-bottom: 0.6rem;
+    /* Experience timeline */
+    .timeline {
       position: relative;
-      padding-left: 1rem;
+      padding-left: 30px;
+      border-left: 3px solid #007acc;
     }
 
-    .cert-list li::before {
-      content: "✓";
+    .timeline-item {
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
       position: absolute;
-      left: 0;
-      color: #2563eb;
-      font-weight: bold;
+      left: -15px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background-color: #007acc;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 6px rgba(0, 122, 204, 0.8);
+    }
+
+    body.dark .timeline {
+      border-left-color: #4da3ff;
+    }
+
+    body.dark .timeline-item::before {
+      background-color: #4da3ff;
+      border-color: #222;
+      box-shadow: 0 0 6px #4da3ffaa;
+    }
+
+    /* Projects & Certifications lists */
+    ul {
+      margin-top: 0.7rem;
+      list-style: disc inside;
+      color: #444;
+    }
+
+    body.dark ul {
+      color: #ccc;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* Contact section */
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 450px;
+    }
+
+    #contact label {
+      font-weight: 600;
+    }
+
+    #contact input,
+    #contact textarea {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 2px solid #ddd;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+
+    #contact input:focus,
+    #contact textarea:focus {
+      outline: none;
+      border-color: #007acc;
+      box-shadow: 0 0 8px #007acc66;
+    }
+
+    body.dark #contact input,
+    body.dark #contact textarea {
+      background-color: #333;
+      border-color: #555;
+      color: #eee;
+    }
+
+    body.dark #contact input:focus,
+    body.dark #contact textarea:focus {
+      border-color: #4da3ff;
+      box-shadow: 0 0 8px #4da3ff99;
+    }
+
+    #contact button {
+      width: 150px;
+      padding: 0.7rem 1rem;
+      border: none;
+      background-color: #007acc;
+      color: white;
+      font-weight: 600;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      align-self: flex-start;
+      user-select: none;
+    }
+
+    #contact button:hover {
+      background-color: #005ea2;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      background-color: #2563eb;
-      color: white;
       padding: 1rem 0;
-      margin-top: auto;
-      font-weight: 600;
-      font-size: 1rem;
+      color: #777;
+      font-size: 0.9rem;
+      user-select: none;
     }
 
-    footer a {
-      color: #bfdbfe;
-      font-weight: 700;
+    body.dark footer {
+      color: #aaa;
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      .cert-list {
-        columns: 1;
+    @media (max-width: 700px) {
+      header {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
       }
 
       header h1 {
-        font-size: 2.4rem;
+        font-size: 1.8rem;
       }
 
-      header p {
-        font-size: 1rem;
+      header img {
+        width: 70px;
+        height: 70px;
+      }
+
+      #darkToggle {
+        margin-left: 0;
+      }
+
+      nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .container {
+        padding: 0 1rem 2rem;
+      }
+
+      section {
+        padding: 1.5rem 1.5rem;
+        margin: 1.5rem 0;
       }
     }
   </style>
@@ -259,149 +357,199 @@
 <body>
   <header>
     <h1>Shivam Aggarwal</h1>
-    <p>Senior Product Delivery Manager | FinTech & SaaS | Agile & AI Integration Expert</p>
-    <div class="contact-links" role="navigation" aria-label="Contact Links">
-      <a href="mailto:aggarwalshivam1991@gmail.com" target="_blank" rel="noopener noreferrer">Email Me</a>
-      <a href="https://www.linkedin.com/in/shivam-aggarwal/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://github.com/shiva-verse" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </div>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <img src="https://avatars.githubusercontent.com/u/10788379?v=4" alt="Shivam Aggarwal" />
+    <button id="darkToggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
   </header>
 
   <main class="container" role="main">
-    <!-- About Me -->
-    <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About Me</h2>
+    <section id="about" tabindex="-1">
+      <h2>About Me</h2>
       <p>
-        Experienced Senior Product Delivery Manager with over 7 years of international experience delivering high-impact digital and technical products in FinTech and SaaS sectors. Proven expertise in leading global cross-functional teams across Agile and Scrum frameworks,
-        driving end-to-end product development from ideation to successful launch.
-      </p>
-      <p>
-        Skilled in managing frontend and backend sprints, scaling complex systems, integrating enterprise platforms including Elastic, ELK Stack, Adobe Experience Manager (AEM), and Adobe Commerce (Magento). Adept in ETL pipelines, API validation, SQL queries, and UAT cycles.
-      </p>
-      <p>
-        Experienced with Artificial Intelligence (AI) tools for customer experience optimization, process automation, and product innovation, leveraging platforms such as ChatGPT, Midjourney, and no-code/low-code automation.
+        Senior Product Manager with 8+ years of experience delivering backend-heavy platforms and APIs across FinTech,
+        SaaS, Telecom, and AI-driven domains. Expert in translating strategy into roadmaps and executing via Agile, SAFe,
+        and hybrid models.
       </p>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title">Skills</h2>
-      <div class="skills-list" role="list" aria-label="Skills list">
-        <span class="skill-tag" role="listitem">Agile Delivery (Scrum, SAFe)</span>
-        <span class="skill-tag" role="listitem">Global Sprint Management</span>
-        <span class="skill-tag" role="listitem">API Integration & Validation</span>
-        <span class="skill-tag" role="listitem">ETL Pipelines & Data Engineering</span>
-        <span class="skill-tag" role="listitem">Elastic & ELK Stack</span>
-        <span class="skill-tag" role="listitem">Adobe Experience Manager (AEM)</span>
-        <span class="skill-tag" role="listitem">Adobe Commerce (Magento)</span>
-        <span class="skill-tag" role="listitem">SQL, Postman, UAT</span>
-        <span class="skill-tag" role="listitem">AI Tools: ChatGPT, Midjourney, Notion AI</span>
-        <span class="skill-tag" role="listitem">Product Lifecycle Management (PLM)</span>
-        <span class="skill-tag" role="listitem">Stakeholder Communication (Global)</span>
-        <span class="skill-tag" role="listitem">Tableau & Power BI</span>
-        <span class="skill-tag" role="listitem">Project Management & Roadmap</span>
-        <span class="skill-tag" role="listitem">Cloud Deployment & Monitoring</span>
+    <section id="skills" tabindex="-1">
+      <h2>Key Skills</h2>
+      <div class="tags" aria-label="Skills tags">
+        <span class="tag">Product Strategy</span>
+        <span class="tag">API Integration</span>
+        <span class="tag">AI & ML</span>
+        <span class="tag">Tableau</span>
+        <span class="tag">Postman</span>
+        <span class="tag">Jira</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Elastic/ELK</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Open Banking</span>
+        <span class="tag">CRM / ERP</span>
+        <span class="tag">Wireframing</span>
+        <span class="tag">User Stories</span>
+        <span class="tag">Gen AI</span>
       </div>
     </section>
 
-    <!-- Professional Experience -->
-    <section id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">Professional Experience</h2>
-
-      <article class="timeline-item" aria-label="Senior Product Manager at Bajaj FinServ Direct Limited">
-        <h3>Senior Product Manager – Delivery</h3>
-        <span>Aug 2021 – Present | Bajaj FinServ Direct Limited, Pune, India</span>
-        <ul>
-          <li>Led Agile delivery of UI and horizontal sprints, managing cross-regional teams to build scalable, customer-centric features focused on automation and intelligent workflows.</li>
-          <li>Delivered Elastic and ELK-based backend solutions to enhance system observability, logging, and diagnostics for global platforms.</li>
-          <li>Managed ELB configurations and cloud deployment strategies, incorporating AI-assisted performance tuning.</li>
-          <li>Collaborated with data engineering teams to design ETL pipelines, enabling real-time reporting and AI-supported KPI dashboards.</li>
-          <li>Oversaw API integration and UAT efforts, ensuring compliance and alignment with evolving product and AI automation needs.</li>
-          <li>Played a key role in designing and rolling out an internal AI-powered chatbot (Master BOT) to improve support and customer experience.</li>
-          <li>Contributed to roadmap development and backlog prioritization with stakeholders across India, US, and ASEAN markets.</li>
-          <li>Delivered digital transformation by integrating Adobe Commerce (Magento) and AEM, enhancing global customer engagement through AI personalization.</li>
-          <li>Utilized AI productivity tools like ChatGPT and Notion AI in daily workflows for research, documentation, and prototyping.</li>
-        </ul>
-      </article>
-
-      <article class="timeline-item" aria-label="Product Manager at Siroi Solution Sdn Bhd">
-        <h3>Product Manager</h3>
-        <span>Dec 2018 – Aug 2021 | Siroi Solution Sdn Bhd, Kuala Lumpur, Malaysia</span>
-        <ul>
-          <li>Owned product delivery across UI and backend layers for fintech platforms in APAC, emphasizing modular scalability and compliance with Open Banking standards.</li>
-          <li>Collaborated with Agile teams across Malaysia, India, and Singapore to execute iterative releases, streamlining communication with AI-enabled productivity tools.</li>
-          <li>Implemented Elastic and ELK for full-stack observability, enabling predictive analysis for app performance at scale.</li>
-          <li>Integrated ETL pipelines with third-party fintech and banking APIs for secure data synchronization and audit trails.</li>
-          <li>Facilitated structured UAT and go-live readiness with vendors and compliance teams, improving validation frameworks with conversational automation.</li>
-          <li>Contributed to Magento platform scalability, experimenting with generative AI and OpenAI tooling for personalization use cases.</li>
-          <li>Kept abreast of AI, Open Banking regulations, and automation trends to inform backlog grooming and stakeholder communication.</li>
-        </ul>
-      </article>
-
-      <article class="timeline-item" aria-label="Product Analyst at Alepo Technologies Inc.">
-        <h3>Product Analyst</h3>
-        <span>Nov 2017 – Dec 2018 | Alepo Technologies Inc., Austin, Texas (Remote)</span>
-        <ul>
-          <li>Supported delivery of telecom and digital infrastructure products for US and LATAM clients.</li>
-          <li>Applied ELK stack and SQL analysis to improve backend reliability and system monitoring.</li>
-          <li>Participated in remote sprint cycles with Texas and Pune teams, managing backlog grooming and UAT planning.</li>
-          <li>Coordinated API validation and post-release monitoring with QA and technical leads.</li>
-        </ul>
-      </article>
-
-      <article class="timeline-item" aria-label="Internship at Alepo Technologies Inc.">
-        <h3>Intern</h3>
-        <span>2017 – 2018 | Alepo Technologies Inc.</span>
-        <ul>
-          <li>Exposure to telecom stack: AAA, CRM/ERP, Wi-Fi Monetization, BoM, and RFP documentation.</li>
-        </ul>
-      </article>
+    <section id="experience" tabindex="-1">
+      <h2>Professional Experience</h2>
+      <div class="timeline" aria-label="Professional experience timeline">
+        <div class="timeline-item">
+          <h3>Senior Product Manager – FinTech Platform Delivery</h3>
+          <ul>
+            <li>Led product delivery across Southeast Asia for secure APIs, scalable backend, and Open Banking standards</li>
+            <li>Integrated ELK tools, enhanced diagnostics, and real-time performance monitoring</li>
+            <li>Worked on GenAI chatbot integration with Adobe AEM</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Product Analyst – Alepo Technologies Inc. (2018)</h3>
+          <ul>
+            <li>Drove Agile delivery of telecom product features</li>
+            <li>Managed roadmaps, dashboards, reports, and cross-team coordination</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Intern – Alepo Technologies Inc. (2017–2018)</h3>
+          <ul>
+            <li>Exposed to telecom stack: AAA, CRM/ERP, Wi-Fi Monetization, BoM, RFP</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Early Roles</h3>
+          <ul>
+            <li>Call Center Product Support – Gained insights into real-time customer operations (not listed on CV)</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- Education -->
-    <section id="education" aria-labelledby="education-title">
-      <h2 id="education-title">Education</h2>
-      <article class="timeline-item" aria-label="MBA from Symbiosis International University">
-        <h3>Master of Business Administration – Information Technology</h3>
-        <span>2016 – 2018 | Symbiosis International University, Pune, India</span>
-      </article>
-      <article class="timeline-item" aria-label="B.Tech from Uttarakhand Technical University">
-        <h3>Bachelor of Technology – Computer Science</h3>
-        <span>2011 – 2015 | Uttarakhand Technical University, Nainital, India</span>
-      </article>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certifications" aria-labelledby="certifications-title">
-      <h2 id="certifications-title">Certifications & Badges</h2>
-      <ul class="cert-list" role="list">
-        <li>PMI Certified – Agile Product Owner</li>
-        <li>Certified Scrum Master (CSM) – Scrum Alliance</li>
-        <li>Certified Scrum Product Owner (CSPO) – Scrum Alliance</li>
-        <li>Oracle Certified OCI Architect Professional</li>
-        <li>Azure DevOps Foundation</li>
-        <li>Google Generative AI Fundamentals</li>
-        <li>IBM Machine Learning Essentials</li>
-        <li>Tableau Certified Analyst</li>
-        <li>Kaggle – Deep Learning, Time Series, Reinforcement Learning, Vision, Geospatial</li>
-      </ul>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
+    <section id="projects" tabindex="-1">
+      <h2>Projects & Certifications</h2>
       <ul>
-        <li>AI Prompt Generator API – Public project showcasing Gen AI use cases</li>
-        <li>Postman Collections – Private workflows & test suites</li>
+        <li>AI Prompt Generator API – Public project showcasing Gen AI use</li>
+        <li>Postman Collections (Private Workflows & Test Suites)</li>
         <li>Power BI dashboards for sales, NPS, and internal analytics</li>
+        <li>Certified Scrum Product Owner (CSPO), Certified Scrum Master (CSM)</li>
+        <li>Adobe Magento Commerce, Project Management Institute - GenAI</li>
+        <li>Tableau Analyst | Developer | Data Scientist</li>
+        <li>Kaggle – Deep Learning, Time Series, Reinforcement Learning, Vision, Geospatial</li>
+        <li>Google – Generative AI Fundamentals</li>
+        <li>IBM – Machine Learning Essentials</li>
       </ul>
+    </section>
+
+    <section id="contact" tabindex="-1" aria-label="Contact form">
+      <h2>Contact Me</h2>
+      <form id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+        <p id="formStatus" role="alert" aria-live="polite" style="margin-top: 0.5rem;"></p>
+      </form>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Shivam Aggarwal | Made with ❤️ | <a href="mailto:aggarwalshivam1991@gmail.com">Email Me</a></p>
+    <p>© 2025 Shivam Aggarwal | Made with ❤️</p>
   </footer>
 
+  <script>
+    // Dark mode toggle
+    const toggleBtn = document.getElementById('darkToggle');
+    const body = document.body;
+
+    // Load saved mode from localStorage
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark');
+      toggleBtn.textContent = '☀️ Light Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+      localStorage.setItem('darkMode', isDark);
+    });
+
+    // Navigation link active state on scroll
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollY = window.pageYOffset;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Simple contact form validation and fake send
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      status.textContent = '';
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        status.style.color = 'red';
+        status.textContent = 'Please fill all fields.';
+        return;
+      }
+
+      if (!validateEmail(email)) {
+        status.style.color = 'red';
+        status.textContent = 'Please enter a valid email.';
+        return;
+      }
+
+      status.style.color = 'green';
+      status.textContent = 'Sending message...';
+
+      // Simulate sending message with timeout
+      setTimeout(() => {
+        status.textContent = 'Thank you for your message. I will get back to you soon!';
+        form.reset();
+      }, 1500);
+    });
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email.toLowerCase());
+    }
+  </script>
 </body>
 
 </html>
