@@ -4,268 +4,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Shivam Aggarwal - Senior Product Manager | FinTech & SaaS | AI Advocate | Portfolio and Resume" />
-  <meta name="keywords" content="Shivam Aggarwal, Product Manager, FinTech, SaaS, AI, API integration, Agile, Scrum, Elastic, ELK, Adobe, Magento" />
+  <meta name="description"
+    content="Shivam Aggarwal - Senior Product Manager | FinTech & SaaS | AI Advocate | Portfolio and Resume" />
+  <meta name="keywords"
+    content="Shivam Aggarwal, Product Manager, FinTech, SaaS, AI, API integration, Agile, Scrum, Elastic, ELK, Adobe, Magento" />
   <meta name="author" content="Shivam Aggarwal" />
   <title>Shivam Aggarwal | Product Manager Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Shivam Aggarwal",
+      "url": "https://www.linkedin.com/in/shivam-aggarwal/",
+      "image": "https://avatars.githubusercontent.com/u/64343528?v=4",
+      "sameAs": [
+        "https://www.linkedin.com/in/shivam-aggarwal/",
+        "mailto:aggarwalshivam1991@gmail.com"
+      ],
+      "jobTitle": "Senior Product Manager",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Bajaj FinServ Direct Limited"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Symbiosis International University"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Uttarakhand Technical University"
+        }
+      ],
+      "description": "Senior Product Manager | FinTech & SaaS | AI Advocate | Agile Product Leader | API & Platform Strategist | AEM & Magento Expert",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pune",
+        "addressCountry": "India"
+      }
+    }
+  </script>
+
   <style>
-    :root {
-      --bg-color: #f9f9f9;
-      --text-color: #222;
-      --header-bg: transparent;
-      --header-text: #000;
-      --link-color: #0073e6;
-      --section-bg: #fff;
-      --tag-bg: #eef;
-      --shadow-color: rgba(0, 0, 0, 0.1);
-      --toggle-bg: #ddd;
-      --toggle-color: #222;
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #eee;
-      --header-bg: #222;
-      --header-text: #fff;
-      --link-color: #5dade2;
-      --section-bg: #1e1e1e;
-      --tag-bg: #2a3a5a;
-      --shadow-color: rgba(255, 255, 255, 0.1);
-      --toggle-bg: #444;
-      --toggle-color: #eee;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Roboto', sans-serif;
       line-height: 1.6;
-      background: var(--bg-color);
-      color: var(--text-color);
-      transition: background-color 0.3s ease, color 0.3s ease;
-      min-height: 100vh;
-    }
-
-    a {
-      color: var(--link-color);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover,
-    a:focus {
-      text-decoration: underline;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+      color: #333;
     }
 
     header {
-      background-color: var(--header-bg);
-      color: var(--header-text);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 6px var(--shadow-color);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      background: #222;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
     }
 
-    .header-left {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
 
-    .header-left h1 {
-      font-weight: 700;
-      font-size: 1.8rem;
-      user-select: none;
-    }
-
-    .header-left p {
-      font-weight: 400;
-      font-size: 1rem;
-      color: var(--header-text);
-    }
-
-    .header-left p a {
-      font-weight: 500;
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+      color: #bbb;
     }
 
     main {
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
     }
 
     section {
-      background: var(--section-bg);
       margin-bottom: 2rem;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px var(--shadow-color);
-      transition: background-color 0.3s ease;
     }
 
     h2 {
-      color: var(--text-color);
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--link-color);
+      border-bottom: 2px solid #222;
       padding-bottom: 0.3rem;
-    }
-
-    h3 {
-      margin-top: 1.2rem;
-      margin-bottom: 0.6rem;
-      color: var(--text-color);
-    }
-
-    p,
-    li {
-      font-weight: 400;
-      margin-bottom: 0.8rem;
-      color: var(--text-color);
+      margin-bottom: 1rem;
+      color: #222;
     }
 
     ul {
-      margin-left: 1.5rem;
-      list-style-type: disc;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.8rem;
-    }
-
-    .tag {
-      background: var(--tag-bg);
-      color: var(--text-color);
-      padding: 0.4rem 0.7rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      user-select: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      list-style: disc;
+      margin-left: 2rem;
     }
 
     footer {
-      background: var(--header-bg);
-      color: var(--header-text);
       text-align: center;
-      padding: 1rem 2rem;
-      font-size: 0.9rem;
-      user-select: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    #darkModeToggle {
-      cursor: pointer;
-      background-color: var(--toggle-bg);
-      color: var(--toggle-color);
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      user-select: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      box-shadow: 0 0 6px var(--shadow-color);
-    }
-
-    #darkModeToggle:hover,
-    #darkModeToggle:focus {
-      background-color: var(--link-color);
+      padding: 1rem;
+      background: #222;
       color: #fff;
-      outline: none;
     }
 
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.8rem;
-      }
-
-      main {
-        margin: 1rem;
-      }
+    .contact {
+      text-align: center;
     }
 
-    /* Hidden header class on scroll */
-    .hide-header {
-      transform: translateY(-100%);
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
-  <header id="siteHeader">
-    <div class="header-left">
-      <h1>Shivam Aggarwal</h1>
-      <p>Senior Product Manager | FinTech & SaaS | AI Advocate</p>
-      <p>
-        <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a> |
-        <a href="tel:+919999999999">+91-99999-99999</a> |
-        <a href="https://www.linkedin.com/in/shivam-aggarwal/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </p>
-    </div>
-    <button id="darkModeToggle" aria-label="Toggle dark mode">Dark Mode</button>
+  <header>
+    <h1>Shivam Aggarwal</h1>
+    <p>Senior Product Manager | FinTech & SaaS | AI Advocate</p>
   </header>
-
   <main>
-    <!-- Your content continues here... (About Me, Experience, etc.) -->
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I am a Senior Product Manager with over 10 years of experience in FinTech, SaaS, and enterprise product
+        development. I specialize in API platforms, AI integrations, and agile product management.
+      </p>
+    </section>
+    <section>
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          <strong>Bajaj Finserv Direct Ltd</strong> - Senior Product Manager<br />
+          Leading development of API platforms, AI tools, and user-centric FinTech products.
+        </li>
+        <li>
+          <strong>ElasticRun</strong> - Product Manager<br />
+          Worked on data platforms and ELK stack integrations.
+        </li>
+        <li>
+          <strong>Adobe</strong> - AEM and Magento implementation for enterprise clients.
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li>MBA - Symbiosis International University</li>
+        <li>B.Tech - Uttarakhand Technical University</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Contact</h2>
+      <div class="contact">
+        <p>Email: <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/shivam-aggarwal/" target="_blank">shivam-aggarwal</a></p>
+      </div>
+    </section>
   </main>
-
   <footer>
-    <p>© 2025 Shivam Aggarwal | Made with ❤️ | <a href="mailto:aggarwalshivam1991@gmail.com">Email Me</a></p>
+    <p>&copy; 2025 Shivam Aggarwal. All rights reserved.</p>
   </footer>
-
-  <script>
-    const toggle = document.getElementById('darkModeToggle');
-    const currentTheme = localStorage.getItem('theme');
-    const header = document.getElementById('siteHeader');
-
-    if (currentTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      toggle.textContent = 'Light Mode';
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      toggle.textContent = 'Dark Mode';
-    }
-
-    toggle.addEventListener('click', () => {
-      const theme = document.documentElement.getAttribute('data-theme');
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        toggle.textContent = 'Dark Mode';
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        toggle.textContent = 'Light Mode';
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-
-    // Hide header on scroll down, show on scroll up
-    let lastScrollY = window.scrollY;
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > lastScrollY) {
-        header.classList.add('hide-header');
-      } else {
-        header.classList.remove('hide-header');
-      }
-      lastScrollY = window.scrollY;
-    });
-  </script>
 </body>
 
 </html>
