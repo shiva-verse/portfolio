@@ -130,6 +130,23 @@
       transition: background-color 0.3s ease;
     }
 
+    .download-btn {
+  display: inline-block;
+  margin: 1rem auto;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+
+
     h2 {
       color: var(--text-color);
       margin-bottom: 1rem;
@@ -238,6 +255,12 @@
     <div class="header-right">
       <!-- Replace the src with your actual photo URL or GitHub avatar link -->
      <!-- <img src="https://avatars.githubusercontent.com/u/64343528?v=4" alt="Shivam Aggarwal Photo" /> -->
+      <div style="text-align: center;">
+  <a href="resume-shivam-aggarwal.pdf" class="download-btn" download>
+    📄 Download Resume (PDF)
+  </a>
+</div>
+
     </div>
     <button id="darkModeToggle" aria-label="Toggle dark mode">Dark Mode</button>
   </header>
