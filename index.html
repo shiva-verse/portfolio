@@ -130,21 +130,22 @@
       transition: background-color 0.3s ease;
     }
 
-    .download-btn {
-  display: inline-block;
-  margin: 1rem auto;
-  padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: #fff;
+ .download-btn {
+  cursor: pointer;
+  background-color: var(--toggle-bg);
+  color: var(--toggle-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 6px var(--shadow-color);
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  display: inline-block;
 }
 
-.download-btn:hover {
-  background-color: #0056b3;
-}
 
 
     h2 {
