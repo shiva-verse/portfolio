@@ -1,573 +1,350 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shivam Aggarwal - Portfolio</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Fira Code font from Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
-  
-  <style>
-    /* Custom neon & code theme colors */
-    :root {
-      --bg-dark: #0f1419;
-      --bg-dark2: #161b22;
-      --text-light: #cdd9e5;
-      --neon: #3ee8a8;
-      --neon-hover: #2acb84;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shivam Aggarwal - Senior Product Delivery Manager</title>
+<style>
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: #e0e0e0;
+    margin: 0; padding: 0;
+    line-height: 1.5;
+  }
+  a {
+    color: #76d7c4;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Container and layout */
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 15px;
+  }
+  header {
+    padding: 20px 0;
+    border-bottom: 2px solid #76d7c4;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1.2px;
+    color: #76d7c4;
+  }
+  header p {
+    margin: 5px 0 0 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  nav {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  nav a {
+    font-weight: 600;
+    border: 1.5px solid #76d7c4;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+  nav a:hover, nav a.active {
+    background: #76d7c4;
+    color: #121212;
+  }
+
+  /* Sections */
+  section {
+    margin-top: 40px;
+    border-left: 4px solid #76d7c4;
+    padding-left: 15px;
+  }
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #76d7c4;
+    border-bottom: 1px solid #333;
+    padding-bottom: 4px;
+  }
+  section p, section li {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li + li {
+    margin-top: 8px;
+  }
+
+  /* Experience and Education item style */
+  .item {
+    margin-bottom: 20px;
+  }
+  .item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #a2d5c6;
+  }
+  .item .meta {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #999;
+  }
+  .item .period {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+
+  /* Skills & Tools inline list */
+  .inline-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .inline-list li {
+    background: #333;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
     }
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      font-family: 'Fira Code', monospace, monospace;
+    nav {
+      justify-content: center;
     }
-    .text-neon {
-      color: var(--neon);
-    }
-    .border-neon {
-      border-color: var(--neon);
-    }
-    .bg-neon {
-      background-color: var(--neon);
-      color: var(--bg-dark);
-    }
-    a:hover.bg-neon {
-      background-color: var(--neon-hover);
-      color: var(--bg-dark);
-    }
-    .hover\:text-neon:hover {
-      color: var(--neon);
-    }
-    /* Scrollbar style */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--bg-dark2);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: var(--neon);
-      border-radius: 4px;
-    }
-    /* Section anchors offset for fixed navbar */
-    section {
-      scroll-margin-top: 72px;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <div id="root"></div>
+<div class="container">
 
-  <!-- React 18 and ReactDOM -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <header>
+    <h1>Shivam Aggarwal</h1>
+    <p>Senior Product Delivery Manager | AI-Driven Product Strategy | Global FinTech & SaaS Experience</p>
+    <nav id="navbar">
+      <a href="#summary">Summary</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills & Tools</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#languages">Languages</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Framer Motion -->
-  <script crossorigin src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+  <section id="summary">
+    <h2>Professional Summary</h2>
+    <p>
+      Experienced Senior Product Delivery Manager with over 7 years of international experience delivering high-impact digital and technical products in FinTech and SaaS sectors. Proven expertise in leading global cross-functional teams across Agile and Scrum frameworks, driving end-to-end product development from ideation to successful launch. Adept at stakeholder collaboration across geographies, including the US, Europe, and Southeast Asia.
+    </p>
+    <p>
+      Skilled in managing both frontend and backend sprints, scaling complex systems, and integrating enterprise platforms such as Elastic, ELK Stack, Adobe Experience Manager (AEM), and Adobe Commerce (Magento). Proficient in handling ETL pipelines, validating backend APIs, executing SQL queries, and facilitating UAT cycles.
+    </p>
+    <p>
+      Bringing a strong understanding of Artificial Intelligence (AI) tools and their applications in product innovation, with hands-on experience leveraging AI-driven platforms for customer experience optimisation, process automation, and product enhancement. Well-versed in using AI tools such as ChatGPT, Midjourney, Notion AI, and no-code/low-code automation platforms. Knowledgeable in AI product trends, ethical AI practices, prompt engineering, AI/ML integration planning, and user-centric AI product strategies.
+    </p>
+  </section>
 
-  <script>
-    // Alias React and ReactDOM from global scope
-    const { useState, useEffect } = React;
-    const { motion, AnimatePresence } = window['framer-motion'];
-    
-    // Navbar component with smooth scroll and active section highlighting
-    function Navbar() {
-      const [active, setActive] = useState("home");
+  <section id="experience">
+    <h2>Professional Experience</h2>
 
-      // Update active link on scroll
-      useEffect(() => {
-        function onScroll() {
-          const sections = ['home','about','experience','education','skills','projects','certifications','contact'];
-          const scrollPos = window.scrollY + window.innerHeight / 3;
-          let current = 'home';
-          for (let id of sections) {
-            const el = document.getElementById(id);
-            if (el && el.offsetTop <= scrollPos) current = id;
-          }
-          setActive(current);
+    <div class="item">
+      <h3>Senior Product Manager</h3>
+      <div class="meta">Bajaj FinServ Direct Limited, Pune, India</div>
+      <div class="period">Aug 2021 – Present</div>
+      <ul>
+        <li>Led Agile delivery of UI and horizontal sprints across 4+ cross-regional teams, resulting in a 25% improvement in feature delivery velocity and reduced turnaround by 18%.</li>
+        <li>Delivered Elastic and ELK-based backend solutions that improved system observability and reduced issue resolution time by 35%.</li>
+        <li>Managed ELB configurations and multi-cloud deployment strategies, increasing infrastructure uptime to 99.95% with optimised cost utilisation.</li>
+        <li>Collaborated with data engineering teams to implement ETL pipelines that processed over 10M data points monthly, enabling real-time analytics for CXO dashboards.</li>
+        <li>Oversaw 100+ API integration test cases and UAT efforts, achieving 98% test coverage and compliance with evolving automation protocols.</li>
+        <li>Co-designed and launched an internal AI chatbot (Master BOT) with 50+ intents and a 92% success rate in resolving employee queries, improving internal support efficiency.</li>
+        <li>Drove roadmap and backlog prioritisation across 3 continents (India, US, ASEAN), enabling a 20% reduction in time-to-market through AI-driven sentiment analytics.</li>
+        <li>Spearheaded digital transformation using Adobe Commerce and AEM, increasing customer engagement metrics by 30% through AI-based personalisation trials.</li>
+        <li>Leveraged AI tools (ChatGPT, Notion AI, etc.) to accelerate solution prototyping by 40% and reduce documentation overhead by 25%.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Senior Product Manager</h3>
+      <div class="meta">Siroi Solution Sdn Bhd, Kuala Lumpur, Malaysia</div>
+      <div class="period">Dec 2018 – Aug 2021</div>
+      <ul>
+        <li>Owned end-to-end product delivery across UI and backend layers for 3+ cross-border fintech platforms in APAC, ensuring modular scalability and compliance-aligned architecture in Open Banking ecosystems, resulting in 40% faster rollout of features across regions.</li>
+        <li>Collaborated with Agile teams across Malaysia, India, and Singapore to execute 15+ iterative product releases, reducing cycle time by 30% and improving stakeholder visibility through automated AI-enabled documentation workflows.</li>
+        <li>Implemented Elastic and ELK for full-stack observability, reducing MTTR (mean time to resolution) by 45% and enhancing diagnostic accuracy through predictive analytics.</li>
+        <li>Integrated 10+ ETL pipelines with external fintech and banking APIs, enabling secure, compliant data synchronisation and audit trail logging across all partner systems, supporting 99.9% uptime SLAs.</li>
+        <li>Facilitated UAT execution across 20+ modules, improving go-live success rate by 95% and reducing defect leakage through AI-informed validation frameworks and early NLP-based interface testing.</li>
+        <li>Enhanced Magento-based platforms to support 5X traffic load increase, and ran personalisation A/B experiments using generative AI, resulting in a 22% uplift in engagement metrics.</li>
+        <li>Embedded strategic insights from AI and Open Banking trends into the product roadmap, driving 3 major feature pivots that improved customer retention by 15% and aligned with future-facing compliance shifts.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Product Manager</h3>
+      <div class="meta">Alepo Technologies Inc., Austin, Texas (Remote from Pune)</div>
+      <div class="period">Nov 2017 – Dec 2018</div>
+      <ul>
+        <li>Supported delivery of telecom and digital infrastructure products for 5+ enterprise clients across the US and LATAM, ensuring timely rollout and compliance with regional standards.</li>
+        <li>Applied ELK stack and SQL-based analytics to optimise system reliability, reducing backend incident recurrence by 35% and improving monitoring accuracy across multiple environments.</li>
+        <li>Participated in 10+ remote Agile sprint cycles across Texas and Pune teams, leading backlog grooming and UAT planning that shortened release timelines by 20%.</li>
+        <li>Coordinated cross-time zone API validation and post-release monitoring with QA and tech leads, enhancing regression coverage and reducing post-launch issues by 25%.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <h3>Product Analyst</h3>
+      <div class="meta">Sea core Financial Pvt Ltd, Delhi, India</div>
+      <div class="period">Apr 2015 – Jul 2016</div>
+      <ul>
+        <li>Performed financial data mapping and delivered structured outputs using Excel and custom data maps, ensuring accurate alignment with product requirements and delivery timelines.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="item">
+      <h3>MBA – Information Technology</h3>
+      <div class="meta">Symbiosis International University, Pune, Maharashtra, India</div>
+      <div class="period">Oct 2016 – Apr 2018</div>
+    </div>
+    <div class="item">
+      <h3>Bachelor of Technology – Computer Science</h3>
+      <div class="meta">Uttarakhand Technical University, Nainital, Uttarakhand, India</div>
+      <div class="period">Apr 2011 – Mar 2015</div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Tools</h2>
+    <h3>Skills</h3>
+    <ul class="inline-list">
+      <li>Agile Delivery (Scrum, Kanban, SAFe)</li>
+      <li>Global Sprint Management</li>
+      <li>PLM</li>
+      <li>Stakeholder Communication (India, US, EMEA, APAC)</li>
+      <li>Backend Architecture</li>
+      <li>SQL</li>
+      <li>API Testing</li>
+      <li>UAT</li>
+      <li>ETL Pipelines</li>
+      <li>AEM</li>
+      <li>Adobe Commerce (Magento)</li>
+      <li>Elastic Stack</li>
+      <li>ELK</li>
+      <li>ELB Deployment</li>
+    </ul>
+
+    <h3 style="margin-top:20px;">Tools</h3>
+    <ul class="inline-list">
+      <li>Jira</li>
+      <li>Confluence</li>
+      <li>Trello</li>
+      <li>Postman</li>
+      <li>Figma</li>
+      <li>Jenkins</li>
+      <li>Git</li>
+      <li>Power BI</li>
+    </ul>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>PMI Certified – Agile Product Owner</li>
+      <li>Certified Scrum Master (CSM)</li>
+      <li>Certified Scrum Product Owner (CSPO)</li>
+      <li>Oracle Certified OCI Architect Professional</li>
+      <li>Azure DevOps Foundation</li>
+      <li>Google Generative AI Fundamentals</li>
+      <li>IBM Machine Learning Essentials</li>
+      <li>Tableau Certified Analyst</li>
+      <li>Oracle Certified Business Analysis Expert</li>
+    </ul>
+  </section>
+
+  <section id="languages">
+    <h2>Languages</h2>
+    <ul>
+      <li>English (Fluent)</li>
+      <li>Hindi (Native)</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Phone:</strong> (+91) 9873216989</p>
+    <p><strong>Email:</strong> <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a></p>
+    <p>
+      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shivamaggarwal" target="_blank" rel="noreferrer">linkedin.com/in/shivamaggarwal</a><br />
+      <strong>GitHub:</strong> <a href="https://github.com/shivamaggarwal" target="_blank" rel="noreferrer">github.com/shivamaggarwal</a><br />
+      <strong>Portfolio:</strong> <a href="https://shivamaggarwal.github.io" target="_blank" rel="noreferrer">shivamaggarwal.github.io</a><br />
+      <strong>Location:</strong> Pune, Maharashtra, India – 411014
+    </p>
+  </section>
+
+</div>
+
+<!-- jQuery for smooth scrolling and active nav link -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(function () {
+    // Smooth scroll
+    $('nav a').on('click', function(e) {
+      e.preventDefault();
+      var target = this.hash;
+      if (target && $(target).length) {
+        $('html, body').animate({
+          scrollTop: $(target).offset().top - 20
+        }, 600);
+      }
+    });
+
+    // Highlight nav on scroll
+    var sections = $('section');
+    var navLinks = $('nav a');
+
+    $(window).on('scroll', function () {
+      var currentPos = $(this).scrollTop() + 30;
+
+      sections.each(function () {
+        var top = $(this).offset().top;
+        var bottom = top + $(this).outerHeight();
+
+        if (currentPos >= top && currentPos <= bottom) {
+          navLinks.removeClass('active');
+          $('nav a[href="#' + this.id + '"]').addClass('active');
         }
-        window.addEventListener('scroll', onScroll);
-        onScroll();
-        return () => window.removeEventListener('scroll', onScroll);
-      }, []);
+      });
+    });
 
-      const links = [
-        {id:'home', label:'Home'},
-        {id:'about', label:'About Me'},
-        {id:'experience', label:'Experience'},
-        {id:'education', label:'Education'},
-        {id:'skills', label:'Skills'},
-        {id:'projects', label:'Projects'},
-        {id:'certifications', label:'Certifications'},
-        {id:'contact', label:'Contact'},
-      ];
+    // Trigger scroll event to set initial active nav
+    $(window).trigger('scroll');
+  });
+</script>
 
-      return (
-        <nav className="fixed top-0 left-0 right-0 bg-bg-dark2 border-b border-neon z-50 px-6 py-4 flex justify-center select-none">
-          <ul className="flex space-x-6 text-sm font-semibold">
-            {links.map(({id,label}) => (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  className={`hover:text-neon transition ${
-                    active === id ? "text-neon underline underline-offset-4" : "text-gray-400"
-                  }`}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      );
-    }
-
-    // Hero section
-    function Hero() {
-      return (
-        <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-6">
-          <motion.h1
-            initial={{opacity:0, y:-20}}
-            animate={{opacity:1, y:0}}
-            transition={{duration:0.8}}
-            className="text-6xl font-mono font-extrabold text-neon mb-4"
-          >
-            Shivam Aggarwal
-          </motion.h1>
-          <motion.p
-            initial={{opacity:0, y:20}}
-            animate={{opacity:1, y:0}}
-            transition={{delay:0.5, duration:0.8}}
-            className="text-xl font-mono text-gray-300 max-w-xl"
-          >
-            Senior Product Delivery Manager | AI-Driven Product Strategy | Global FinTech & SaaS Expert
-          </motion.p>
-          <motion.div
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            transition={{delay:1, duration:0.8}}
-            className="mt-8 flex space-x-6"
-          >
-            <a href="#contact" className="px-6 py-3 bg-neon rounded font-semibold hover:bg-neon-hover transition">
-              Contact Me
-            </a>
-            <a href="#projects" className="px-6 py-3 border border-neon rounded font-semibold hover:bg-neon hover:text-bg-dark transition">
-              See Projects
-            </a>
-          </motion.div>
-        </section>
-      );
-    }
-
-    // About section with fade-in
-    function About() {
-      return (
-        <section id="about" className="max-w-4xl mx-auto px-6 py-20">
-          <motion.h2
-            initial={{opacity:0, x:-30}}
-            whileInView={{opacity:1, x:0}}
-            viewport={{once:true}}
-            className="text-4xl font-mono font-bold mb-8 border-l-4 border-neon pl-3 text-neon"
-          >
-            About Me
-          </motion.h2>
-          <motion.p
-            initial={{opacity:0}}
-            whileInView={{opacity:1}}
-            viewport={{once:true}}
-            className="text-gray-300 font-mono text-lg leading-relaxed"
-          >
-            I am an experienced Senior Product Delivery Manager with over 7 years of international
-            experience delivering high-impact digital and technical products in FinTech and SaaS
-            sectors. I specialize in leading global Agile teams and integrating AI-driven tools to
-            innovate and accelerate product delivery.
-          </motion.p>
-          <motion.p
-            initial={{opacity:0}}
-            whileInView={{opacity:1}}
-            viewport={{once:true}}
-            transition={{delay:0.3}}
-            className="text-gray-400 font-mono mt-4 text-lg leading-relaxed"
-          >
-            Passionate about leveraging AI for product innovation, I focus on scalable solutions,
-            backend and frontend integration, and cross-functional collaboration across multiple
-            regions.
-          </motion.p>
-        </section>
-      );
-    }
-
-    // Experience timeline with animation
-    function Experience() {
-      const jobs = [
-        {
-          role: "Senior Product Manager",
-          company: "Bajaj FinServ Direct Limited",
-          location: "Pune, India",
-          period: "Aug 2021 – Present",
-          details: [
-            "Led Agile delivery across 4+ cross-regional teams, improving feature delivery velocity by 25%.",
-            "Delivered Elastic and ELK-based backend solutions reducing issue resolution by 35%.",
-            "Managed multi-cloud deployment with 99.95% uptime.",
-            "Co-designed AI chatbot 'Master BOT' with 92% success rate resolving employee queries.",
-            "Drove roadmap across 3 continents reducing time-to-market by 20%.",
-          ],
-        },
-        {
-          role: "Senior Product Manager",
-          company: "Siroi Solution Sdn Bhd",
-          location: "Kuala Lumpur, Malaysia",
-          period: "Dec 2018 – Aug 2021",
-          details: [
-            "Delivered UI and backend for 3+ cross-border fintech platforms.",
-            "Reduced cycle time by 30% with AI-enabled documentation workflows.",
-            "Implemented ELK stack observability, reducing MTTR by 45%.",
-            "Integrated 10+ ETL pipelines with banking APIs supporting 99.9% uptime SLA.",
-            "Enhanced Magento platform supporting 5X traffic with AI personalization experiments.",
-          ],
-        },
-        {
-          role: "Product Manager",
-          company: "Alepo Technologies Inc.",
-          location: "Austin, Texas (Remote)",
-          period: "Nov 2017 – Dec 2018",
-          details: [
-            "Supported telecom & digital infrastructure products delivery for 5+ enterprise clients.",
-            "Reduced backend incident recurrence by 35% using ELK stack and SQL analytics.",
-            "Led backlog grooming and UAT planning, shortening release timelines by 20%.",
-          ],
-        },
-        {
-          role: "Product Analyst",
-          company: "Sea core Financial Pvt Ltd",
-          location: "Delhi, India",
-          period: "Apr 2015 – Jul 2016",
-          details: [
-            "Performed financial data mapping and structured outputs using Excel and custom data maps.",
-          ],
-        },
-      ];
-
-      return (
-        <section id="experience" className="max-w-5xl mx-auto px-6 py-20">
-          <h2 className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon">
-            Experience
-          </h2>
-          <div className="relative border-l border-neon ml-4 pl-6 space-y-12">
-            {jobs.map(({ role, company, location, period, details }, idx) => (
-              <motion.div
-                key={idx}
-                initial={{opacity: 0, x: -50}}
-                whileInView={{opacity:1, x:0}}
-                viewport={{once:true}}
-                transition={{duration:0.5, delay: idx * 0.2}}
-                className="relative"
-              >
-                <span className="absolute -left-7 top-0 w-5 h-5 bg-neon rounded-full border-2 border-bg-dark"></span>
-                <h3 className="text-xl font-semibold font-mono text-neon">{role}</h3>
-                <p className="italic text-gray-400 text-sm mb-1">{company} — {location}</p>
-                <p className="text-gray-500 text-sm mb-2">{period}</p>
-                <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
-                  {details.map((d,i) => (
-                    <li key={i}>{d}</li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-      );
-    }
-
-    // Education timeline
-    function Education() {
-      const schools = [
-        {
-          degree: "MBA – Information Technology",
-          institution: "Symbiosis International University, Pune, Maharashtra, India",
-          period: "Oct 2016 – Apr 2018",
-        },
-        {
-          degree: "Bachelor of Technology – Computer Science",
-          institution: "Uttarakhand Technical University, Nainital, Uttarakhand, India",
-          period: "Apr 2011 – Mar 2015",
-        },
-      ];
-
-      return (
-        <section id="education" className="max-w-4xl mx-auto px-6 py-20">
-          <h2 className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon">
-            Education
-          </h2>
-          <div className="relative border-l border-neon ml-4 pl-6 space-y-10">
-            {schools.map(({ degree, institution, period }, idx) => (
-              <motion.div
-                key={idx}
-                initial={{opacity: 0, x: 50}}
-                whileInView={{opacity:1, x:0}}
-                viewport={{once:true}}
-                transition={{duration:0.5, delay: idx * 0.3}}
-                className="relative"
-              >
-                <span className="absolute -left-7 top-0 w-5 h-5 bg-neon rounded-full border-2 border-bg-dark"></span>
-                <h3 className="text-xl font-semibold font-mono text-neon">{degree}</h3>
-                <p className="italic text-gray-400 text-sm">{institution}</p>
-                <p className="text-gray-500 text-sm">{period}</p>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-      );
-    }
-
-    // Skills & Tools grid
-    function Skills() {
-      const skills = [
-        "Agile Delivery (Scrum, Kanban, SAFe)",
-        "Global Sprint Management",
-        "PLM",
-        "Stakeholder Communication (India, US, EMEA, APAC)",
-        "Backend Architecture",
-        "SQL",
-        "API Testing",
-        "UAT",
-        "ETL Pipelines",
-        "AEM",
-        "Adobe Commerce (Magento)",
-        "Elastic Stack",
-        "ELK",
-        "ELB Deployment",
-      ];
-
-      const tools = [
-        { name: "Jira", icon: "🗂️" },
-        { name: "Confluence", icon: "📚" },
-        { name: "Trello", icon: "📝" },
-        { name: "Postman", icon: "📬" },
-        { name: "Figma", icon: "🎨" },
-        { name: "Jenkins", icon: "🛠️" },
-        { name: "Git", icon: "🐙" },
-        { name: "Power BI", icon: "📊" },
-      ];
-
-      return (
-        <section id="skills" className="max-w-5xl mx-auto px-6 py-20">
-          <h2 className="text-4xl font-mono font-bold mb-10 border-l-4 border-neon pl-3 text-neon">Skills & Tools</h2>
-          <div className="mb-12">
-            <h3 className="text-xl font-semibold font-mono text-neon mb-4">Skills</h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-gray-300 font-mono">
-              {skills.map((skill, i) => (
-                <li
-                  key={i}
-                  className="p-3 border border-neon rounded-md hover:shadow-[0_0_10px_var(--neon)] cursor-default"
-                  title={skill}
-                >
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold font-mono text-neon mb-4">Tools</h3>
-            <div className="grid grid-cols-4 sm:grid-cols-8 gap-6 justify-center text-4xl text-neon">
-              {tools.map(({ name, icon }, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col items-center cursor-default hover:scale-110 transition-transform select-none"
-                  title={name}
-                >
-                  <span>{icon}</span>
-                  <small className="mt-1 text-xs text-gray-400">{name}</small>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      );
-    }
-
-    // Projects section
-    function Projects() {
-      const projects = [
-        {
-          title: "AI Chatbot (Master BOT)",
-          description: "Internal AI chatbot with 50+ intents achieving 92% success rate in query resolution.",
-          tech: ["React", "AI", "Node.js"],
-          github: "https://github.com/shivamaggarwal/ai-chatbot",
-          demo: "#",
-          image: null,
-        },
-        {
-          title: "Elastic & ELK Backend Solutions",
-          description: "Implemented ELK stack observability to reduce issue resolution by 35%.",
-          tech: ["Elastic Stack", "Node.js", "Kibana"],
-          github: "#",
-          demo: "#",
-          image: null,
-        },
-        {
-          title: "Magento AI Personalisation",
-          description: "A/B experiments on Magento platform using generative AI for 22% engagement uplift.",
-          tech: ["Magento", "AI", "AEM"],
-          github: "#",
-          demo: "#",
-          image: null,
-        },
-      ];
-
-      return (
-        <section id="projects" className="max-w-6xl mx-auto px-6 py-20">
-          <h2 className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon">Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map(({title, description, tech, github, demo}, idx) => (
-              <motion.div
-                key={idx}
-                initial={{opacity:0, y:30}}
-                whileInView={{opacity:1, y:0}}
-                viewport={{once:true}}
-                transition={{delay: idx * 0.3, duration: 0.6}}
-                className="bg-bg-dark2 p-6 rounded-lg border border-neon shadow-lg hover:shadow-neon transition cursor-default"
-              >
-                <h3 className="text-xl font-mono font-semibold mb-3 text-neon">{title}</h3>
-                <p className="text-gray-300 mb-4">{description}</p>
-                <div className="mb-4">
-                  {tech.map((t,i) => (
-                    <span
-                      key={i}
-                      className="inline-block text-xs border border-neon rounded px-2 py-1 mr-2 font-mono"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex space-x-4">
-                  {github && (
-                    <a
-                      href={github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-neon hover:underline"
-                    >
-                      GitHub
-                    </a>
-                  )}
-                  {demo && demo !== "#" && (
-                    <a
-                      href={demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-neon hover:underline"
-                    >
-                      Demo
-                    </a>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-      );
-    }
-
-    // Certifications
-    function Certifications() {
-      const certs = [
-        {
-          title: "AWS Certified Cloud Practitioner",
-          issuer: "Amazon Web Services",
-          date: "Issued Jan 2024",
-          link: "https://aws.amazon.com/certification/certified-cloud-practitioner/",
-        },
-        {
-          title: "Certified ScrumMaster (CSM)",
-          issuer: "Scrum Alliance",
-          date: "Issued May 2023",
-          link: "https://www.scrumalliance.org/certifications/practitioners/certified-scrummaster-csm",
-        },
-      ];
-
-      return (
-        <section id="certifications" className="max-w-4xl mx-auto px-6 py-20">
-          <h2 className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon">Certifications</h2>
-          <ul className="list-disc list-inside text-gray-300 font-mono space-y-4">
-            {certs.map(({title, issuer, date, link}, i) => (
-              <li key={i}>
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-neon hover:underline"
-                >
-                  {title}
-                </a> — <em>{issuer}</em>, <small>{date}</small>
-              </li>
-            ))}
-          </ul>
-        </section>
-      );
-    }
-
-    // Contact section
-    function Contact() {
-      return (
-        <section
-          id="contact"
-          className="max-w-4xl mx-auto px-6 py-20 text-center"
-          aria-label="Contact information"
-        >
-          <h2 className="text-4xl font-mono font-bold mb-8 border-l-4 border-neon pl-3 text-neon inline-block">
-            Contact
-          </h2>
-          <p className="text-gray-300 mb-4 font-mono text-lg">
-            Feel free to reach out via email or LinkedIn.
-          </p>
-          <a
-            href="mailto:shivam@example.com"
-            className="inline-block bg-neon px-6 py-3 rounded font-semibold hover:bg-neon-hover transition mb-4"
-          >
-            Email Me
-          </a>
-          <br />
-          <a
-            href="https://www.linkedin.com/in/shivamaggarwal/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-neon hover:underline font-mono text-lg"
-          >
-            LinkedIn Profile
-          </a>
-        </section>
-      );
-    }
-
-    // Main app combining all sections
-    function App() {
-      return (
-        <>
-          <Navbar />
-          <main className="pt-20">
-            <Hero />
-            <About />
-            <Experience />
-            <Education />
-            <Skills />
-            <Projects />
-            <Certifications />
-            <Contact />
-          </main>
-        </>
-      );
-    }
-
-    // Render React 18 app to #root
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
-  </script>
 </body>
 </html>
