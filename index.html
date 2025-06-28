@@ -1,552 +1,573 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Shivam Aggarwal | Portfolio</title>
-
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- Tailwind config to extend fonts & colors -->
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          neon: "#00ffc8",
-          "neon-dark": "#00caa7",
-          bgdark: "#0f111a",
-          bgdark2: "#131824",
-          graysoft: "#c8f9f1",
-        },
-        fontFamily: {
-          mono: ["Fira Code", "JetBrains Mono", "monospace"],
-        },
-      },
-    },
-  };
-</script>
-
-<!-- Fira Code and JetBrains Mono fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=JetBrains+Mono&display=swap" rel="stylesheet" />
-
-<!-- React & ReactDOM CDN -->
-<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-
-<!-- Babel for JSX -->
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-<!-- Framer Motion -->
-<script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
-
-<!-- React Slick & Slick Carousel CSS/JS -->
-<link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-<style>
-  /* Override slick dots */
-  .slick-dots li button:before {
-    color: #00ffc8;
-  }
-  .slick-prev:before, .slick-next:before {
-    color: #00ffc8;
-  }
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #131824;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: #00ffc8;
-    border-radius: 20px;
-    border: 3px solid #131824;
-  }
-</style>
-</head>
-<body class="bg-bgdark text-gray-300 font-mono leading-relaxed">
-
-<div id="root"></div>
-
-<script type="text/babel">
-
-const { useState, useEffect, useRef } = React;
-const { motion } = window["framer-motion"];
-
-// Smooth scroll to id anchor
-function scrollToId(id) {
-  const el = document.getElementById(id);
-  if (el) {
-    window.scrollTo({
-      top: el.offsetTop - 50,
-      behavior: "smooth"
-    });
-  }
-}
-
-// Scrollspy hook
-function useScrollSpy(ids, offset=50) {
-  const [activeId, setActiveId] = useState(ids[0]);
-  useEffect(() => {
-    function onScroll() {
-      const scrollPos = window.scrollY + offset + 5;
-      let current = ids[0];
-      for (const id of ids) {
-        const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollPos) current = id;
-      }
-      setActiveId(current);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shivam Aggarwal - Portfolio</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fira Code font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* Custom neon & code theme colors */
+    :root {
+      --bg-dark: #0f1419;
+      --bg-dark2: #161b22;
+      --text-light: #cdd9e5;
+      --neon: #3ee8a8;
+      --neon-hover: #2acb84;
     }
-    window.addEventListener("scroll", onScroll);
-    onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [ids, offset]);
-  return activeId;
-}
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Fira Code', monospace, monospace;
+    }
+    .text-neon {
+      color: var(--neon);
+    }
+    .border-neon {
+      border-color: var(--neon);
+    }
+    .bg-neon {
+      background-color: var(--neon);
+      color: var(--bg-dark);
+    }
+    a:hover.bg-neon {
+      background-color: var(--neon-hover);
+      color: var(--bg-dark);
+    }
+    .hover\:text-neon:hover {
+      color: var(--neon);
+    }
+    /* Scrollbar style */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark2);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--neon);
+      border-radius: 4px;
+    }
+    /* Section anchors offset for fixed navbar */
+    section {
+      scroll-margin-top: 72px;
+    }
+  </style>
+</head>
+<body>
 
-function Navbar() {
-  const sections = ["hero","about","experience","education","skills","projects","certifications","contact"];
-  const active = useScrollSpy(sections);
-  return (
-    <nav className="fixed top-0 left-0 right-0 bg-bgdark bg-opacity-90 backdrop-blur-md z-50 shadow-lg">
-      <ul className="max-w-6xl mx-auto px-6 flex gap-6 text-sm font-mono text-neon select-none">
-        {sections.map(s => (
-          <li key={s}>
-            <a
-              href={"#"+s}
-              onClick={e => {
-                e.preventDefault();
-                scrollToId(s);
-              }}
-              className={"py-3 inline-block transition " + (active === s ? "text-neon font-bold border-b-2 border-neon" : "opacity-70 hover:text-neon-dark")}
-            >
-              {s.charAt(0).toUpperCase() + s.slice(1)}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-}
+  <div id="root"></div>
 
-function Hero() {
-  return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-tr from-bgdark to-bgdark2 text-neon px-6 text-center pt-20">
-      <motion.h1
-        initial={{opacity:0, y:20}}
-        animate={{opacity:1, y:0}}
-        transition={{delay:0.1}}
-        className="text-6xl font-mono font-extrabold leading-tight mb-4 select-text"
-      >
-        Shivam Aggarwal
-      </motion.h1>
-      <motion.p
-        initial={{opacity:0, y:20}}
-        animate={{opacity:1, y:0}}
-        transition={{delay:0.3}}
-        className="text-xl font-mono mb-8 max-w-xl"
-      >
-        Senior Product Delivery Manager | AI & ML | Backend | API Expert
-      </motion.p>
-      <motion.div
-        initial={{opacity:0, scale:0.85}}
-        animate={{opacity:1, scale:1}}
-        transition={{delay:0.5}}
-        className="flex gap-6"
-      >
-        <a href="#contact" className="px-6 py-3 border border-neon rounded-md font-mono font-semibold hover:bg-neon hover:text-bgdark transition select-none">
-          Contact Me
-        </a>
-        <a href="https://github.com/shivamaggarwal" target="_blank" rel="noreferrer" className="px-6 py-3 border border-neon rounded-md font-mono font-semibold hover:bg-neon-dark hover:text-bgdark transition select-none">
-          GitHub
-        </a>
-      </motion.div>
-    </section>
-  );
-}
+  <!-- React 18 and ReactDOM -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-function About() {
-  return (
-    <section id="about" className="max-w-5xl mx-auto px-6 py-20 text-graysoft bg-bgdark2 rounded-lg shadow-lg select-text">
-      <motion.h2
-        initial={{opacity:0, x:-30}}
-        whileInView={{opacity:1, x:0}}
-        viewport={{once:true}}
-        className="text-4xl font-mono font-bold mb-8 border-l-4 border-neon pl-3"
-      >
-        About Me
-      </motion.h2>
-      <motion.p
-        initial={{opacity:0}}
-        whileInView={{opacity:1}}
-        viewport={{once:true}}
-        className="text-lg font-mono leading-relaxed max-w-3xl mx-auto"
-      >
-        Experienced Senior Product Delivery Manager with over 7 years of international experience delivering high-impact digital and technical products in FinTech and SaaS sectors. Skilled in leading global cross-functional teams and driving AI-powered product innovation. Passionate about leveraging cutting-edge AI and agile methodologies to build scalable, customer-centric products that solve real-world problems.
-      </motion.p>
-    </section>
-  );
-}
+  <!-- Framer Motion -->
+  <script crossorigin src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
 
-function Experience() {
-  const jobs = [
-    {
-      role: "Senior Product Manager",
-      company: "Bajaj FinServ Direct Limited",
-      location: "Pune, India",
-      period: "Aug 2021 – Present",
-      details: [
-        "Led Agile delivery of UI and horizontal sprints across 4+ cross-regional teams, improving feature delivery velocity by 25% and reducing turnaround by 18%.",
-        "Delivered Elastic and ELK-based backend solutions improving observability and reducing issue resolution time by 35%.",
-        "Managed ELB configurations and multi-cloud deployment, increasing uptime to 99.95%.",
-        "Oversaw 100+ API integration test cases and UAT efforts achieving 98% test coverage.",
-        "Co-designed an internal AI chatbot (Master BOT) improving support efficiency.",
-        "Drove roadmap and backlog prioritization across India, US, and ASEAN, reducing time-to-market by 20%.",
-      ],
-    },
-    {
-      role: "Senior Product Manager",
-      company: "Siroi Solution Sdn Bhd",
-      location: "Kuala Lumpur, Malaysia",
-      period: "Dec 2018 – Aug 2021",
-      details: [
-        "Owned end-to-end product delivery across UI and backend for 3+ cross-border fintech platforms.",
-        "Reduced cycle time by 30% and improved stakeholder visibility with AI-enabled documentation workflows.",
-        "Implemented Elastic and ELK for full-stack observability reducing MTTR by 45%.",
-        "Integrated 10+ ETL pipelines enabling secure data synchronization and audit logging.",
-        "Enhanced Magento-based platforms supporting 5X traffic load and AI-based personalization experiments.",
-      ],
-    },
-    {
-      role: "Product Manager",
-      company: "Alepo Technologies Inc.",
-      location: "Austin, Texas (Remote from Pune)",
-      period: "Nov 2017 – Dec 2018",
-      details: [
-        "Delivered telecom and digital infrastructure products for US and LATAM enterprise clients.",
-        "Optimized system reliability with ELK stack and SQL analytics, reducing backend incidents by 35%.",
-        "Led backlog grooming and UAT planning, shortening release timelines by 20%.",
-      ],
-    },
-    {
-      role: "Product Analyst",
-      company: "Sea core Financial Pvt Ltd",
-      location: "Delhi, India",
-      period: "Apr 2015 – Jul 2016",
-      details: [
-        "Performed financial data mapping delivering structured outputs using Excel and custom data maps.",
-      ],
-    },
-  ];
+  <script>
+    // Alias React and ReactDOM from global scope
+    const { useState, useEffect } = React;
+    const { motion, AnimatePresence } = window['framer-motion'];
+    
+    // Navbar component with smooth scroll and active section highlighting
+    function Navbar() {
+      const [active, setActive] = useState("home");
 
-  return (
-    <section id="experience" className="max-w-5xl mx-auto px-6 py-20 select-text">
-      <motion.h2
-        initial={{opacity:0, x:-30}}
-        whileInView={{opacity:1, x:0}}
-        viewport={{once:true}}
-        className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon"
-      >
-        Experience
-      </motion.h2>
+      // Update active link on scroll
+      useEffect(() => {
+        function onScroll() {
+          const sections = ['home','about','experience','education','skills','projects','certifications','contact'];
+          const scrollPos = window.scrollY + window.innerHeight / 3;
+          let current = 'home';
+          for (let id of sections) {
+            const el = document.getElementById(id);
+            if (el && el.offsetTop <= scrollPos) current = id;
+          }
+          setActive(current);
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+        return () => window.removeEventListener('scroll', onScroll);
+      }, []);
 
-      <div className="relative border-l-2 border-neon ml-4">
-        {jobs.map(({role, company, location, period, details}, i) => (
+      const links = [
+        {id:'home', label:'Home'},
+        {id:'about', label:'About Me'},
+        {id:'experience', label:'Experience'},
+        {id:'education', label:'Education'},
+        {id:'skills', label:'Skills'},
+        {id:'projects', label:'Projects'},
+        {id:'certifications', label:'Certifications'},
+        {id:'contact', label:'Contact'},
+      ];
+
+      return (
+        <nav className="fixed top-0 left-0 right-0 bg-bg-dark2 border-b border-neon z-50 px-6 py-4 flex justify-center select-none">
+          <ul className="flex space-x-6 text-sm font-semibold">
+            {links.map(({id,label}) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  className={`hover:text-neon transition ${
+                    active === id ? "text-neon underline underline-offset-4" : "text-gray-400"
+                  }`}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      );
+    }
+
+    // Hero section
+    function Hero() {
+      return (
+        <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-6">
+          <motion.h1
+            initial={{opacity:0, y:-20}}
+            animate={{opacity:1, y:0}}
+            transition={{duration:0.8}}
+            className="text-6xl font-mono font-extrabold text-neon mb-4"
+          >
+            Shivam Aggarwal
+          </motion.h1>
+          <motion.p
+            initial={{opacity:0, y:20}}
+            animate={{opacity:1, y:0}}
+            transition={{delay:0.5, duration:0.8}}
+            className="text-xl font-mono text-gray-300 max-w-xl"
+          >
+            Senior Product Delivery Manager | AI-Driven Product Strategy | Global FinTech & SaaS Expert
+          </motion.p>
           <motion.div
-            key={i}
-            initial={{opacity:0, x:50}}
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            transition={{delay:1, duration:0.8}}
+            className="mt-8 flex space-x-6"
+          >
+            <a href="#contact" className="px-6 py-3 bg-neon rounded font-semibold hover:bg-neon-hover transition">
+              Contact Me
+            </a>
+            <a href="#projects" className="px-6 py-3 border border-neon rounded font-semibold hover:bg-neon hover:text-bg-dark transition">
+              See Projects
+            </a>
+          </motion.div>
+        </section>
+      );
+    }
+
+    // About section with fade-in
+    function About() {
+      return (
+        <section id="about" className="max-w-4xl mx-auto px-6 py-20">
+          <motion.h2
+            initial={{opacity:0, x:-30}}
             whileInView={{opacity:1, x:0}}
             viewport={{once:true}}
-            transition={{delay: i * 0.15}}
-            className="mb-12 relative pl-8"
+            className="text-4xl font-mono font-bold mb-8 border-l-4 border-neon pl-3 text-neon"
           >
-            <div className="absolute -left-5 top-2 w-4 h-4 rounded-full bg-neon border-2 border-bgdark2" />
-            <h3 className="text-xl font-semibold font-mono text-neon">{role}</h3>
-            <p className="text-sm text-gray-400 font-mono">{company} — {location}</p>
-            <p className="text-xs text-gray-500 font-mono italic">{period}</p>
-            <ul className="list-disc list-inside text-gray-300 mt-2 font-mono">
-              {details.map((d, idx) => (
-                <li key={idx}>{d}</li>
+            About Me
+          </motion.h2>
+          <motion.p
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
+            viewport={{once:true}}
+            className="text-gray-300 font-mono text-lg leading-relaxed"
+          >
+            I am an experienced Senior Product Delivery Manager with over 7 years of international
+            experience delivering high-impact digital and technical products in FinTech and SaaS
+            sectors. I specialize in leading global Agile teams and integrating AI-driven tools to
+            innovate and accelerate product delivery.
+          </motion.p>
+          <motion.p
+            initial={{opacity:0}}
+            whileInView={{opacity:1}}
+            viewport={{once:true}}
+            transition={{delay:0.3}}
+            className="text-gray-400 font-mono mt-4 text-lg leading-relaxed"
+          >
+            Passionate about leveraging AI for product innovation, I focus on scalable solutions,
+            backend and frontend integration, and cross-functional collaboration across multiple
+            regions.
+          </motion.p>
+        </section>
+      );
+    }
+
+    // Experience timeline with animation
+    function Experience() {
+      const jobs = [
+        {
+          role: "Senior Product Manager",
+          company: "Bajaj FinServ Direct Limited",
+          location: "Pune, India",
+          period: "Aug 2021 – Present",
+          details: [
+            "Led Agile delivery across 4+ cross-regional teams, improving feature delivery velocity by 25%.",
+            "Delivered Elastic and ELK-based backend solutions reducing issue resolution by 35%.",
+            "Managed multi-cloud deployment with 99.95% uptime.",
+            "Co-designed AI chatbot 'Master BOT' with 92% success rate resolving employee queries.",
+            "Drove roadmap across 3 continents reducing time-to-market by 20%.",
+          ],
+        },
+        {
+          role: "Senior Product Manager",
+          company: "Siroi Solution Sdn Bhd",
+          location: "Kuala Lumpur, Malaysia",
+          period: "Dec 2018 – Aug 2021",
+          details: [
+            "Delivered UI and backend for 3+ cross-border fintech platforms.",
+            "Reduced cycle time by 30% with AI-enabled documentation workflows.",
+            "Implemented ELK stack observability, reducing MTTR by 45%.",
+            "Integrated 10+ ETL pipelines with banking APIs supporting 99.9% uptime SLA.",
+            "Enhanced Magento platform supporting 5X traffic with AI personalization experiments.",
+          ],
+        },
+        {
+          role: "Product Manager",
+          company: "Alepo Technologies Inc.",
+          location: "Austin, Texas (Remote)",
+          period: "Nov 2017 – Dec 2018",
+          details: [
+            "Supported telecom & digital infrastructure products delivery for 5+ enterprise clients.",
+            "Reduced backend incident recurrence by 35% using ELK stack and SQL analytics.",
+            "Led backlog grooming and UAT planning, shortening release timelines by 20%.",
+          ],
+        },
+        {
+          role: "Product Analyst",
+          company: "Sea core Financial Pvt Ltd",
+          location: "Delhi, India",
+          period: "Apr 2015 – Jul 2016",
+          details: [
+            "Performed financial data mapping and structured outputs using Excel and custom data maps.",
+          ],
+        },
+      ];
+
+      return (
+        <section id="experience" className="max-w-5xl mx-auto px-6 py-20">
+          <h2 className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon">
+            Experience
+          </h2>
+          <div className="relative border-l border-neon ml-4 pl-6 space-y-12">
+            {jobs.map(({ role, company, location, period, details }, idx) => (
+              <motion.div
+                key={idx}
+                initial={{opacity: 0, x: -50}}
+                whileInView={{opacity:1, x:0}}
+                viewport={{once:true}}
+                transition={{duration:0.5, delay: idx * 0.2}}
+                className="relative"
+              >
+                <span className="absolute -left-7 top-0 w-5 h-5 bg-neon rounded-full border-2 border-bg-dark"></span>
+                <h3 className="text-xl font-semibold font-mono text-neon">{role}</h3>
+                <p className="italic text-gray-400 text-sm mb-1">{company} — {location}</p>
+                <p className="text-gray-500 text-sm mb-2">{period}</p>
+                <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
+                  {details.map((d,i) => (
+                    <li key={i}>{d}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    // Education timeline
+    function Education() {
+      const schools = [
+        {
+          degree: "MBA – Information Technology",
+          institution: "Symbiosis International University, Pune, Maharashtra, India",
+          period: "Oct 2016 – Apr 2018",
+        },
+        {
+          degree: "Bachelor of Technology – Computer Science",
+          institution: "Uttarakhand Technical University, Nainital, Uttarakhand, India",
+          period: "Apr 2011 – Mar 2015",
+        },
+      ];
+
+      return (
+        <section id="education" className="max-w-4xl mx-auto px-6 py-20">
+          <h2 className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon">
+            Education
+          </h2>
+          <div className="relative border-l border-neon ml-4 pl-6 space-y-10">
+            {schools.map(({ degree, institution, period }, idx) => (
+              <motion.div
+                key={idx}
+                initial={{opacity: 0, x: 50}}
+                whileInView={{opacity:1, x:0}}
+                viewport={{once:true}}
+                transition={{duration:0.5, delay: idx * 0.3}}
+                className="relative"
+              >
+                <span className="absolute -left-7 top-0 w-5 h-5 bg-neon rounded-full border-2 border-bg-dark"></span>
+                <h3 className="text-xl font-semibold font-mono text-neon">{degree}</h3>
+                <p className="italic text-gray-400 text-sm">{institution}</p>
+                <p className="text-gray-500 text-sm">{period}</p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    // Skills & Tools grid
+    function Skills() {
+      const skills = [
+        "Agile Delivery (Scrum, Kanban, SAFe)",
+        "Global Sprint Management",
+        "PLM",
+        "Stakeholder Communication (India, US, EMEA, APAC)",
+        "Backend Architecture",
+        "SQL",
+        "API Testing",
+        "UAT",
+        "ETL Pipelines",
+        "AEM",
+        "Adobe Commerce (Magento)",
+        "Elastic Stack",
+        "ELK",
+        "ELB Deployment",
+      ];
+
+      const tools = [
+        { name: "Jira", icon: "🗂️" },
+        { name: "Confluence", icon: "📚" },
+        { name: "Trello", icon: "📝" },
+        { name: "Postman", icon: "📬" },
+        { name: "Figma", icon: "🎨" },
+        { name: "Jenkins", icon: "🛠️" },
+        { name: "Git", icon: "🐙" },
+        { name: "Power BI", icon: "📊" },
+      ];
+
+      return (
+        <section id="skills" className="max-w-5xl mx-auto px-6 py-20">
+          <h2 className="text-4xl font-mono font-bold mb-10 border-l-4 border-neon pl-3 text-neon">Skills & Tools</h2>
+          <div className="mb-12">
+            <h3 className="text-xl font-semibold font-mono text-neon mb-4">Skills</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-gray-300 font-mono">
+              {skills.map((skill, i) => (
+                <li
+                  key={i}
+                  className="p-3 border border-neon rounded-md hover:shadow-[0_0_10px_var(--neon)] cursor-default"
+                  title={skill}
+                >
+                  {skill}
+                </li>
               ))}
             </ul>
-          </motion.div>
-        ))}
-      </div>
-    </section>
-  );
-}
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold font-mono text-neon mb-4">Tools</h3>
+            <div className="grid grid-cols-4 sm:grid-cols-8 gap-6 justify-center text-4xl text-neon">
+              {tools.map(({ name, icon }, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center cursor-default hover:scale-110 transition-transform select-none"
+                  title={name}
+                >
+                  <span>{icon}</span>
+                  <small className="mt-1 text-xs text-gray-400">{name}</small>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
 
-function Education() {
-  const education = [
-    {
-      degree: "MBA – Information Technology",
-      school: "Symbiosis International University",
-      location: "Pune, Maharashtra, India",
-      period: "Oct 2016 – Apr 2018",
-    },
-    {
-      degree: "Bachelor of Technology – Computer Science",
-      school: "Uttarakhand Technical University",
-      location: "Nainital, Uttarakhand, India",
-      period: "Apr 2011 – Mar 2015",
-    },
-  ];
-  return (
-    <section id="education" className="max-w-5xl mx-auto px-6 py-20 bg-bgdark2 rounded-lg shadow-lg select-text">
-      <motion.h2
-        initial={{opacity:0, x:-30}}
-        whileInView={{opacity:1, x:0}}
-        viewport={{once:true}}
-        className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon"
-      >
-        Education
-      </motion.h2>
-      <div className="space-y-10 border-l-2 border-neon ml-4 relative">
-        {education.map(({degree, school, location, period}, i) => (
-          <motion.div
-            key={i}
-            initial={{opacity:0, x:50}}
-            whileInView={{opacity:1, x:0}}
-            viewport={{once:true}}
-            transition={{delay: i * 0.1}}
-            className="pl-8 relative"
+    // Projects section
+    function Projects() {
+      const projects = [
+        {
+          title: "AI Chatbot (Master BOT)",
+          description: "Internal AI chatbot with 50+ intents achieving 92% success rate in query resolution.",
+          tech: ["React", "AI", "Node.js"],
+          github: "https://github.com/shivamaggarwal/ai-chatbot",
+          demo: "#",
+          image: null,
+        },
+        {
+          title: "Elastic & ELK Backend Solutions",
+          description: "Implemented ELK stack observability to reduce issue resolution by 35%.",
+          tech: ["Elastic Stack", "Node.js", "Kibana"],
+          github: "#",
+          demo: "#",
+          image: null,
+        },
+        {
+          title: "Magento AI Personalisation",
+          description: "A/B experiments on Magento platform using generative AI for 22% engagement uplift.",
+          tech: ["Magento", "AI", "AEM"],
+          github: "#",
+          demo: "#",
+          image: null,
+        },
+      ];
+
+      return (
+        <section id="projects" className="max-w-6xl mx-auto px-6 py-20">
+          <h2 className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {projects.map(({title, description, tech, github, demo}, idx) => (
+              <motion.div
+                key={idx}
+                initial={{opacity:0, y:30}}
+                whileInView={{opacity:1, y:0}}
+                viewport={{once:true}}
+                transition={{delay: idx * 0.3, duration: 0.6}}
+                className="bg-bg-dark2 p-6 rounded-lg border border-neon shadow-lg hover:shadow-neon transition cursor-default"
+              >
+                <h3 className="text-xl font-mono font-semibold mb-3 text-neon">{title}</h3>
+                <p className="text-gray-300 mb-4">{description}</p>
+                <div className="mb-4">
+                  {tech.map((t,i) => (
+                    <span
+                      key={i}
+                      className="inline-block text-xs border border-neon rounded px-2 py-1 mr-2 font-mono"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex space-x-4">
+                  {github && (
+                    <a
+                      href={github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-neon hover:underline"
+                    >
+                      GitHub
+                    </a>
+                  )}
+                  {demo && demo !== "#" && (
+                    <a
+                      href={demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-neon hover:underline"
+                    >
+                      Demo
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    // Certifications
+    function Certifications() {
+      const certs = [
+        {
+          title: "AWS Certified Cloud Practitioner",
+          issuer: "Amazon Web Services",
+          date: "Issued Jan 2024",
+          link: "https://aws.amazon.com/certification/certified-cloud-practitioner/",
+        },
+        {
+          title: "Certified ScrumMaster (CSM)",
+          issuer: "Scrum Alliance",
+          date: "Issued May 2023",
+          link: "https://www.scrumalliance.org/certifications/practitioners/certified-scrummaster-csm",
+        },
+      ];
+
+      return (
+        <section id="certifications" className="max-w-4xl mx-auto px-6 py-20">
+          <h2 className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon">Certifications</h2>
+          <ul className="list-disc list-inside text-gray-300 font-mono space-y-4">
+            {certs.map(({title, issuer, date, link}, i) => (
+              <li key={i}>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-neon hover:underline"
+                >
+                  {title}
+                </a> — <em>{issuer}</em>, <small>{date}</small>
+              </li>
+            ))}
+          </ul>
+        </section>
+      );
+    }
+
+    // Contact section
+    function Contact() {
+      return (
+        <section
+          id="contact"
+          className="max-w-4xl mx-auto px-6 py-20 text-center"
+          aria-label="Contact information"
+        >
+          <h2 className="text-4xl font-mono font-bold mb-8 border-l-4 border-neon pl-3 text-neon inline-block">
+            Contact
+          </h2>
+          <p className="text-gray-300 mb-4 font-mono text-lg">
+            Feel free to reach out via email or LinkedIn.
+          </p>
+          <a
+            href="mailto:shivam@example.com"
+            className="inline-block bg-neon px-6 py-3 rounded font-semibold hover:bg-neon-hover transition mb-4"
           >
-            <div className="absolute -left-5 top-2 w-4 h-4 rounded-full bg-neon border-2 border-bgdark2" />
-            <h3 className="text-xl font-semibold font-mono text-neon">{degree}</h3>
-            <p className="text-sm text-gray-400 font-mono">{school} — {location}</p>
-            <p className="text-xs text-gray-500 font-mono italic">{period}</p>
-          </motion.div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-function Skills() {
-  const skillSet = [
-    "Agile & Scrum",
-    "Product Roadmapping",
-    "JIRA & Confluence",
-    "AI/ML Integration",
-    "Elastic Stack (ELK)",
-    "Backend & API Design",
-    "UAT & QA Testing",
-    "Cloud Deployments (AWS/ELB)",
-    "Magento & E-Commerce",
-    "SQL & Data Analytics",
-  ];
-  return (
-    <section id="skills" className="max-w-5xl mx-auto px-6 py-20 select-text">
-      <motion.h2
-        initial={{opacity:0, x:-30}}
-        whileInView={{opacity:1, x:0}}
-        viewport={{once:true}}
-        className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon"
-      >
-        Skills
-      </motion.h2>
-      <motion.ul
-        initial={{opacity:0}}
-        whileInView={{opacity:1}}
-        viewport={{once:true}}
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 font-mono text-gray-300"
-      >
-        {skillSet.map((skill, i) => (
-          <li
-            key={i}
-            className="px-4 py-2 border border-neon rounded-md hover:bg-neon hover:text-bgdark cursor-default select-none transition"
-          >
-            {skill}
-          </li>
-        ))}
-      </motion.ul>
-    </section>
-  );
-}
-
-function Projects() {
-  // Dummy placeholders; replace or expand as needed
-  const projects = [
-    {
-      name: "AI Chatbot Master BOT",
-      desc: "Co-designed an internal AI chatbot to improve support efficiency and reduce resolution time.",
-      url: "#",
-    },
-    {
-      name: "Elastic Backend Observability",
-      desc: "Delivered ELK stack integrations improving system monitoring and issue resolution by 35%.",
-      url: "#",
-    },
-    {
-      name: "Magento Platform Enhancement",
-      desc: "Enhanced Magento platforms for 5X traffic and implemented AI personalization experiments.",
-      url: "#",
-    },
-  ];
-  return (
-    <section id="projects" className="max-w-5xl mx-auto px-6 py-20 select-text">
-      <motion.h2
-        initial={{opacity:0, x:-30}}
-        whileInView={{opacity:1, x:0}}
-        viewport={{once:true}}
-        className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon"
-      >
-        Projects
-      </motion.h2>
-      <div className="grid md:grid-cols-3 gap-8">
-        {projects.map(({name, desc, url}, i) => (
-          <motion.a
-            key={i}
-            href={url}
+            Email Me
+          </a>
+          <br />
+          <a
+            href="https://www.linkedin.com/in/shivamaggarwal/"
             target="_blank"
             rel="noreferrer"
-            initial={{opacity:0, y:30}}
-            whileInView={{opacity:1, y:0}}
-            viewport={{once:true}}
-            transition={{delay: i * 0.1}}
-            className="block p-6 border border-neon rounded-lg hover:bg-neon hover:text-bgdark transition"
+            className="text-neon hover:underline font-mono text-lg"
           >
-            <h3 className="font-mono font-semibold text-lg mb-2">{name}</h3>
-            <p className="text-gray-300">{desc}</p>
-          </motion.a>
-        ))}
-      </div>
-    </section>
-  );
-}
+            LinkedIn Profile
+          </a>
+        </section>
+      );
+    }
 
-function Certifications() {
-  // Certification data
-  const certs = [
-    {
-      title: "Certified Scrum Master",
-      issuer: "Scrum Alliance",
-      year: "2022",
-    },
-    {
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      year: "2021",
-    },
-    {
-      title: "Google Cloud Certified - Professional Data Engineer",
-      issuer: "Google",
-      year: "2023",
-    },
-    {
-      title: "AI & ML Specialization",
-      issuer: "Coursera",
-      year: "2020",
-    },
-  ];
+    // Main app combining all sections
+    function App() {
+      return (
+        <>
+          <Navbar />
+          <main className="pt-20">
+            <Hero />
+            <About />
+            <Experience />
+            <Education />
+            <Skills />
+            <Projects />
+            <Certifications />
+            <Contact />
+          </main>
+        </>
+      );
+    }
 
-  // React Slick in React (using jQuery version in this standalone is tricky)
-  // We'll do a simple manual slider here without React Slick to keep simple & standalone
-
-  const [index, setIndex] = React.useState(0);
-  const next = () => setIndex((index + 1) % certs.length);
-  const prev = () => setIndex((index - 1 + certs.length) % certs.length);
-
-  return (
-    <section id="certifications" className="max-w-3xl mx-auto px-6 py-20 bg-bgdark2 rounded-lg shadow-lg select-text relative">
-      <h2 className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon">
-        Certifications
-      </h2>
-
-      <div className="relative">
-        <motion.div
-          key={index}
-          initial={{opacity:0, x:50}}
-          animate={{opacity:1, x:0}}
-          exit={{opacity:0, x:-50}}
-          transition={{duration:0.5}}
-          className="p-8 border border-neon rounded-lg text-center select-text"
-        >
-          <h3 className="text-2xl font-semibold font-mono text-neon mb-2">{certs[index].title}</h3>
-          <p className="text-gray-400 italic">{certs[index].issuer}</p>
-          <p className="text-gray-500 mt-1">{certs[index].year}</p>
-        </motion.div>
-        <button
-          onClick={prev}
-          aria-label="Previous Certification"
-          className="absolute top-1/2 left-0 -translate-y-1/2 text-neon hover:text-neon-dark px-4 text-3xl select-none"
-        >
-          ‹
-        </button>
-        <button
-          onClick={next}
-          aria-label="Next Certification"
-          className="absolute top-1/2 right-0 -translate-y-1/2 text-neon hover:text-neon-dark px-4 text-3xl select-none"
-        >
-          ›
-        </button>
-      </div>
-    </section>
-  );
-}
-
-function Contact() {
-  return (
-    <section id="contact" className="max-w-3xl mx-auto px-6 py-20 text-center select-text">
-      <motion.h2
-        initial={{opacity:0, x:-30}}
-        whileInView={{opacity:1, x:0}}
-        viewport={{once:true}}
-        className="text-4xl font-mono font-bold mb-12 border-l-4 border-neon pl-3 text-neon"
-      >
-        Contact Me
-      </motion.h2>
-      <p className="mb-6 text-lg font-mono max-w-xl mx-auto text-graysoft">
-        Feel free to reach out for collaborations, product discussions, or just to say hi.
-      </p>
-      <a
-        href="mailto:shivamaggarwal@gmail.com"
-        className="inline-block px-8 py-4 border border-neon rounded-lg font-mono font-semibold hover:bg-neon hover:text-bgdark transition"
-      >
-        Email Me
-      </a>
-      <div className="mt-8 flex justify-center gap-6 text-neon text-3xl select-none">
-        <a href="https://github.com/shivamaggarwal" target="_blank" rel="noreferrer" aria-label="GitHub Profile">🐱</a>
-        <a href="https://linkedin.com/in/shivamaggarwal" target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">🔗</a>
-        <a href="https://twitter.com/shivamaggarwal" target="_blank" rel="noreferrer" aria-label="Twitter Profile">🐦</a>
-      </div>
-    </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="bg-bgdark2 py-8 mt-16 text-center text-gray-500 font-mono text-sm select-none">
-      © 2025 Shivam Aggarwal. All rights reserved.
-    </footer>
-  );
-}
-
-function App() {
-  return (
-    <>
-      <Navbar />
-      <main className="pt-16">
-        <Hero />
-        <About />
-        <Experience />
-        <Education />
-        <Skills />
-        <Projects />
-        <Certifications />
-        <Contact />
-        <Footer />
-      </main>
-    </>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
-</script>
+    // Render React 18 app to #root
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
 </body>
 </html>
