@@ -1,523 +1,655 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shivam Aggarwal | AI Product Strategist</title>
+  <title>Shivam Aggarwal | Portfolio</title>
 
-  <!-- AOS CSS -->
+  <!-- AOS Animation CSS -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
   <style>
-    /* Reset + base */
+    /* --- Reset & base --- */
     * {
       box-sizing: border-box;
-    }
-    body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d1117;
-      color: #c9d1d9;
-      line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
+      padding: 0;
+      scroll-behavior: smooth;
     }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff9e6;
+      color: #5a4d00;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
     a {
-      color: #58a6ff;
+      color: #f6b93b;
       text-decoration: none;
       transition: color 0.3s;
     }
+
     a:hover {
-      text-decoration: underline;
-      color: #1f6feb;
+      color: #f39c12;
     }
 
-    /* Light theme */
-    body.light {
-      background-color: #f6f8fa;
-      color: #24292f;
-    }
-    body.light a {
-      color: #0366d6;
-    }
-    body.light a:hover {
-      color: #0356b6;
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #f39c12;
+      text-shadow: 1px 1px 2px #d9b300;
     }
 
-    header {
-      background: #161b22;
-      padding: 2rem 1rem;
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2.25rem;
+      margin-top: 40px;
+      border-bottom: 3px solid #f6b93b;
+      padding-bottom: 8px;
+      max-width: max-content;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    /* --- Container --- */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 30px;
+    }
+
+    /* --- Banner / Hero --- */
+    #hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 90vh;
+      background: linear-gradient(135deg, #fff6d1 30%, #f6b93b 100%);
       text-align: center;
+      padding: 0 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 24px rgb(246 185 59 / 0.3);
+      margin-bottom: 40px;
+    }
+
+    #hero h1 {
+      font-size: 4rem;
+      margin-bottom: 15px;
+    }
+
+    #hero p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      max-width: 700px;
+      margin: auto;
+      color: #6b5e00;
+      text-shadow: 0 0 4px #f6b93b90;
+    }
+
+    #hero .btn-download {
+      background: #f6b93b;
+      border: none;
+      padding: 14px 40px;
+      font-weight: 600;
+      border-radius: 30px;
+      margin-top: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px #f6b93b90;
+      transition: background-color 0.3s ease;
+      color: #5a4d00;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    #hero .btn-download:hover {
+      background: #f39c12;
+      color: #fff;
+      box-shadow: 0 8px 18px #f39c12cc;
+    }
+
+    /* --- Navigation --- */
+    nav {
+      background: #f6b93b;
+      padding: 12px 0;
       position: sticky;
       top: 0;
-      z-index: 10;
-      border-bottom: 1px solid #30363d;
-    }
-    body.light header {
-      background: #e1e4e8;
-      border-bottom: 1px solid #d1d5da;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.2rem;
-    }
-    .tagline {
-      font-style: italic;
-      color: #58a6ff;
-      margin-bottom: 1rem;
-    }
-    body.light .tagline {
-      color: #0366d6;
-    }
-    nav a {
-      margin: 0 1rem;
-      font-weight: 600;
-      color: #8b949e;
-    }
-    body.light nav a {
-      color: #57606a;
-    }
-    nav a:hover {
-      color: #58a6ff;
-    }
-    body.light nav a:hover {
-      color: #0366d6;
-    }
-    nav {
-      margin-bottom: 0.5rem;
-    }
-    button#toggle-theme {
-      background: transparent;
-      border: 2px solid #58a6ff;
-      color: #58a6ff;
-      padding: 0.3rem 0.8rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s;
-      margin-left: 0.5rem;
-    }
-    button#toggle-theme:hover {
-      background: #58a6ff;
-      color: #0d1117;
-    }
-    body.light button#toggle-theme {
-      border-color: #0366d6;
-      color: #0366d6;
-    }
-    body.light button#toggle-theme:hover {
-      background: #0366d6;
-      color: white;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgb(246 185 59 / 0.6);
+      border-radius: 0 0 10px 10px;
     }
 
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav li {
+      margin: 0 20px;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: #f39c12;
+      box-shadow: 0 5px 15px #f39c12cc;
+    }
+
+    /* --- Sections --- */
     section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      padding: 40px 0;
     }
-    h2 {
-      border-bottom: 2px solid #30363d;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-      color: #f0f6fc;
-    }
-    body.light h2 {
-      border-color: #d1d5da;
-      color: #24292f;
-    }
+
+    /* --- Cards --- */
     .card {
-      background: #161b22;
-      border-radius: 10px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.5);
-      transition: background 0.3s;
+      background: #fff4d1;
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgb(246 185 59 / 0.3);
+      transition: transform 0.3s ease;
     }
-    body.light .card {
-      background: #fff;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgb(246 185 59 / 0.5);
     }
-    ul {
-      padding-left: 1.3rem;
+
+    /* --- Experience Timeline --- */
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+      padding-left: 30px;
     }
-    ul li {
-      margin-bottom: 0.4rem;
+
+    /* The vertical line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #f6b93b;
+      border-radius: 5px;
     }
-    footer {
-      background: #161b22;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #8b949e;
-      margin-top: 3rem;
-      border-top: 1px solid #30363d;
+
+    /* Timeline item */
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      padding-left: 40px;
     }
-    body.light footer {
-      background: #e1e4e8;
-      color: #57606a;
-      border-top: 1px solid #d1d5da;
+
+    /* Timeline dot */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 9px;
+      background: #f39c12;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      top: 3px;
+      box-shadow: 0 0 12px #f39c12aa;
+      transition: background-color 0.3s ease;
     }
-    /* Skills */
-    #skills p {
+
+    /* Timeline content */
+    .timeline-item h3 {
+      margin-bottom: 6px;
+      font-size: 1.3rem;
+      color: #ad6e00;
+    }
+
+    .timeline-item p {
+      font-size: 1rem;
+      color: #6b5e00;
+    }
+
+    /* --- Skills --- */
+    .skills-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 15px;
     }
-    #skills span.skill {
-      background: #30363d;
-      padding: 0.3rem 0.6rem;
-      border-radius: 5px;
+
+    .skill-badge {
+      background: #f6b93b;
+      color: #5a4d00;
       font-weight: 600;
-      font-size: 0.9rem;
-      color: #58a6ff;
+      padding: 8px 16px;
+      border-radius: 30px;
+      box-shadow: 0 3px 8px #f6b93b99;
+      transition: background 0.3s ease;
       cursor: default;
-      transition: background-color 0.3s;
-    }
-    body.light #skills span.skill {
-      background: #d1d5da;
-      color: #0366d6;
-    }
-    #skills span.skill:hover {
-      background: #58a6ff;
-      color: #0d1117;
-    }
-    body.light #skills span.skill:hover {
-      background: #0366d6;
-      color: white;
+      user-select: none;
+      font-size: 0.95rem;
     }
 
-    /* Projects filtering */
-    #project-filters {
+    .skill-badge:hover {
+      background: #f39c12;
+      color: #fff;
+      box-shadow: 0 6px 15px #f39c12cc;
+    }
+
+    /* --- Certifications with badges --- */
+    .certifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .cert-badge {
+      background: #fff4d1;
+      box-shadow: 0 5px 15px #f6b93b44;
+      border-radius: 14px;
+      padding: 18px 25px;
+      width: 230px;
       text-align: center;
-      margin-bottom: 1rem;
-    }
-    #project-filters button {
-      background: #21262d;
-      border: none;
-      color: #58a6ff;
-      padding: 0.5rem 1rem;
-      margin: 0 0.3rem;
-      border-radius: 8px;
-      cursor: pointer;
+      color: #ad6e00;
       font-weight: 600;
-      transition: background-color 0.3s;
-    }
-    #project-filters button.active,
-    #project-filters button:hover {
-      background: #58a6ff;
-      color: #0d1117;
-    }
-    body.light #project-filters button {
-      background: #e1e4e8;
-      color: #0366d6;
-    }
-    body.light #project-filters button.active,
-    body.light #project-filters button:hover {
-      background: #0366d6;
-      color: white;
+      position: relative;
+      transition: transform 0.3s ease;
+      cursor: default;
     }
 
-    #projects .card {
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    #projects .card:hover {
-      transform: scale(1.05);
+    .cert-badge:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px #f39c1299;
     }
 
-    /* GitHub activity graph */
-    #github-activity {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background: #161b22;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.5);
-    }
-    body.light #github-activity {
-      background: #fff;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
-      color: #24292f;
-    }
-    #github-activity h2 {
-      margin-top: 0;
-    }
-    #contrib-graph {
-      overflow-x: auto;
-      padding: 0.5rem 0;
-    }
-    #contrib-graph img {
-      width: 100%;
-      max-width: 900px;
+    .cert-badge svg {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 12px;
+      fill: #f39c12;
+      filter: drop-shadow(0 0 1px #ad6e00);
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      nav a {
-        display: inline-block;
-        margin: 0.3rem 0.5rem;
-      }
-      #skills p {
-        justify-content: center;
-      }
+    /* --- Projects with filtering --- */
+    #project-filters {
+      margin-bottom: 25px;
+      text-align: center;
     }
 
-    /* Download resume button */
-    #download-resume {
-      background: #238636;
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
+    .filter-btn {
+      background: #fff4d1;
+      border: 2px solid #f6b93b;
+      color: #ad6e00;
+      padding: 8px 20px;
       font-weight: 600;
-      border: none;
+      border-radius: 30px;
       cursor: pointer;
-      transition: background-color 0.3s;
-      margin-top: 0.5rem;
+      margin: 5px 8px;
+      transition: all 0.3s ease;
       display: inline-block;
+      user-select: none;
     }
-    #download-resume:hover {
-      background: #2ea043;
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #f6b93b;
+      color: #fff;
+      box-shadow: 0 6px 20px #f6b93bcc;
+      border-color: #f39c12;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .project-item {
+      background: #fff4d1;
+      border-radius: 12px;
+      padding: 20px 25px;
+      box-shadow: 0 5px 15px rgb(246 185 59 / 0.3);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      color: #5a4d00;
+    }
+
+    .project-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgb(246 185 59 / 0.6);
+      background: #f6b93b;
+      color: #fff;
+    }
+
+    .project-item h4 {
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .project-item p {
+      font-weight: 500;
+    }
+
+    /* --- GitHub Activity --- */
+    #contrib-graph {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff4d1;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgb(246 185 59 / 0.3);
+    }
+
+    /* --- Footer --- */
+    footer {
+      background: #f6b93b;
+      color: #5a4d00;
+      text-align: center;
+      padding: 15px 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      font-weight: 600;
+      box-shadow: 0 -4px 8px #f6b93bbb;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      #hero h1 {
+        font-size: 2.8rem;
+      }
+
+      #hero p {
+        font-size: 1.1rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+      }
+
+      nav li {
+        margin: 10px 15px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>👋 Hi, I'm Shivam Aggarwal</h1>
-    <p class="tagline">Senior Product Delivery Manager • AI Strategy • Global FinTech & SaaS</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#projects">Projects</a>
-      <a href="#github-activity">GitHub</a>
-      <a href="#contact">Contact</a>
-      <button id="toggle-theme" aria-label="Toggle Dark/Light Theme">Light Mode</button>
-    </nav>
-  </header>
-
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>
-      I’m a Senior Product Delivery Manager with 7+ years of experience delivering high-impact digital products in FinTech & SaaS. I bring cross-continental experience (US, Europe, APAC) in building human-centric, AI-enhanced platforms. I specialize in agile delivery, AI product strategy, and system observability.
-    </p>
-  </section>
-
-  <section id="experience" data-aos="fade-up">
-    <h2>Experience</h2>
-    <div class="card">
-      <h3>Bajaj FinServ Direct Ltd</h3>
-      <p><strong>Senior Product Manager</strong> (Aug 2021 – Present)</p>
-      <ul>
-        <li>Improved feature velocity by 25% through Agile sprint ownership</li>
-        <li>Launched AI chatbot with 92% resolution rate</li>
-        <li>ETL pipelines processing 10M+ data points monthly</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Siroi Solution Sdn Bhd, Malaysia</h3>
-      <p><strong>Senior Product Manager</strong> (Dec 2018 – Aug 2021)</p>
-      <ul>
-        <li>Managed Open Banking API products across APAC</li>
-        <li>Reduced MTTR by 45% via ELK implementation</li>
-        <li>Improved go-live success rate to 95%</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Alepo Technologies (Remote)</h3>
-      <p><strong>Product Manager</strong> (Nov 2017 – Dec 2018)</p>
-    </div>
-    <div class="card">
-      <h3>Sea core Financial Pvt Ltd</h3>
-      <p><strong>Product Analyst</strong> (Apr 2015 – Jul 2016)</p>
-    </div>
-  </section>
-
-  <section id="education" data-aos="fade-up">
-    <h2>Education</h2>
+  <!-- Navigation -->
+  <nav>
     <ul>
-      <li><strong>MBA – Information Technology</strong>, Symbiosis International Univ, Pune (2018)</li>
-      <li><strong>B.Tech – Computer Science</strong>, UTU, Nainital (2015)</li>
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#github-activity">GitHub</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+  </nav>
+
+  <!-- Hero / Banner -->
+  <section id="hero" data-aos="fade-down" data-aos-duration="1200">
+    <h1>Hi, I’m Shivam Aggarwal</h1>
+    <p>Senior Product Delivery Manager | AI-Driven Product Strategy | Global FinTech & SaaS Expert</p>
+    <a href="https://shivam-aggarwal-git.github.io/resume/ShivamAggarwal_Resume.pdf" download
+      class="btn-download" aria-label="Download Resume">Download Resume</a>
   </section>
 
-  <section id="skills" data-aos="fade-up">
-    <h2>Skills & Tools</h2>
-    <p>
-      <span class="skill">Agile</span>
-      <span class="skill">Scrum</span>
-      <span class="skill">SAFe</span>
-      <span class="skill">SQL</span>
-      <span class="skill">AEM</span>
-      <span class="skill">Adobe Commerce</span>
-      <span class="skill">APIs</span>
-      <span class="skill">ETL</span>
-      <span class="skill">ELK</span>
-      <span class="skill">Azure</span>
-      <span class="skill">Power BI</span>
-      <span class="skill">Figma</span>
-      <span class="skill">Git</span>
-      <span class="skill">Jenkins</span>
-      <span class="skill">ChatGPT</span>
-      <span class="skill">Notion AI</span>
-    </p>
-  </section>
+  <div class="container">
+    <!-- About Me -->
+    <section id="about" data-aos="fade-up" data-aos-duration="1200">
+      <h2>About Me</h2>
+      <p>
+        Experienced Senior Product Delivery Manager with 7+ years delivering high-impact digital and technical
+        products in FinTech and SaaS sectors. Skilled in leading global cross-functional Agile teams, driving end-to-end
+        product development, and integrating AI-driven innovations for enhanced customer experiences.
+      </p>
+      <p>
+        Passionate about AI tools like ChatGPT, Midjourney, and Notion AI to accelerate prototyping and product strategy.
+        Strong advocate for ethical AI and human-centric technology.
+      </p>
+      <p>Location: Pune, Maharashtra, India</p>
+      <p>
+        Contact: <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a> | Phone: +91 98732
+        16989
+      </p>
+      <p>
+        LinkedIn: <a href="https://linkedin.com/in/shivam-aggarwal" target="_blank" rel="noopener noreferrer">linkedin.com/in/shivam-aggarwal</a>
+        |
+        GitHub: <a href="https://github.com/shivam-aggarwal-git" target="_blank" rel="noopener noreferrer">github.com/shivam-aggarwal-git</a>
+      </p>
+    </section>
 
-  <section id="certifications" data-aos="fade-up">
-    <h2>Certifications</h2>
-    <ul>
-      <li>Certified Scrum Product Owner (CSPO)</li>
-      <li>PMI Agile Product Owner</li>
-      <li>Oracle OCI Architect Professional</li>
-      <li>Azure DevOps Foundation</li>
-      <li>Google Gen AI Fundamentals</li>
-      <li>IBM Machine Learning Essentials</li>
-      <li>Tableau Certified Analyst</li>
-      <li>Oracle Certified Business Analysis Expert</li>
-    </ul>
-  </section>
+    <!-- Experience Timeline -->
+    <section id="experience" data-aos="fade-up" data-aos-duration="1200">
+      <h2>Experience</h2>
+      <div class="timeline">
 
-  <section id="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-    <div id="project-filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="AI">AI</button>
-      <button class="filter-btn" data-filter="FinTech">FinTech</button>
-      <button class="filter-btn" data-filter="SaaS">SaaS</button>
-      <button class="filter-btn" data-filter="OpenBanking">Open Banking</button>
-      <button class="filter-btn" data-filter="Chatbot">Chatbot</button>
-    </div>
-    <div id="project-list">
-      <div class="card project-item" data-category="AI Chatbot SaaS">
-        <h3>Internal AI Chatbot (Master BOT)</h3>
-        <p>Co-designed and launched a chatbot with 50+ intents, achieving 92% success rate in employee query resolution.</p>
-      </div>
-      <div class="card project-item" data-category="FinTech OpenBanking SaaS">
-        <h3>Cross-border FinTech Platform</h3>
-        <p>Delivered modular Open Banking compliant fintech platforms across APAC with 40% faster feature rollouts.</p>
-      </div>
-      <div class="card project-item" data-category="AI Personalization SaaS AdobeCommerce">
-        <h3>AI-driven Personalization in Adobe Commerce</h3>
-        <p>Spearheaded AI personalization trials increasing customer engagement metrics by 30%.</p>
-      </div>
-      <div class="card project-item" data-category="ELK Monitoring SaaS">
-        <h3>Full-stack Observability with ELK Stack</h3>
-        <p>Implemented ELK-based observability solutions reducing incident resolution time by 35-45% across platforms.</p>
-      </div>
-      <div class="card project-item" data-category="Chatbot AI">
-        <h3>AI-enabled UAT Automation Framework</h3>
-        <p>Reduced defect leakage via NLP-based interface testing and AI-informed validation.</p>
-      </div>
-    </div>
-  </section>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+          <h3>Senior Product Manager</h3>
+          <h4>Bajaj FinServ Direct Limited, Pune, India</h4>
+          <small>Aug 2021 – Present</small>
+          <p>Led Agile delivery with 4+ cross-regional teams, improving feature velocity by 25%.</p>
+          <p>Implemented Elastic/ELK backend solutions, reducing issue resolution by 35%.</p>
+          <p>Designed an AI chatbot with 92% success rate, boosting support efficiency.</p>
+          <p>Collaborated globally, reducing time-to-market by 20% using AI sentiment analytics.</p>
+        </div>
 
-  <section id="github-activity" data-aos="fade-up">
-    <h2>GitHub Activity</h2>
-    <p>Live contribution graph from my GitHub profile:</p>
-    <div id="contrib-graph">
-      <!-- Will load SVG from GitHub -->
-      <p>Loading GitHub activity graph...</p>
-    </div>
-  </section>
+        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+          <h3>Senior Product Manager</h3>
+          <h4>Siroi Solution Sdn Bhd, Kuala Lumpur, Malaysia</h4>
+          <small>Dec 2018 – Aug 2021</small>
+          <p>Managed end-to-end product delivery for APAC fintech platforms, speeding feature rollout by 40%.</p>
+          <p>Enhanced observability reducing MTTR by 45% using ELK stack and predictive analytics.</p>
+          <p>Supported 99.9% uptime SLAs with secure ETL pipelines integration.</p>
+          <p>Drove AI-enabled documentation workflows improving stakeholder visibility.</p>
+        </div>
 
-  <section id="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a></p>
-    <p>📍 Pune, Maharashtra, India</p>
-    <p>
-      <a href="https://linkedin.com/in/shivam-aggarwal" target="_blank" rel="noopener">LinkedIn</a> •
-      <a href="https://github.com/shivam-aggarwal-git" target="_blank" rel="noopener">GitHub</a> •
-      <a href="https://shivam-aggarwal-git.github.io/portfolio" target="_blank" rel="noopener">Portfolio</a>
-    </p>
-    <a href="https://shivam-aggarwal-git.github.io/resume.pdf" id="download-resume" download>Download Resume (PDF)</a>
-  </section>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+          <h3>Product Manager</h3>
+          <h4>Alepo Technologies Inc., Austin, Texas (Remote from Pune)</h4>
+          <small>Nov 2017 – Dec 2018</small>
+          <p>Supported telecom and digital infrastructure product delivery for US/LATAM clients.</p>
+          <p>Optimized backend reliability reducing incidents by 35% using ELK and SQL analytics.</p>
+          <p>Led cross-time zone Agile sprints cutting release times by 20%.</p>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
+          <h3>Product Analyst</h3>
+          <h4>Sea Core Financial Pvt Ltd, Delhi, India</h4>
+          <small>Apr 2015 – Jul 2016</small>
+          <p>Delivered accurate financial data mappings and structured outputs aligned with product needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects with Filtering -->
+    <section id="projects" data-aos="fade-up" data-aos-duration="1200">
+      <h2>Projects</h2>
+      <div id="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+        <button class="filter-btn" data-filter="fintech">FinTech</button>
+        <button class="filter-btn" data-filter="saas">SaaS</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-item" data-category="ai fintech" data-aos="zoom-in" data-aos-delay="100">
+          <h4>NutriChat</h4>
+          <p>AI-based meal assistant with dietary preferences (veg/eggetarian).</p>
+          <a href="https://nutrichat-llama.vercel.app" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-item" data-category="ai" data-aos="zoom-in" data-aos-delay="200">
+          <h4>AI-Chat Agents</h4>
+          <p>Custom GPT-based agents for content creation, task automation, and analytics.</p>
+          <a href="https://example.com/ai-chat-agents" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-item" data-category="fintech saas" data-aos="zoom-in" data-aos-delay="300">
+          <h4>FinTech Automation</h4>
+          <p>Automation pipelines for financial service workflows using ELK and SQL analytics.</p>
+          <a href="https://example.com/fintech-automation" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-item" data-category="saas" data-aos="zoom-in" data-aos-delay="400">
+          <h4>Product Analytics Dashboard</h4>
+          <p>Real-time SaaS dashboard to monitor KPIs, uptime, and customer metrics.</p>
+          <a href="https://example.com/product-analytics" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" data-aos="fade-up" data-aos-duration="1200">
+      <h2>Skills & Tools</h2>
+      <div class="skills-container">
+        <span class="skill-badge">AI & ML</span>
+        <span class="skill-badge">Product Strategy</span>
+        <span class="skill-badge">Agile & Scrum</span>
+        <span class="skill-badge">ELK Stack</span>
+        <span class="skill-badge">SQL & Data Analytics</span>
+        <span class="skill-badge">Cloud Platforms</span>
+        <span class="skill-badge">ChatGPT & Midjourney</span>
+        <span class="skill-badge">Jira & Confluence</span>
+        <span class="skill-badge">Cross-functional Teams</span>
+        <span class="skill-badge">Customer Experience</span>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" data-aos="fade-up" data-aos-duration="1200">
+      <h2>Certifications & Badges</h2>
+      <div class="certifications">
+        <div class="cert-badge" title="Certified Scrum Master">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 9v6l10 5 10-5V9l-10 0z"/></svg>
+          Certified Scrum Master
+        </div>
+        <div class="cert-badge" title="AI For Everyone by deeplearning.ai">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 9v6l10 5 10-5V9l-10 0z"/></svg>
+          AI For Everyone
+        </div>
+        <div class="cert-badge" title="Google Project Management">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 9v6l10 5 10-5V9l-10 0z"/></svg>
+          Google Project Management
+        </div>
+        <div class="cert-badge" title="AWS Cloud Practitioner">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 9v6l10 5 10-5V9l-10 0z"/></svg>
+          AWS Cloud Practitioner
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Activity Graph -->
+    <section id="github-activity" data-aos="fade-up" data-aos-duration="1200">
+      <h2>GitHub Activity</h2>
+      <div id="contrib-graph">
+        <iframe
+          src="https://github.com/shivam-aggarwal-git"
+          style="width:100%; height:320px; border:none; border-radius:15px;"
+          title="GitHub Activity Graph"
+          loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" data-aos="fade-up" data-aos-duration="1200">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a></p>
+      <p>Phone: +91 98732 16989</p>
+      <p>LinkedIn:
+        <a href="https://linkedin.com/in/shivam-aggarwal" target="_blank" rel="noopener noreferrer">linkedin.com/in/shivam-aggarwal</a>
+      </p>
+      <p>GitHub:
+        <a href="https://github.com/shivam-aggarwal-git" target="_blank" rel="noopener noreferrer">github.com/shivam-aggarwal-git</a>
+      </p>
+    </section>
+  </div>
 
   <footer>
-    <p>© 2025 Shivam Aggarwal • Made with 💻 in India</p>
+    © 2025 Shivam Aggarwal. All rights reserved.
   </footer>
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- AOS JS -->
+  <!-- AOS Animation JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
   <script>
-    $(document).ready(function () {
-      // Smooth scroll for nav links
-      $('nav a').on('click', function (e) {
-        if (this.hash !== '') {
-          e.preventDefault();
-          const hash = this.hash;
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top - 60
-          }, 600);
-        }
-      });
+    // Initialize AOS animations
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-in-out',
+    });
 
-      // Initialize AOS
-      AOS.init({
-        duration: 700,
-        once: true,
-      });
+    // Project filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project-item');
 
-      // Dark/light mode toggle
-      const toggleBtn = $('#toggle-theme');
-      function updateThemeText() {
-        if ($('body').hasClass('light')) {
-          toggleBtn.text('Dark Mode');
-        } else {
-          toggleBtn.text('Light Mode');
-        }
-      }
-      toggleBtn.on('click', () => {
-        $('body').toggleClass('light');
-        updateThemeText();
-        // Save preference
-        localStorage.setItem('theme', $('body').hasClass('light') ? 'light' : 'dark');
-      });
-      // Load preference
-      if (localStorage.getItem('theme') === 'light') {
-        $('body').addClass('light');
-      }
-      updateThemeText();
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-      // Project filtering
-      $('.filter-btn').on('click', function () {
-        $('.filter-btn').removeClass('active');
-        $(this).addClass('active');
-        const filter = $(this).data('filter').toLowerCase();
-        if (filter === 'all') {
-          $('.project-item').show();
-        } else {
-          $('.project-item').each(function () {
-            const categories = $(this).data('category').toLowerCase();
-            if (categories.includes(filter)) {
-              $(this).show();
-            } else {
-              $(this).hide();
-            }
-          });
-        }
-      });
+        const filter = btn.getAttribute('data-filter');
 
-      // Load GitHub contribution graph (SVG)
-      const username = 'shivam-aggarwal-git';
-      const contribUrl = `https://github.com/users/${username}/contributions`;
-      $.get(contribUrl)
-        .done(function (data) {
-          const svg = $(data).find('svg.js-calendar-graph-svg').parent().html();
-          if (svg) {
-            $('#contrib-graph').html(svg);
+        projects.forEach(project => {
+          if (filter === 'all') {
+            project.style.display = 'block';
           } else {
-            $('#contrib-graph').html('<p>Unable to load GitHub activity graph.</p>');
+            const categories = project.getAttribute('data-category').split(' ');
+            project.style.display = categories.includes(filter) ? 'block' : 'none';
           }
-        })
-        .fail(function () {
-          $('#contrib-graph').html('<p>Failed to load GitHub activity graph.</p>');
         });
+      });
+    });
+
+    // Smooth scroll for nav links & active toggle on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
     });
   </script>
-
 </body>
+
 </html>
