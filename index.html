@@ -1,425 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="Shivam Aggarwal - Senior Product Manager | FinTech & SaaS | AI Advocate | Portfolio and Resume" />
-  <meta name="keywords"
-    content="Shivam Aggarwal, Product Manager, FinTech, SaaS, AI, API integration, Agile, Scrum, Elastic, ELK, Adobe, Magento" />
-  <meta name="author" content="Shivam Aggarwal" />
-  <title>Shivam Aggarwal | Product Manager Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <title>Shivam Aggarwal | AI Product Strategist</title>
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <style>
-    /* Root variables for light and dark mode */
-    :root {
-      --bg-color: #f9f9f9;
-      --text-color: #222;
-      --header-bg: transparent;
-      --header-text: #000;
-      --link-color: #0073e6;
-      --section-bg: #fff;
-      --tag-bg: #eef;
-      --shadow-color: rgba(0, 0, 0, 0.1);
-      --toggle-bg: #ddd;
-      --toggle-color: #222;
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #eee;
-      --header-bg: #222;
-      --header-text: #fff;
-      --link-color: #5dade2;
-      --section-bg: #1e1e1e;
-      --tag-bg: #2a3a5a;
-      --shadow-color: rgba(255, 255, 255, 0.1);
-      --toggle-bg: #444;
-      --toggle-color: #eee;
-    }
-
-    /* Global Reset */
+    /* Reset + base */
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
-
     body {
-      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
       line-height: 1.6;
-      background: var(--bg-color);
-      color: var(--text-color);
-      transition: background-color 0.3s ease, color 0.3s ease;
-      min-height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
     }
-
     a {
-      color: var(--link-color);
+      color: #58a6ff;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #1f6feb;
     }
 
-    a:hover,
-    a:focus {
-      text-decoration: underline;
+    /* Light theme */
+    body.light {
+      background-color: #f6f8fa;
+      color: #24292f;
+    }
+    body.light a {
+      color: #0366d6;
+    }
+    body.light a:hover {
+      color: #0356b6;
     }
 
     header {
-      background-color: var(--header-bg);
-      color: var(--header-text);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 6px var(--shadow-color);
+      background: #161b22;
+      padding: 2rem 1rem;
+      text-align: center;
       position: sticky;
       top: 0;
-      z-index: 100;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      z-index: 10;
+      border-bottom: 1px solid #30363d;
+    }
+    body.light header {
+      background: #e1e4e8;
+      border-bottom: 1px solid #d1d5da;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
+    }
+    .tagline {
+      font-style: italic;
+      color: #58a6ff;
+      margin-bottom: 1rem;
+    }
+    body.light .tagline {
+      color: #0366d6;
+    }
+    nav a {
+      margin: 0 1rem;
+      font-weight: 600;
+      color: #8b949e;
+    }
+    body.light nav a {
+      color: #57606a;
+    }
+    nav a:hover {
+      color: #58a6ff;
+    }
+    body.light nav a:hover {
+      color: #0366d6;
+    }
+    nav {
+      margin-bottom: 0.5rem;
+    }
+    button#toggle-theme {
+      background: transparent;
+      border: 2px solid #58a6ff;
+      color: #58a6ff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin-left: 0.5rem;
+    }
+    button#toggle-theme:hover {
+      background: #58a6ff;
+      color: #0d1117;
+    }
+    body.light button#toggle-theme {
+      border-color: #0366d6;
+      color: #0366d6;
+    }
+    body.light button#toggle-theme:hover {
+      background: #0366d6;
+      color: white;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .header-left h1 {
-      font-weight: 700;
-      font-size: 1.8rem;
-      user-select: none;
-    }
-
-    .header-left p {
-      font-weight: 400;
-      font-size: 1rem;
-      color: var(--header-text);
-    }
-
-    .header-left p a {
-      font-weight: 500;
-    }
-
-    .header-right img {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 0 6px var(--shadow-color);
-      border: 2px solid var(--link-color);
-      user-select: none;
-    }
-
-    main {
+    section {
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
-
-    section {
-      background: var(--section-bg);
-      margin-bottom: 2rem;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px var(--shadow-color);
-      transition: background-color 0.3s ease;
-    }
-
- .download-btn {
-  cursor: pointer;
-  background-color: var(--toggle-bg);
-  color: var(--toggle-color);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  box-shadow: 0 0 6px var(--shadow-color);
-  text-decoration: none;
-  display: inline-block;
-}
-
-
-
     h2 {
-      color: var(--text-color);
+      border-bottom: 2px solid #30363d;
+      padding-bottom: 0.5rem;
       margin-bottom: 1rem;
-      border-bottom: 2px solid var(--link-color);
-      padding-bottom: 0.3rem;
+      color: #f0f6fc;
     }
-
-    h3 {
-      margin-top: 1.2rem;
-      margin-bottom: 0.6rem;
-      color: var(--text-color);
+    body.light h2 {
+      border-color: #d1d5da;
+      color: #24292f;
     }
-
-    p,
-    li {
-      font-weight: 400;
-      margin-bottom: 0.8rem;
-      color: var(--text-color);
+    .card {
+      background: #161b22;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.5);
+      transition: background 0.3s;
     }
-
+    body.light .card {
+      background: #fff;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+    }
     ul {
-      margin-left: 1.5rem;
-      list-style-type: disc;
+      padding-left: 1.3rem;
     }
-
-    .tags {
+    ul li {
+      margin-bottom: 0.4rem;
+    }
+    footer {
+      background: #161b22;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #8b949e;
+      margin-top: 3rem;
+      border-top: 1px solid #30363d;
+    }
+    body.light footer {
+      background: #e1e4e8;
+      color: #57606a;
+      border-top: 1px solid #d1d5da;
+    }
+    /* Skills */
+    #skills p {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.8rem;
+      gap: 8px;
     }
-
-    .tag {
-      background: var(--tag-bg);
-      color: var(--text-color);
-      padding: 0.4rem 0.7rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      user-select: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    footer {
-      background: var(--header-bg);
-      color: var(--header-text);
-      text-align: center;
-      padding: 1rem 2rem;
-      font-size: 0.9rem;
-      user-select: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    /* Dark mode toggle button */
-    #darkModeToggle {
-      cursor: pointer;
-      background-color: var(--toggle-bg);
-      color: var(--toggle-color);
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
+    #skills span.skill {
+      background: #30363d;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
       font-weight: 600;
       font-size: 0.9rem;
-      user-select: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      box-shadow: 0 0 6px var(--shadow-color);
+      color: #58a6ff;
+      cursor: default;
+      transition: background-color 0.3s;
+    }
+    body.light #skills span.skill {
+      background: #d1d5da;
+      color: #0366d6;
+    }
+    #skills span.skill:hover {
+      background: #58a6ff;
+      color: #0d1117;
+    }
+    body.light #skills span.skill:hover {
+      background: #0366d6;
+      color: white;
     }
 
-    #darkModeToggle:hover,
-    #darkModeToggle:focus {
-      background-color: var(--link-color);
-      color: #fff;
-      outline: none;
+    /* Projects filtering */
+    #project-filters {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    #project-filters button {
+      background: #21262d;
+      border: none;
+      color: #58a6ff;
+      padding: 0.5rem 1rem;
+      margin: 0 0.3rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    #project-filters button.active,
+    #project-filters button:hover {
+      background: #58a6ff;
+      color: #0d1117;
+    }
+    body.light #project-filters button {
+      background: #e1e4e8;
+      color: #0366d6;
+    }
+    body.light #project-filters button.active,
+    body.light #project-filters button:hover {
+      background: #0366d6;
+      color: white;
+    }
+
+    #projects .card {
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    #projects .card:hover {
+      transform: scale(1.05);
+    }
+
+    /* GitHub activity graph */
+    #github-activity {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #161b22;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.5);
+    }
+    body.light #github-activity {
+      background: #fff;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+      color: #24292f;
+    }
+    #github-activity h2 {
+      margin-top: 0;
+    }
+    #contrib-graph {
+      overflow-x: auto;
+      padding: 0.5rem 0;
+    }
+    #contrib-graph img {
+      width: 100%;
+      max-width: 900px;
     }
 
     /* Responsive */
-    @media (max-width: 640px) {
-      header {
-        flex-direction: column;
-        gap: 1rem;
+    @media (max-width: 600px) {
+      nav a {
+        display: inline-block;
+        margin: 0.3rem 0.5rem;
       }
+      #skills p {
+        justify-content: center;
+      }
+    }
 
-      .header-right img {
-        width: 60px;
-        height: 60px;
-      }
-
-      main {
-        margin: 1rem;
-      }
+    /* Download resume button */
+    #download-resume {
+      background: #238636;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 0.5rem;
+      display: inline-block;
+    }
+    #download-resume:hover {
+      background: #2ea043;
     }
   </style>
 </head>
-
 <body>
+
   <header>
-    <div class="header-left">
-      <h1>Shivam Aggarwal</h1>
-      <p>Senior Product Manager | FinTech & SaaS | AI Advocate</p>
-      <p>
-        <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a> |
-        <a href="https://www.linkedin.com/in/shivam-aggarwal/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="" target="_blank" rel="noopener noreferrer"> +91-9873216989</a>
-
-      </p>
-    </div>
-    <div class="header-right">
-      <!-- Replace the src with your actual photo URL or GitHub avatar link -->
-     <!-- <img src="https://avatars.githubusercontent.com/u/64343528?v=4" alt="Shivam Aggarwal Photo" /> -->
-   <div style="text-align: center; margin-top: 1.5rem;">
-  <a href="resume-shivam-aggarwal.pdf" class="download-btn" download>
-    📄 Download Resume
-  </a>
-</div>
-
-    </div>
-    <button id="darkModeToggle" aria-label="Toggle dark mode">Dark Mode</button>
+    <h1>👋 Hi, I'm Shivam Aggarwal</h1>
+    <p class="tagline">Senior Product Delivery Manager • AI Strategy • Global FinTech & SaaS</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#projects">Projects</a>
+      <a href="#github-activity">GitHub</a>
+      <a href="#contact">Contact</a>
+      <button id="toggle-theme" aria-label="Toggle Dark/Light Theme">Light Mode</button>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>
-        Senior Product Manager with over 7 years of international experience delivering high-impact digital and
-        technical products in FinTech and SaaS sectors. Proven expertise in leading global cross-functional teams across
-        Agile and Scrum frameworks, driving end-to-end product development from ideation to successful launch. Adept at
-        stakeholder collaboration across geographies, including the US, Europe, and Southeast Asia.
-      </p>
-      <p>
-        Skilled in managing both frontend and backend sprints, scaling complex systems, and integrating enterprise
-        platforms such as Elastic, ELK Stack, Adobe Experience Manager (AEM), and Adobe Commerce (Magento). Proficient
-        in handling ETL pipelines, validating backend APIs, executing SQL queries, and facilitating UAT cycles.
-      </p>
-      <p>
-        Bringing a strong understanding of Artificial Intelligence (AI) tools and their applications in product
-        innovation, with hands-on experience leveraging AI-driven platforms for customer experience optimisation, process
-        automation, and product enhancement. Well-versed in using AI tools such as ChatGPT, Midjourney, Notion AI, and
-        no-code/low-code automation platforms. Knowledgeable in AI product trends, ethical AI practices, prompt
-        engineering, AI/ML integration planning, and user-centric AI product strategies.
-      </p>
-      <p>
-        Recognised for promoting data-driven decision-making, aligning diverse stakeholder groups, and driving innovation
-        in fast-paced, compliance-regulated environments.
-      </p>
-    </section>
+  <section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+      I’m a Senior Product Delivery Manager with 7+ years of experience delivering high-impact digital products in FinTech & SaaS. I bring cross-continental experience (US, Europe, APAC) in building human-centric, AI-enhanced platforms. I specialize in agile delivery, AI product strategy, and system observability.
+    </p>
+  </section>
 
-    <section>
-      <h2>Professional Experience</h2>
-      
-      <h3>Senior Product Manager – Delivery (Aug 2021 – Present)</h4>
-      <h4>Bajaj FinServ Direct Limited, Pune, India</h3>
+  <section id="experience" data-aos="fade-up">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Bajaj FinServ Direct Ltd</h3>
+      <p><strong>Senior Product Manager</strong> (Aug 2021 – Present)</p>
       <ul>
-        <li>Led Agile delivery of UI and horizontal sprints, managing cross-regional teams to build scalable, customer-centric features with focus on automation and intelligent workflows.</li>
-        <li>Delivered Elastic and ELK-based backend solutions to enhance system observability, logging, and diagnostics for global platforms, supporting data-driven decision-making and operational efficiency.</li>
-        <li>Managed ELB configurations and cloud deployment strategies for high-availability infrastructure, incorporating monitoring tools and AI-assisted performance tuning recommendations.</li>
-        <li>Collaborated with data engineering teams to design and implement ETL pipelines, enabling real-time reporting and AI-supported KPI dashboards for leadership insights.</li>
-        <li>Oversaw API integration and UAT efforts for backend systems, ensuring compliance, accuracy, and alignment with evolving product and AI-aligned automation needs.</li>
-        <li>Played a key role in the design and rollout of an internal AI-powered chatbot (Master BOT), contributing to conversation flows, use case mapping, and user adoption strategy to enhance internal support and customer experience.</li>
-        <li>Contributed to roadmap development and backlog prioritisation with stakeholders across India, the US, and ASEAN markets, incorporating feedback loops powered by AI-driven analytics and sentiment tracking tools.</li>
-        <li>Delivered digital transformation initiatives by integrating Adobe Commerce (Magento) and AEM, while exploring AI-enhanced personalisation features to improve global customer engagement.</li>
-        <li>Embraced AI productivity tools (e.g., ChatGPT, Notion AI, automation platforms) in daily workflows to accelerate research, documentation, and solution prototyping in cross-functional teams.</li>
+        <li>Improved feature velocity by 25% through Agile sprint ownership</li>
+        <li>Launched AI chatbot with 92% resolution rate</li>
+        <li>ETL pipelines processing 10M+ data points monthly</li>
       </ul>
-      
-      <h3>Product Manager (Dec 2018 – Aug 2021)</h4>
-      <h4>Siroi Solution Sdn Bhd, Kuala Lumpur, Malaysia</h3>
+    </div>
+    <div class="card">
+      <h3>Siroi Solution Sdn Bhd, Malaysia</h3>
+      <p><strong>Senior Product Manager</strong> (Dec 2018 – Aug 2021)</p>
       <ul>
-        <li>Owned product delivery across UI and backend layers for cross-border fintech platforms in APAC, focusing on modular scalability and compliance-aligned architecture in evolving Open Banking ecosystems.</li>
-        <li>Collaborated with Agile teams across Malaysia, India, and Singapore to execute iterative product releases, streamlining communication and documentation workflows through AI-enabled productivity tools.</li>
-        <li>Implemented Elastic and ELK for full-stack observability and diagnostic optimisation, enabling actionable insights and predictive analysis for application performance at scale.</li>
-        <li>Integrated ETL pipelines with third-party fintech and banking APIs, supporting secure cross-platform data synchronisation, audit trails, and early exploration of pattern recognition in reporting metrics.</li>
-        <li>Facilitated structured UAT and go-live readiness with vendors and compliance teams, with enhanced validation frameworks influenced by conversational automation and early natural language interface testing.</li>
-        <li>Contributed to global commerce scalability by enhancing Magento-based platforms, evaluating personalisation use cases through lightweight experimentation with generative AI concepts and OpenAI tooling.</li>
-        <li>Stayed actively informed on AI trends, Open Banking regulations, and intelligent automation, embedding strategic insights into backlog grooming, stakeholder discussions, and product roadmap decisions.</li>
+        <li>Managed Open Banking API products across APAC</li>
+        <li>Reduced MTTR by 45% via ELK implementation</li>
+        <li>Improved go-live success rate to 95%</li>
       </ul>
+    </div>
+    <div class="card">
+      <h3>Alepo Technologies (Remote)</h3>
+      <p><strong>Product Manager</strong> (Nov 2017 – Dec 2018)</p>
+    </div>
+    <div class="card">
+      <h3>Sea core Financial Pvt Ltd</h3>
+      <p><strong>Product Analyst</strong> (Apr 2015 – Jul 2016)</p>
+    </div>
+  </section>
 
-      <h3>Product Analyst (Nov 2017 – Dec 2018)</h4>
-      <h4>Alepo Technologies Inc., Austin, Texas (Remote)</h3>
-      <ul>
-        <li>Supported the delivery of telecom and digital infrastructure products for US-based and LATAM clients.</li>
-        <li>Applied ELK stack and SQL analysis to drive backend reliability and system monitoring.</li>
-        <li>Participated in remote sprint cycles with the Texas and Pune teams, managing backlog grooming and UAT planning.</li>
-        <li>Coordinated API validation and post-release monitoring with QA and tech leads across time zones.</li>
-      </ul>
-    </section>
+  <section id="education" data-aos="fade-up">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>MBA – Information Technology</strong>, Symbiosis International Univ, Pune (2018)</li>
+      <li><strong>B.Tech – Computer Science</strong>, UTU, Nainital (2015)</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Symbiosis International University, Pune</strong> — MBA, Information Technology (2016 – 2018)</li>
-        <li><strong>Uttarakhand Technical University, Nainital</strong> — Bachelor of Technology, Computer Science (2011 – 2015)</li>
-      </ul>
-    </section>
+  <section id="skills" data-aos="fade-up">
+    <h2>Skills & Tools</h2>
+    <p>
+      <span class="skill">Agile</span>
+      <span class="skill">Scrum</span>
+      <span class="skill">SAFe</span>
+      <span class="skill">SQL</span>
+      <span class="skill">AEM</span>
+      <span class="skill">Adobe Commerce</span>
+      <span class="skill">APIs</span>
+      <span class="skill">ETL</span>
+      <span class="skill">ELK</span>
+      <span class="skill">Azure</span>
+      <span class="skill">Power BI</span>
+      <span class="skill">Figma</span>
+      <span class="skill">Git</span>
+      <span class="skill">Jenkins</span>
+      <span class="skill">ChatGPT</span>
+      <span class="skill">Notion AI</span>
+    </p>
+  </section>
 
-    <section>
-      <h2>Skills</h2>
-      <div class="tags">
-        <span class="tag">Agile Delivery (Scrum, Kanban, SAFe)</span>
-        <span class="tag">Global Sprint Management</span>
-        <span class="tag">Product Lifecycle Management</span>
-        <span class="tag">Stakeholder Communication</span>
-        <span class="tag">Backend Architecture & Integration</span>
-        <span class="tag">SQL, API Testing, UAT</span>
-        <span class="tag">ETL Workflows & Data Engineering</span>
-        <span class="tag">Adobe Experience Manager (AEM)</span>
-        <span class="tag">Adobe Commerce / Magento</span>
-        <span class="tag">Elastic, ELK Stack, ELB Deployment</span>
-        <span class="tag">AI Tools (ChatGPT, Midjourney, Notion AI)</span>
+  <section id="certifications" data-aos="fade-up">
+    <h2>Certifications</h2>
+    <ul>
+      <li>Certified Scrum Product Owner (CSPO)</li>
+      <li>PMI Agile Product Owner</li>
+      <li>Oracle OCI Architect Professional</li>
+      <li>Azure DevOps Foundation</li>
+      <li>Google Gen AI Fundamentals</li>
+      <li>IBM Machine Learning Essentials</li>
+      <li>Tableau Certified Analyst</li>
+      <li>Oracle Certified Business Analysis Expert</li>
+    </ul>
+  </section>
+
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div id="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="AI">AI</button>
+      <button class="filter-btn" data-filter="FinTech">FinTech</button>
+      <button class="filter-btn" data-filter="SaaS">SaaS</button>
+      <button class="filter-btn" data-filter="OpenBanking">Open Banking</button>
+      <button class="filter-btn" data-filter="Chatbot">Chatbot</button>
+    </div>
+    <div id="project-list">
+      <div class="card project-item" data-category="AI Chatbot SaaS">
+        <h3>Internal AI Chatbot (Master BOT)</h3>
+        <p>Co-designed and launched a chatbot with 50+ intents, achieving 92% success rate in employee query resolution.</p>
       </div>
-    </section>
+      <div class="card project-item" data-category="FinTech OpenBanking SaaS">
+        <h3>Cross-border FinTech Platform</h3>
+        <p>Delivered modular Open Banking compliant fintech platforms across APAC with 40% faster feature rollouts.</p>
+      </div>
+      <div class="card project-item" data-category="AI Personalization SaaS AdobeCommerce">
+        <h3>AI-driven Personalization in Adobe Commerce</h3>
+        <p>Spearheaded AI personalization trials increasing customer engagement metrics by 30%.</p>
+      </div>
+      <div class="card project-item" data-category="ELK Monitoring SaaS">
+        <h3>Full-stack Observability with ELK Stack</h3>
+        <p>Implemented ELK-based observability solutions reducing incident resolution time by 35-45% across platforms.</p>
+      </div>
+      <div class="card project-item" data-category="Chatbot AI">
+        <h3>AI-enabled UAT Automation Framework</h3>
+        <p>Reduced defect leakage via NLP-based interface testing and AI-informed validation.</p>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Certifications</h2>
-      <ul>
-        <li>PMI Certified – Agile Product Owner</li>
-        <li>Scrum Alliance – Certified Scrum Master (CSM)</li>
-        <li>Scrum Alliance – Certified Scrum Product Owner (CSPO)</li>
-        <li>Oracle Certified OCI Architect Professional</li>
-        <li>Azure DevOps Foundation</li>
-        <li>Google Generative AI Fundamentals</li>
-        <li>IBM Machine Learning Essentials</li>
-        <li>Tableau Certified Analyst</li>
-        <li>Oracle Certified Business Analysis Expert</li>
-      </ul>
-    </section>
+  <section id="github-activity" data-aos="fade-up">
+    <h2>GitHub Activity</h2>
+    <p>Live contribution graph from my GitHub profile:</p>
+    <div id="contrib-graph">
+      <!-- Will load SVG from GitHub -->
+      <p>Loading GitHub activity graph...</p>
+    </div>
+  </section>
 
-    <section>
-      <h2>Languages</h2>
-      <ul>
-        <li>Hindi - Native</li>
-        <li>English – Fluent</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      <ul>
-        <li>AI Prompt Generator API – Public project showcasing Gen AI use cases</li>
-        <li>Postman Collections (Private Workflows & Test Suites)</li>
-        <li>Power BI Dashboards for sales, NPS, and internal analytics</li>
-      </ul>
-    </section>
-  </main>
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a></p>
+    <p>📍 Pune, Maharashtra, India</p>
+    <p>
+      <a href="https://linkedin.com/in/shivam-aggarwal" target="_blank" rel="noopener">LinkedIn</a> •
+      <a href="https://github.com/shivam-aggarwal-git" target="_blank" rel="noopener">GitHub</a> •
+      <a href="https://shivam-aggarwal-git.github.io/portfolio" target="_blank" rel="noopener">Portfolio</a>
+    </p>
+    <a href="https://shivam-aggarwal-git.github.io/resume.pdf" id="download-resume" download>Download Resume (PDF)</a>
+  </section>
 
   <footer>
-    <p>© 2025 Shivam Aggarwal | Made with ❤️ | <a href="mailto:aggarwalshivam1991@gmail.com">Email Me</a></p>
+    <p>© 2025 Shivam Aggarwal • Made with 💻 in India</p>
   </footer>
 
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
   <script>
-    const toggle = document.getElementById('darkModeToggle');
-    const currentTheme = localStorage.getItem('theme');
+    $(document).ready(function () {
+      // Smooth scroll for nav links
+      $('nav a').on('click', function (e) {
+        if (this.hash !== '') {
+          e.preventDefault();
+          const hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top - 60
+          }, 600);
+        }
+      });
 
-    // Apply saved theme on load
-    if (currentTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      toggle.textContent = 'Light Mode';
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      toggle.textContent = 'Dark Mode';
-    }
+      // Initialize AOS
+      AOS.init({
+        duration: 700,
+        once: true,
+      });
 
-    toggle.addEventListener('click', () => {
-      let theme = document.documentElement.getAttribute('data-theme');
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        toggle.textContent = 'Dark Mode';
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        toggle.textContent = 'Light Mode';
-        localStorage.setItem('theme', 'dark');
+      // Dark/light mode toggle
+      const toggleBtn = $('#toggle-theme');
+      function updateThemeText() {
+        if ($('body').hasClass('light')) {
+          toggleBtn.text('Dark Mode');
+        } else {
+          toggleBtn.text('Light Mode');
+        }
       }
+      toggleBtn.on('click', () => {
+        $('body').toggleClass('light');
+        updateThemeText();
+        // Save preference
+        localStorage.setItem('theme', $('body').hasClass('light') ? 'light' : 'dark');
+      });
+      // Load preference
+      if (localStorage.getItem('theme') === 'light') {
+        $('body').addClass('light');
+      }
+      updateThemeText();
+
+      // Project filtering
+      $('.filter-btn').on('click', function () {
+        $('.filter-btn').removeClass('active');
+        $(this).addClass('active');
+        const filter = $(this).data('filter').toLowerCase();
+        if (filter === 'all') {
+          $('.project-item').show();
+        } else {
+          $('.project-item').each(function () {
+            const categories = $(this).data('category').toLowerCase();
+            if (categories.includes(filter)) {
+              $(this).show();
+            } else {
+              $(this).hide();
+            }
+          });
+        }
+      });
+
+      // Load GitHub contribution graph (SVG)
+      const username = 'shivam-aggarwal-git';
+      const contribUrl = `https://github.com/users/${username}/contributions`;
+      $.get(contribUrl)
+        .done(function (data) {
+          const svg = $(data).find('svg.js-calendar-graph-svg').parent().html();
+          if (svg) {
+            $('#contrib-graph').html(svg);
+          } else {
+            $('#contrib-graph').html('<p>Unable to load GitHub activity graph.</p>');
+          }
+        })
+        .fail(function () {
+          $('#contrib-graph').html('<p>Failed to load GitHub activity graph.</p>');
+        });
     });
   </script>
-</body>
 
+</body>
 </html>
