@@ -1,260 +1,248 @@
-Sure! Let's make it look cleaner, modern, and more visually appealing — with a nice color palette, neat spacing, subtle shadows, and a professional font. I'll keep it still simple HTML, CSS, and jQuery, fully self-contained in one file for GitHub Pages.
-
----
-
-### What you’ll get:
-
-* Elegant card-like layout
-* Clear headings with accent color
-* Distinct sections with subtle backgrounds
-* Responsive and mobile-friendly
-* Smooth nav with highlight on scroll
-* Soft shadows, crisp fonts (Google Fonts included)
-* Professional and modern vibe
-
----
-
-Here’s the complete `index.html`:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Shivam Aggarwal - Senior Product Delivery Manager</title>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-<style>
-  /* Reset */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Inter', sans-serif;
-    background: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
-  }
-  a {
-    color: #0077cc;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Shivam Aggarwal - Senior Product Delivery Manager Resume">
+  <title>Shivam Aggarwal | Resume</title>
 
-  /* Container */
-  .container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 40px 50px;
-    border-radius: 12px;
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-  }
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-Ff3w4+3h7fL+ZlJ0akz7vzFtqvF7wC94KZb+nHG9ZhxPsnk2xz38G5rccZh0Yko8kBJPpT+7AhEfPl3j8hMOCg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-  /* Header */
-  header {
-    border-bottom: 3px solid #0077cc;
-    padding-bottom: 15px;
-    margin-bottom: 40px;
-    text-align: center;
-  }
-  header h1 {
-    font-weight: 700;
-    font-size: 2.8rem;
-    margin: 0 0 8px 0;
-    color: #0077cc;
-  }
-  header p.subtitle {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: #555;
-  }
-
-  /* Navigation */
-  nav {
-    margin-top: 25px;
-    text-align: center;
-  }
-  nav a {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 10px 18px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: #0077cc;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-  nav a:hover, nav a.active {
-    background-color: #0077cc;
-    color: #fff;
-    border-color: #0077cc;
-  }
-
-  /* Sections */
-  section {
-    margin-bottom: 50px;
-  }
-  section h2 {
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    border-left: 6px solid #0077cc;
-    padding-left: 14px;
-    color: #004a99;
-  }
-
-  /* Paragraphs */
-  section p {
-    font-size: 1.05rem;
-    color: #444;
-  }
-
-  /* Experience & Education items */
-  .item {
-    margin-bottom: 28px;
-  }
-  .item h3 {
-    margin: 0 0 6px 0;
-    font-weight: 700;
-    font-size: 1.25rem;
-    color: #0077cc;
-  }
-  .item .meta {
-    font-style: italic;
-    font-size: 0.92rem;
-    color: #666;
-    margin-bottom: 4px;
-  }
-  .item .period {
-    font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 10px;
-  }
-  .item ul {
-    padding-left: 18px;
-    margin: 0;
-  }
-  .item ul li {
-    margin-bottom: 8px;
-    font-size: 1rem;
-    color: #555;
-  }
-
-  /* Inline lists for skills/tools */
-  .inline-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .inline-list li {
-    background: #e1e9f8;
-    color: #004a99;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
-
-  /* Contact */
-  #contact p {
-    font-size: 1.05rem;
-    color: #444;
-    margin-bottom: 10px;
-  }
-  #contact a {
-    font-weight: 600;
-  }
-
-  /* Responsive */
-  @media (max-width: 640px) {
-    .container {
-      padding: 30px 25px;
-      margin: 20px;
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #2d3e50;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
     }
     header h1 {
-      font-size: 2rem;
+      margin: 0.2rem 0;
     }
-    section h2 {
-      font-size: 1.6rem;
+    .contact {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
     }
-    nav a {
-      margin: 6px 8px;
-      padding: 8px 14px;
+    .contact p {
+      margin: 0.3rem 0;
+    }
+    .contact i {
+      margin-right: 0.4rem;
+      color: #00aced;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem 1.5rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #2d3e50;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    .job, .education-item {
+      margin-bottom: 1.5rem;
+    }
+    .job h3, .education-item h3 {
+      margin: 0.2rem 0;
+      color: #1a1a1a;
+    }
+    .job span, .education-item span {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    ul {
+      margin: 0.5rem 0 0 1.5rem;
+    }
+    footer {
+      background: #2d3e50;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.85rem;
+    }
+    .skills, .tools, .certs, .langs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .skills span, .tools span, .certs span, .langs span {
+      background: #e0e0e0;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
       font-size: 0.9rem;
     }
-    .inline-list {
-      justify-content: center;
+    a {
+      color: #0073e6;
+      text-decoration: none;
     }
-  }
-</style>
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
+<header>
+  <h1>Shivam Aggarwal</h1>
+  <p>Senior Product Delivery Manager | AI-Driven Product Strategy | FinTech & SaaS</p>
+  <div class="contact">
+    <p><i class="fas fa-phone"></i>+91 9873216989</p>
+    <p><i class="fas fa-envelope"></i><a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a></p>
+    <p>
+      <i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a> |
+      <i class="fab fa-github"></i><a href="https://github.com/YOUR_GITHUB_URL" target="_blank">GitHub</a> |
+      <i class="fas fa-globe"></i><a href="https://YOUR_PORTFOLIO_URL" target="_blank">Portfolio</a>
+    </p>
+    <p><i class="fas fa-map-marker-alt"></i>Pune, Maharashtra, India – 411014</p>
+  </div>
+</header>
+
 <div class="container">
 
-  <header>
-    <h1>Shivam Aggarwal</h1>
-    <p class="subtitle">Senior Product Delivery Manager | AI-Driven Product Strategy | Global FinTech & SaaS Experience</p>
-    <nav id="navbar">
-      <a href="#summary">Summary</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills & Tools</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#languages">Languages</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section id="summary">
+  <section>
     <h2>Professional Summary</h2>
-    <p>
-      Experienced Senior Product Delivery Manager with over 7 years of international experience delivering high-impact digital and technical products in FinTech and SaaS sectors. Proven expertise in leading global cross-functional teams across Agile and Scrum frameworks, driving end-to-end product development from ideation to successful launch. Adept at stakeholder collaboration across geographies, including the US, Europe, and Southeast Asia.
-    </p>
-    <p>
-      Skilled in managing both frontend and backend sprints, scaling complex systems, and integrating enterprise platforms such as Elastic, ELK Stack, Adobe Experience Manager (AEM), and Adobe Commerce (Magento). Proficient in handling ETL pipelines, validating backend APIs, executing SQL queries, and facilitating UAT cycles.
-    </p>
-    <p>
-      Bringing a strong understanding of Artificial Intelligence (AI) tools and their applications in product innovation, with hands-on experience leveraging AI-driven platforms for customer experience optimisation, process automation, and product enhancement. Well-versed in using AI tools such as ChatGPT, Midjourney, Notion AI, and no-code/low-code automation platforms. Knowledgeable in AI product trends, ethical AI practices, prompt engineering, AI/ML integration planning, and user-centric AI product strategies.
-    </p>
+    <p>Experienced Senior Product Delivery Manager with 7+ years of international experience in FinTech and SaaS. Expert in Agile delivery, cross-regional collaboration, backend/frontend scaling, and AI integration. Strong knowledge of AEM, ELK, Adobe Commerce, and AI tools like ChatGPT and Midjourney.</p>
   </section>
 
-  <section id="experience">
+  <section>
     <h2>Professional Experience</h2>
 
-    <div class="item">
-      <h3>Senior Product Manager</h3>
-      <div class="meta">Bajaj FinServ Direct Limited, Pune, India</div>
-      <div class="period">Aug 2021 – Present</div>
+    <!-- Job 1 -->
+    <div class="job">
+      <h3>Senior Product Manager – Bajaj FinServ Direct Limited</h3>
+      <span>Aug 2021 – Present, Pune, India</span>
       <ul>
-        <li>Led Agile delivery of UI and horizontal sprints across 4+ cross-regional teams, resulting in a 25% improvement in feature delivery velocity and reduced turnaround by 18%.</li>
-        <li>Delivered Elastic and ELK-based backend solutions that improved system observability and reduced issue resolution time by 35%.</li>
-        <li>Managed ELB configurations and multi-cloud deployment strategies, increasing infrastructure uptime to 99.95% with optimised cost utilisation.</li>
-        <li>Collaborated with data engineering teams to implement ETL pipelines that processed over 10M data points monthly, enabling real-time analytics for CXO dashboards.</li>
-        <li>Oversaw 100+ API integration test cases and UAT efforts, achieving 98% test coverage and compliance with evolving automation protocols.</li>
-        <li>Co-designed and launched an internal AI chatbot (Master BOT) with 50+ intents and a 92% success rate in resolving employee queries, improving internal support efficiency.</li>
-        <li>Drove roadmap and backlog prioritisation across 3 continents (India, US, ASEAN), enabling a 20% reduction in time-to-market through AI-driven sentiment analytics.</li>
-        <li>Spearheaded digital transformation using Adobe Commerce and AEM, increasing customer engagement metrics by 30% through AI-based personalisation trials.</li>
-        <li>Leveraged AI tools (ChatGPT, Notion AI, etc.) to accelerate solution prototyping by 40% and reduce documentation overhead by 25%.</li>
+        <li>Improved delivery velocity by 25% via Agile leadership across 4+ global teams.</li>
+        <li>Deployed Elastic/ELK backend monitoring; reduced issue resolution by 35%.</li>
+        <li>Managed multi-cloud deployment; achieved 99.95% uptime.</li>
+        <li>Built ETL pipelines for 10M+ monthly records; enabled real-time CXO analytics.</li>
+        <li>Launched AI chatbot (Master BOT) with 92% resolution success.</li>
+        <li>Accelerated prototyping 40% with AI tools (ChatGPT, Notion AI, etc.).</li>
       </ul>
     </div>
 
-    <div class="item">
-      <h3>Senior Product Manager</h3>
-      <div class="meta">Siroi Solution Sdn Bhd, Kuala Lumpur, Malaysia</div>
-      <div class="period">Dec 2018 – Aug 2021</div>
+    <!-- Job 2 -->
+    <div class="job">
+      <h3>Senior Product Manager – Siroi Solution Sdn Bhd</h3>
+      <span>Dec 2018 – Aug 2021, Kuala Lumpur, Malaysia</span>
       <ul>
-        <li>Owned end-to-end product delivery across UI and backend layers for 3+ cross-border fintech platforms in APAC, ensuring modular scalability and compliance-aligned architecture in Open Banking ecosystems, resulting in 40% faster rollout of features across regions.</li>
-        <li>Collaborated with Agile teams across Malaysia, India
-```
+        <li>Delivered Open Banking solutions 40% faster across APAC regions.</li>
+        <li>Reduced MTTR by 45% via full-stack ELK implementation.</li>
+        <li>Enabled 5X traffic capacity with Magento enhancement & AI experiments.</li>
+        <li>Drove product pivots from AI/Open Banking insights; boosted retention by 15%.</li>
+      </ul>
+    </div>
+
+    <!-- Job 3 -->
+    <div class="job">
+      <h3>Product Manager – Alepo Technologies Inc.</h3>
+      <span>Nov 2017 – Dec 2018, Austin, Texas (Remote)</span>
+      <ul>
+        <li>Optimized backend monitoring, reducing incident recurrence by 35%.</li>
+        <li>Led backlog grooming and UAT planning, shortening release cycles by 20%.</li>
+      </ul>
+    </div>
+
+    <!-- Job 4 -->
+    <div class="job">
+      <h3>Product Analyst – Sea Core Financial Pvt Ltd</h3>
+      <span>Apr 2015 – Jul 2016, Delhi, India</span>
+      <ul>
+        <li>Performed financial data mapping to support accurate product delivery.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="education-item">
+      <h3>MBA – Information Technology</h3>
+      <span>Symbiosis International University, Pune (2016–2018)</span>
+    </div>
+    <div class="education-item">
+      <h3>B.Tech – Computer Science</h3>
+      <span>Uttarakhand Technical University, Nainital (2011–2015)</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Agile Delivery</span>
+      <span>Scrum, Kanban, SAFe</span>
+      <span>SQL</span>
+      <span>API Testing</span>
+      <span>ETL Pipelines</span>
+      <span>AEM</span>
+      <span>Adobe Commerce</span>
+      <span>Elastic Stack</span>
+      <span>ELK</span>
+      <span>Backend Architecture</span>
+      <span>Stakeholder Communication</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tools</h2>
+    <div class="tools">
+      <span>Jira</span>
+      <span>Confluence</span>
+      <span>Trello</span>
+      <span>Postman</span>
+      <span>Figma</span>
+      <span>Jenkins</span>
+      <span>Git</span>
+      <span>Power BI</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <div class="certs">
+      <span>PMI Agile Product Owner</span>
+      <span>CSM</span>
+      <span>CSPO</span>
+      <span>Oracle OCI Architect</span>
+      <span>Azure DevOps Foundation</span>
+      <span>Google Generative AI</span>
+      <span>IBM ML Essentials</span>
+      <span>Tableau Analyst</span>
+      <span>Oracle Business Analyst</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <div class="langs">
+      <span>English (Fluent)</span>
+      <span>Hindi (Native)</span>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2025 Shivam Aggarwal | All Rights Reserved
+</footer>
+
+</body>
+</html>
