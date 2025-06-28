@@ -1,350 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Shivam Aggarwal - Senior Product Delivery Manager</title>
-<style>
-  /* Reset and base */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #121212;
-    color: #e0e0e0;
-    margin: 0; padding: 0;
-    line-height: 1.5;
-  }
-  a {
-    color: #76d7c4;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-
-  /* Container and layout */
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px 15px;
-  }
-  header {
-    padding: 20px 0;
-    border-bottom: 2px solid #76d7c4;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 1.2px;
-    color: #76d7c4;
-  }
-  header p {
-    margin: 5px 0 0 0;
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-  nav {
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  nav a {
-    font-weight: 600;
-    border: 1.5px solid #76d7c4;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-  }
-  nav a:hover, nav a.active {
-    background: #76d7c4;
-    color: #121212;
-  }
-
-  /* Sections */
-  section {
-    margin-top: 40px;
-    border-left: 4px solid #76d7c4;
-    padding-left: 15px;
-  }
-  section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #76d7c4;
-    border-bottom: 1px solid #333;
-    padding-bottom: 4px;
-  }
-  section p, section li {
-    font-size: 1rem;
-    color: #ccc;
-  }
-  ul {
-    padding-left: 20px;
-  }
-  li + li {
-    margin-top: 8px;
-  }
-
-  /* Experience and Education item style */
-  .item {
-    margin-bottom: 20px;
-  }
-  .item h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #a2d5c6;
-  }
-  .item .meta {
-    font-style: italic;
-    font-size: 0.9rem;
-    color: #999;
-  }
-  .item .period {
-    font-size: 0.9rem;
-    color: #aaa;
-    margin-bottom: 8px;
-  }
-
-  /* Skills & Tools inline list */
-  .inline-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .inline-list li {
-    background: #333;
-    padding: 6px 10px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2rem;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivam Aggarwal | AI Product Leader</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Fira Code', monospace;
+      background-color: #0f111a;
+      color: #cdd6f4;
+      line-height: 1.6;
+      padding: 2rem;
     }
-    nav {
-      justify-content: center;
+    a { color: #89b4fa; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    section { margin-bottom: 3rem; }
+    h1, h2, h3 { color: #94e2d5; margin-bottom: 1rem; }
+    .highlight { color: #f38ba8; }
+    .container { max-width: 960px; margin: auto; }
+    .timeline { border-left: 2px solid #89dceb; padding-left: 1rem; }
+    .timeline-entry { margin-bottom: 1.5rem; position: relative; }
+    .timeline-entry::before {
+      content: '●'; position: absolute; left: -1rem; color: #f38ba8;
     }
-  }
-</style>
+    .badge-grid img { height: 40px; }
+    .project { margin-bottom: 1.5rem; }
+    .footer { text-align: center; margin-top: 4rem; color: #6c7086; }
+    .terminal-section {
+      background-color: #1e1e2e;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      color: #cdd6f4;
+    }
+    #map { height: 300px; margin-top: 1rem; border-radius: 8px; }
+    .swiper {
+      width: 100%;
+      padding: 1rem 0;
+    }
+    .swiper-slide {
+      background-color: #1e1e2e;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 8px;
+    }
+    form input, form textarea, form button {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Fira Code', monospace;
+    }
+    form input, form textarea {
+      background-color: #1e1e2e;
+      color: #cdd6f4;
+    }
+    form button {
+      background-color: #89b4fa;
+      color: #1e1e2e;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #74c7ec;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <section data-aos="fade-down">
+      <h1>Shivam Aggarwal</h1>
+      <p><strong>Senior Product Delivery Manager</strong> | AI-Driven Product Strategy | Global FinTech & SaaS Experience</p>
+      <p>📍 Pune, India – 411014 | 📞 (+91) 9873216989 | 📧 <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a><br/>
+      🔗 <a href="#">LinkedIn</a> • <a href="#">GitHub</a> • <a href="#">Portfolio</a></p>
+    </section>
 
-<div class="container">
+    <section data-aos="fade-up" class="terminal-section">
+      <h2>About Me</h2>
+      <p>Experienced Product Manager with 7+ years of FinTech and SaaS experience across India, US, and ASEAN. AI-enthusiast building intelligent, scalable platforms using tools like ChatGPT, Midjourney, and AEM.</p>
+    </section>
 
-  <header>
-    <h1>Shivam Aggarwal</h1>
-    <p>Senior Product Delivery Manager | AI-Driven Product Strategy | Global FinTech & SaaS Experience</p>
-    <nav id="navbar">
-      <a href="#summary">Summary</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills & Tools</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#languages">Languages</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <section data-aos="fade-up">
+      <h2>Experience Map</h2>
+      <div id="map"></div>
+    </section>
 
-  <section id="summary">
-    <h2>Professional Summary</h2>
-    <p>
-      Experienced Senior Product Delivery Manager with over 7 years of international experience delivering high-impact digital and technical products in FinTech and SaaS sectors. Proven expertise in leading global cross-functional teams across Agile and Scrum frameworks, driving end-to-end product development from ideation to successful launch. Adept at stakeholder collaboration across geographies, including the US, Europe, and Southeast Asia.
-    </p>
-    <p>
-      Skilled in managing both frontend and backend sprints, scaling complex systems, and integrating enterprise platforms such as Elastic, ELK Stack, Adobe Experience Manager (AEM), and Adobe Commerce (Magento). Proficient in handling ETL pipelines, validating backend APIs, executing SQL queries, and facilitating UAT cycles.
-    </p>
-    <p>
-      Bringing a strong understanding of Artificial Intelligence (AI) tools and their applications in product innovation, with hands-on experience leveraging AI-driven platforms for customer experience optimisation, process automation, and product enhancement. Well-versed in using AI tools such as ChatGPT, Midjourney, Notion AI, and no-code/low-code automation platforms. Knowledgeable in AI product trends, ethical AI practices, prompt engineering, AI/ML integration planning, and user-centric AI product strategies.
-    </p>
-  </section>
+    <section data-aos="fade-up">
+      <h2>Certifications & Badges</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">PMI – Agile Product Owner</div>
+          <div class="swiper-slide">CSM | CSPO</div>
+          <div class="swiper-slide">Oracle OCI Architect</div>
+          <div class="swiper-slide">Google GenAI</div>
+          <div class="swiper-slide">IBM ML Essentials</div>
+          <div class="swiper-slide">Tableau Certified</div>
+        </div>
+      </div>
+    </section>
 
-  <section id="experience">
-    <h2>Professional Experience</h2>
+    <section data-aos="fade-up">
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/aggarwalshivam1991@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
 
-    <div class="item">
-      <h3>Senior Product Manager</h3>
-      <div class="meta">Bajaj FinServ Direct Limited, Pune, India</div>
-      <div class="period">Aug 2021 – Present</div>
-      <ul>
-        <li>Led Agile delivery of UI and horizontal sprints across 4+ cross-regional teams, resulting in a 25% improvement in feature delivery velocity and reduced turnaround by 18%.</li>
-        <li>Delivered Elastic and ELK-based backend solutions that improved system observability and reduced issue resolution time by 35%.</li>
-        <li>Managed ELB configurations and multi-cloud deployment strategies, increasing infrastructure uptime to 99.95% with optimised cost utilisation.</li>
-        <li>Collaborated with data engineering teams to implement ETL pipelines that processed over 10M data points monthly, enabling real-time analytics for CXO dashboards.</li>
-        <li>Oversaw 100+ API integration test cases and UAT efforts, achieving 98% test coverage and compliance with evolving automation protocols.</li>
-        <li>Co-designed and launched an internal AI chatbot (Master BOT) with 50+ intents and a 92% success rate in resolving employee queries, improving internal support efficiency.</li>
-        <li>Drove roadmap and backlog prioritisation across 3 continents (India, US, ASEAN), enabling a 20% reduction in time-to-market through AI-driven sentiment analytics.</li>
-        <li>Spearheaded digital transformation using Adobe Commerce and AEM, increasing customer engagement metrics by 30% through AI-based personalisation trials.</li>
-        <li>Leveraged AI tools (ChatGPT, Notion AI, etc.) to accelerate solution prototyping by 40% and reduce documentation overhead by 25%.</li>
-      </ul>
+    <div class="footer">
+      <p>&copy; 2025 Shivam Aggarwal | Built with ❤️ and AI</p>
     </div>
+  </div>
 
-    <div class="item">
-      <h3>Senior Product Manager</h3>
-      <div class="meta">Siroi Solution Sdn Bhd, Kuala Lumpur, Malaysia</div>
-      <div class="period">Dec 2018 – Aug 2021</div>
-      <ul>
-        <li>Owned end-to-end product delivery across UI and backend layers for 3+ cross-border fintech platforms in APAC, ensuring modular scalability and compliance-aligned architecture in Open Banking ecosystems, resulting in 40% faster rollout of features across regions.</li>
-        <li>Collaborated with Agile teams across Malaysia, India, and Singapore to execute 15+ iterative product releases, reducing cycle time by 30% and improving stakeholder visibility through automated AI-enabled documentation workflows.</li>
-        <li>Implemented Elastic and ELK for full-stack observability, reducing MTTR (mean time to resolution) by 45% and enhancing diagnostic accuracy through predictive analytics.</li>
-        <li>Integrated 10+ ETL pipelines with external fintech and banking APIs, enabling secure, compliant data synchronisation and audit trail logging across all partner systems, supporting 99.9% uptime SLAs.</li>
-        <li>Facilitated UAT execution across 20+ modules, improving go-live success rate by 95% and reducing defect leakage through AI-informed validation frameworks and early NLP-based interface testing.</li>
-        <li>Enhanced Magento-based platforms to support 5X traffic load increase, and ran personalisation A/B experiments using generative AI, resulting in a 22% uplift in engagement metrics.</li>
-        <li>Embedded strategic insights from AI and Open Banking trends into the product roadmap, driving 3 major feature pivots that improved customer retention by 15% and aligned with future-facing compliance shifts.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>Product Manager</h3>
-      <div class="meta">Alepo Technologies Inc., Austin, Texas (Remote from Pune)</div>
-      <div class="period">Nov 2017 – Dec 2018</div>
-      <ul>
-        <li>Supported delivery of telecom and digital infrastructure products for 5+ enterprise clients across the US and LATAM, ensuring timely rollout and compliance with regional standards.</li>
-        <li>Applied ELK stack and SQL-based analytics to optimise system reliability, reducing backend incident recurrence by 35% and improving monitoring accuracy across multiple environments.</li>
-        <li>Participated in 10+ remote Agile sprint cycles across Texas and Pune teams, leading backlog grooming and UAT planning that shortened release timelines by 20%.</li>
-        <li>Coordinated cross-time zone API validation and post-release monitoring with QA and tech leads, enhancing regression coverage and reducing post-launch issues by 25%.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>Product Analyst</h3>
-      <div class="meta">Sea core Financial Pvt Ltd, Delhi, India</div>
-      <div class="period">Apr 2015 – Jul 2016</div>
-      <ul>
-        <li>Performed financial data mapping and delivered structured outputs using Excel and custom data maps, ensuring accurate alignment with product requirements and delivery timelines.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="item">
-      <h3>MBA – Information Technology</h3>
-      <div class="meta">Symbiosis International University, Pune, Maharashtra, India</div>
-      <div class="period">Oct 2016 – Apr 2018</div>
-    </div>
-    <div class="item">
-      <h3>Bachelor of Technology – Computer Science</h3>
-      <div class="meta">Uttarakhand Technical University, Nainital, Uttarakhand, India</div>
-      <div class="period">Apr 2011 – Mar 2015</div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills & Tools</h2>
-    <h3>Skills</h3>
-    <ul class="inline-list">
-      <li>Agile Delivery (Scrum, Kanban, SAFe)</li>
-      <li>Global Sprint Management</li>
-      <li>PLM</li>
-      <li>Stakeholder Communication (India, US, EMEA, APAC)</li>
-      <li>Backend Architecture</li>
-      <li>SQL</li>
-      <li>API Testing</li>
-      <li>UAT</li>
-      <li>ETL Pipelines</li>
-      <li>AEM</li>
-      <li>Adobe Commerce (Magento)</li>
-      <li>Elastic Stack</li>
-      <li>ELK</li>
-      <li>ELB Deployment</li>
-    </ul>
-
-    <h3 style="margin-top:20px;">Tools</h3>
-    <ul class="inline-list">
-      <li>Jira</li>
-      <li>Confluence</li>
-      <li>Trello</li>
-      <li>Postman</li>
-      <li>Figma</li>
-      <li>Jenkins</li>
-      <li>Git</li>
-      <li>Power BI</li>
-    </ul>
-  </section>
-
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>PMI Certified – Agile Product Owner</li>
-      <li>Certified Scrum Master (CSM)</li>
-      <li>Certified Scrum Product Owner (CSPO)</li>
-      <li>Oracle Certified OCI Architect Professional</li>
-      <li>Azure DevOps Foundation</li>
-      <li>Google Generative AI Fundamentals</li>
-      <li>IBM Machine Learning Essentials</li>
-      <li>Tableau Certified Analyst</li>
-      <li>Oracle Certified Business Analysis Expert</li>
-    </ul>
-  </section>
-
-  <section id="languages">
-    <h2>Languages</h2>
-    <ul>
-      <li>English (Fluent)</li>
-      <li>Hindi (Native)</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><strong>Phone:</strong> (+91) 9873216989</p>
-    <p><strong>Email:</strong> <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a></p>
-    <p>
-      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/shivamaggarwal" target="_blank" rel="noreferrer">linkedin.com/in/shivamaggarwal</a><br />
-      <strong>GitHub:</strong> <a href="https://github.com/shivamaggarwal" target="_blank" rel="noreferrer">github.com/shivamaggarwal</a><br />
-      <strong>Portfolio:</strong> <a href="https://shivamaggarwal.github.io" target="_blank" rel="noreferrer">shivamaggarwal.github.io</a><br />
-      <strong>Location:</strong> Pune, Maharashtra, India – 411014
-    </p>
-  </section>
-
-</div>
-
-<!-- jQuery for smooth scrolling and active nav link -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(function () {
-    // Smooth scroll
-    $('nav a').on('click', function(e) {
-      e.preventDefault();
-      var target = this.hash;
-      if (target && $(target).length) {
-        $('html, body').animate({
-          scrollTop: $(target).offset().top - 20
-        }, 600);
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    AOS.init();
+    const map = L.map('map').setView([18.5204, 73.8567], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+    }).addTo(map);
+    L.marker([18.5204, 73.8567]).addTo(map).bindPopup('Pune, India').openPopup();
+    L.marker([3.139, 101.6869]).addTo(map).bindPopup('Kuala Lumpur');
+    L.marker([30.7333, 76.7794]).addTo(map).bindPopup('Delhi');
+    L.marker([30.3165, 78.0322]).addTo(map).bindPopup('Dehradun (Uttarakhand Univ)');
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 2,
+      spaceBetween: 20,
+      breakpoints: {
+        640: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
       }
     });
-
-    // Highlight nav on scroll
-    var sections = $('section');
-    var navLinks = $('nav a');
-
-    $(window).on('scroll', function () {
-      var currentPos = $(this).scrollTop() + 30;
-
-      sections.each(function () {
-        var top = $(this).offset().top;
-        var bottom = top + $(this).outerHeight();
-
-        if (currentPos >= top && currentPos <= bottom) {
-          navLinks.removeClass('active');
-          $('nav a[href="#' + this.id + '"]').addClass('active');
-        }
-      });
-    });
-
-    // Trigger scroll event to set initial active nav
-    $(window).trigger('scroll');
-  });
-</script>
-
+  </script>
 </body>
 </html>
