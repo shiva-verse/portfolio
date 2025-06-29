@@ -2,247 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Shivam Aggarwal - Senior Product Delivery Manager Resume">
-  <title>Shivam Aggarwal | Resume</title>
-
-  <!-- Font Awesome CDN -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-Ff3w4+3h7fL+ZlJ0akz7vzFtqvF7wC94KZb+nHG9ZhxPsnk2xz38G5rccZh0Yko8kBJPpT+7AhEfPl3j8hMOCg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shivam Aggarwal - AI Product Leader Resume Portfolio" />
+  <title>Shivam Aggarwal | AI Product Leader</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #2d3e50;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0.2rem 0;
-    }
-    .contact {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-    }
-    .contact p {
-      margin: 0.3rem 0;
-    }
-    .contact i {
-      margin-right: 0.4rem;
-      color: #00aced;
-    }
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 1rem 1.5rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #2d3e50;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-    .job, .education-item {
-      margin-bottom: 1.5rem;
-    }
-    .job h3, .education-item h3 {
-      margin: 0.2rem 0;
-      color: #1a1a1a;
-    }
-    .job span, .education-item span {
-      font-size: 0.9rem;
-      color: #666;
-    }
-    ul {
-      margin: 0.5rem 0 0 1.5rem;
-    }
-    footer {
-      background: #2d3e50;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.85rem;
-    }
-    .skills, .tools, .certs, .langs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .skills span, .tools span, .certs span, .langs span {
-      background: #e0e0e0;
-      padding: 0.3rem 0.6rem;
-      border-radius: 5px;
-      font-size: 0.9rem;
-    }
-    a {
-      color: #0073e6;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+    header { background: linear-gradient(to right, #1e88e5, #1976d2); color: white; text-align: center; padding: 4rem 1rem; position: relative; overflow: hidden; }
+    header h1 { font-size: 3rem; }
+    header h2 { font-size: 1.2rem; font-weight: 300; margin-top: 0.5rem; }
+    nav { background: white; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 999; }
+    nav ul { display: flex; list-style: none; justify-content: center; gap: 1.5rem; }
+    nav a { text-decoration: none; color: #1e88e5; font-weight: 600; }
+    .container { max-width: 1000px; margin: auto; padding: 2rem 1rem; }
+    section { margin: 3rem 0; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    h3.section-title { font-size: 1.5rem; color: #1e88e5; margin-bottom: 1rem; }
+    ul { margin-left: 1.5rem; }
+    .timeline { position: relative; padding-left: 2rem; border-left: 2px solid #1e88e5; }
+    .timeline div { margin-bottom: 1.5rem; }
+    .timeline span { font-weight: bold; color: #1e88e5; }
+    .slider { display: flex; overflow-x: auto; gap: 1rem; scroll-snap-type: x mandatory; }
+    .slider div { flex: none; width: 250px; background: #e3f2fd; padding: 1rem; border-radius: 0.75rem; scroll-snap-align: center; }
+    footer { text-align: center; padding: 2rem 1rem; font-size: 0.9rem; color: #666; }
+    a { color: #1976d2; text-decoration: none; }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      nav ul { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Shivam Aggarwal</h1>
-  <p>Senior Product Delivery Manager | AI-Driven Product Strategy | FinTech & SaaS</p>
-  <div class="contact">
-    <p><i class="fas fa-phone"></i>+91 9873216989</p>
-    <p><i class="fas fa-envelope"></i><a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a></p>
-    <p>
-      <i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a> |
-      <i class="fab fa-github"></i><a href="https://github.com/YOUR_GITHUB_URL" target="_blank">GitHub</a> |
-      <i class="fas fa-globe"></i><a href="https://YOUR_PORTFOLIO_URL" target="_blank">Portfolio</a>
-    </p>
-    <p><i class="fas fa-map-marker-alt"></i>Pune, Maharashtra, India – 411014</p>
+  <header data-aos="fade-down">
+    <h1>Shivam Aggarwal</h1>
+    <h2>AI Product Leader | GenAI Strategist | LLM Enthusiast</h2>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="about" data-aos="fade-up">
+      <h3 class="section-title">🧠 About Me</h3>
+      <p>Senior Product Manager with 7+ years of experience in building AI-first SaaS platforms and global FinTech solutions. Expert in Generative AI, Prompt Engineering, and LLM applications. Adept at leading cross-functional teams to deliver scalable, innovative products with measurable impact.</p>
+    </section>
+
+    <section id="projects" data-aos="fade-up">
+      <h3 class="section-title">🚀 Projects</h3>
+      <div class="slider">
+        <div><strong>NutriChat</strong><br/>AI meal planner for eggetarians & vegetarians<br/><a href="https://nutrichat-llama.vercel.app">Live</a></div>
+        <div><strong>ResumeGen AI</strong><br/>LLM-powered resume builder<br/>Coming Soon</div>
+        <div><strong>Vector Search UX</strong><br/>RAG search demo with Azure OpenAI<br/>Preview Soon</div>
+        <div><strong>AI PM Case Studies</strong><br/>GenAI product examples<br/><a href="https://github.com/shivam-aggarwal-git/AI-PM-Case-Studies">GitHub</a></div>
+      </div>
+    </section>
+
+    <section id="experience" data-aos="fade-up">
+      <h3 class="section-title">🏢 Experience Timeline</h3>
+      <div class="timeline">
+        <div><span>2023–Present:</span> Leading AI Products, Automation & Delivery for Global FinTech – 30% increase in ops efficiency</div>
+        <div><span>2020–2022:</span> Scaled GenAI MVPs for customer onboarding, India & Malaysia markets</div>
+        <div><span>2018–2020:</span> PM for SaaS-based compliance products in BFSI domain</div>
+      </div>
+    </section>
+
+    <section id="education" data-aos="fade-up">
+      <h3 class="section-title">🎓 Education Timeline</h3>
+      <div class="timeline">
+        <div><span>MBA – Symbiosis, Pune:</span> Specialization in IT & Strategy (2014–2016)</div>
+        <div><span>B.Tech – IT:</span> Focus on Software Engineering and Systems (2008–2012)</div>
+      </div>
+    </section>
+
+    <section id="certifications" data-aos="fade-up">
+      <h3 class="section-title">📜 Certifications</h3>
+      <ul>
+        <li>Azure AI Search & Vector Search – Microsoft, Jun 2025</li>
+        <li>AI Builder, Text Generation – Microsoft, May 2025</li>
+        <li>Responsible Generative AI – Microsoft, May 2025</li>
+      </ul>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
+      <h3 class="section-title">📫 Contact</h3>
+      <p>
+        <strong>Email:</strong> <a href="mailto:aggarwalshivam1991@gmail.com">aggarwalshivam1991@gmail.com</a><br/>
+        <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/shivam-aggarwal">linkedin.com/in/shivam-aggarwal</a><br/>
+        <strong>GitHub:</strong> <a href="https://github.com/shivam-aggarwal-git">shivam-aggarwal-git</a>
+      </p>
+    </section>
   </div>
-</header>
 
-<div class="container">
+  <footer>
+    <p>© 2025 Shivam Aggarwal · Designed with 💙 and HTML · <a href="#top">Back to Top</a></p>
+  </footer>
 
-  <section>
-    <h2>Professional Summary</h2>
-    <p>Experienced Senior Product Delivery Manager with 7+ years of international experience in FinTech and SaaS. Expert in Agile delivery, cross-regional collaboration, backend/frontend scaling, and AI integration. Strong knowledge of AEM, ELK, Adobe Commerce, and AI tools like ChatGPT and Midjourney.</p>
-  </section>
-
-  <section>
-    <h2>Professional Experience</h2>
-
-    <!-- Job 1 -->
-    <div class="job">
-      <h3>Senior Product Manager – Bajaj FinServ Direct Limited</h3>
-      <span>Aug 2021 – Present, Pune, India</span>
-      <ul>
-        <li>Improved delivery velocity by 25% via Agile leadership across 4+ global teams.</li>
-        <li>Deployed Elastic/ELK backend monitoring; reduced issue resolution by 35%.</li>
-        <li>Managed multi-cloud deployment; achieved 99.95% uptime.</li>
-        <li>Built ETL pipelines for 10M+ monthly records; enabled real-time CXO analytics.</li>
-        <li>Launched AI chatbot (Master BOT) with 92% resolution success.</li>
-        <li>Accelerated prototyping 40% with AI tools (ChatGPT, Notion AI, etc.).</li>
-      </ul>
-    </div>
-
-    <!-- Job 2 -->
-    <div class="job">
-      <h3>Senior Product Manager – Siroi Solution Sdn Bhd</h3>
-      <span>Dec 2018 – Aug 2021, Kuala Lumpur, Malaysia</span>
-      <ul>
-        <li>Delivered Open Banking solutions 40% faster across APAC regions.</li>
-        <li>Reduced MTTR by 45% via full-stack ELK implementation.</li>
-        <li>Enabled 5X traffic capacity with Magento enhancement & AI experiments.</li>
-        <li>Drove product pivots from AI/Open Banking insights; boosted retention by 15%.</li>
-      </ul>
-    </div>
-
-    <!-- Job 3 -->
-    <div class="job">
-      <h3>Product Manager – Alepo Technologies Inc.</h3>
-      <span>Nov 2017 – Dec 2018, Austin, Texas (Remote)</span>
-      <ul>
-        <li>Optimized backend monitoring, reducing incident recurrence by 35%.</li>
-        <li>Led backlog grooming and UAT planning, shortening release cycles by 20%.</li>
-      </ul>
-    </div>
-
-    <!-- Job 4 -->
-    <div class="job">
-      <h3>Product Analyst – Sea Core Financial Pvt Ltd</h3>
-      <span>Apr 2015 – Jul 2016, Delhi, India</span>
-      <ul>
-        <li>Performed financial data mapping to support accurate product delivery.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <div class="education-item">
-      <h3>MBA – Information Technology</h3>
-      <span>Symbiosis International University, Pune (2016–2018)</span>
-    </div>
-    <div class="education-item">
-      <h3>B.Tech – Computer Science</h3>
-      <span>Uttarakhand Technical University, Nainital (2011–2015)</span>
-    </div>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Agile Delivery</span>
-      <span>Scrum, Kanban, SAFe</span>
-      <span>SQL</span>
-      <span>API Testing</span>
-      <span>ETL Pipelines</span>
-      <span>AEM</span>
-      <span>Adobe Commerce</span>
-      <span>Elastic Stack</span>
-      <span>ELK</span>
-      <span>Backend Architecture</span>
-      <span>Stakeholder Communication</span>
-    </div>
-  </section>
-
-  <section>
-    <h2>Tools</h2>
-    <div class="tools">
-      <span>Jira</span>
-      <span>Confluence</span>
-      <span>Trello</span>
-      <span>Postman</span>
-      <span>Figma</span>
-      <span>Jenkins</span>
-      <span>Git</span>
-      <span>Power BI</span>
-    </div>
-  </section>
-
-  <section>
-    <h2>Certifications</h2>
-    <div class="certs">
-      <span>PMI Agile Product Owner</span>
-      <span>CSM</span>
-      <span>CSPO</span>
-      <span>Oracle OCI Architect</span>
-      <span>Azure DevOps Foundation</span>
-      <span>Google Generative AI</span>
-      <span>IBM ML Essentials</span>
-      <span>Tableau Analyst</span>
-      <span>Oracle Business Analyst</span>
-    </div>
-  </section>
-
-  <section>
-    <h2>Languages</h2>
-    <div class="langs">
-      <span>English (Fluent)</span>
-      <span>Hindi (Native)</span>
-    </div>
-  </section>
-
-</div>
-
-<footer>
-  &copy; 2025 Shivam Aggarwal | All Rights Reserved
-</footer>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
 </body>
 </html>
